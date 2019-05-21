@@ -87,7 +87,7 @@
           <br>
           <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，<b>未來20年內，台北市中午會經常有高達40度的高溫。</b></p>
           <br>
-          <img src="../public/images/heat_island_chart4.svg" alt="">
+          <bar-chart></bar-chart>
         </div>     
       </div>
     </div>
@@ -98,6 +98,7 @@
 import giraffe from '../public/video/heat_island_v2.mp4'
 import hippo from '../public/video/heat_island_v1.mp4'
 import chart from './components/chart.vue'
+import barChart from './components/barChart.vue'
 
 export default {
   name: 'app',
@@ -113,7 +114,8 @@ export default {
     }
   },
   components: {
-    chart
+    chart,
+    barChart
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
