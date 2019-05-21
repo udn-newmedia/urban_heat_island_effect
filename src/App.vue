@@ -29,25 +29,17 @@
           </video>
       </div>
       <div key="2" :class="{'cover-background-current': backgrounds[1]}" class="cover-background cover-background2">
-          <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource2" autobuffer autoplay loop muted playsinline>
-            <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource2" webkit-playsinline="true"></source>
-            <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="videoSource2"></source>
-            <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSource2"></source>
-          </video>
+        <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource2" autobuffer autoplay loop muted playsinline>
+          <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource2" webkit-playsinline="true"></source>
+          <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="videoSource2"></source>
+          <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSource2"></source>
+        </video>
       </div>
       <div key="3" :class="{'cover-background-current': backgrounds[2]}" class="cover-background cover-background3">
-          <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource1" autobuffer autoplay loop muted playsinline>
-            <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource1" webkit-playsinline="true"></source>
-            <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="videoSource1"></source>
-            <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSource1"></source>
-          </video>
+          <img src="../public/images/heat_island_img1.jpg" alt="">
       </div>
       <div key="4" :class="{'cover-background-current': backgrounds[3]}" class="cover-background cover-background4">
-          <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource2" autobuffer autoplay loop muted playsinline>
-            <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource2" webkit-playsinline="true"></source>
-            <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="videoSource2"></source>
-            <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSource2"></source>
-          </video>
+          <img src="../public/images/heat_island_img2.jpg" alt="">
       </div>
     </div>
     <div class="contain-wrapper">
@@ -78,30 +70,34 @@
           <br>
 
           <h1></h1>
-          <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource1" autobuffer autoplay loop muted playsinline>
+          <!-- <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource1" autobuffer autoplay loop muted playsinline>
             <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource1" webkit-playsinline="true"></source>
             <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="videoSource1"></source>
             <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSource1"></source>
-          </video>
+          </video> -->
           <img src="../public/images/heat_island_img4.jpg" alt="">
         </div>     
       </div>
     </div>
-    
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- <content>
-      <h1>hello</h1>
-    </content>
-    <content>
-      <h1>hello</h1>
-    </content> -->
+    <chart></chart>
+    <div class="contain-wrapper">
+      <div class="container">
+        <div class="report-content">
+          <p>在高樓櫛次鱗比的都市叢林裡，許多人為因素均造成熱島效應不斷發威，導致都市的「高燒不退」。</p>
+          <br>
+          <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，<b>未來20年內，台北市中午會經常有高達40度的高溫。</b></p>
+          <br>
+          <img src="../public/images/heat_island_chart4.svg" alt="">
+        </div>     
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import giraffe from '../public/video/heat_island_v2.mp4'
 import hippo from '../public/video/heat_island_v1.mp4'
+import chart from './components/chart.vue'
 
 export default {
   name: 'app',
@@ -117,7 +113,7 @@ export default {
     }
   },
   components: {
-    HelloWorld
+    chart
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
@@ -210,7 +206,7 @@ html, body {
     }
   }
   .cover-background-current {
-    z-index: -10;
+    z-index: 10;
     animation: fade 1s ease-in-out forwards;
   }
   @keyframes fade {
@@ -225,6 +221,7 @@ html, body {
     position: relative;
     background: url("../public/images/heat_island_img3.jpg") no-repeat;
     background-attachment: fixed;
+    z-index: 5;
     .main-title-background {
        height: 100vh;
     }
@@ -242,6 +239,12 @@ html, body {
     img {
       width: 100%;
     }
+  }
+  .contain-wrapper {
+    padding: 300px 0;
+    z-index: 100;
+    width: 100%;
+    position: absolute;
   }
 }
 </style>
