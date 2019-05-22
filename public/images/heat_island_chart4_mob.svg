@@ -1,102 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 520 389" style="enable-background:new 0 0 520 389;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 520 390" style="enable-background:new 0 0 520 390;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#707070;stroke-width:0.5;stroke-miterlimit:10;}
-	.st1{fill:#D2D4D6;}
-	.st2{fill:#EA0303;}
-	.st3{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st4{fill:#202020;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st5{fill:#9F9F9F;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st6{fill:#404040;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st7{fill:#808080;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st8{fill:#DFDFDF;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st9{stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st10{fill:#707070;}
-	.st11{font-family:'ArialMT';}
-	.st12{font-size:16px;}
-	.st13{font-size:14px;}
-	.st14{font-family:'ARHeiB5-Light-B5pc-H';}
+	.st0{fill:#707070;}
+	.st1{font-family:'ArialMT';}
+	.st2{font-size:16px;}
+	.st3{fill:none;stroke:#707070;stroke-width:0.5;stroke-miterlimit:10;}
+	.st4{font-size:14px;}
+	.st5{font-family:'ARHeiB5-Light-B5pc-H';}
+	.st6{fill:#EA0303;}
+	.st7{fill:#D2D4D6;}
 </style>
-<g>
-	<text transform="matrix(1.0052 0 0 1 29.9316 344.2026)" class="st10 st11 st12">0</text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 20.9863 280.3052)" class="st10 st11 st12">10</text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 20.9863 216.4072)" class="st10 st11 st12">20</text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 20.9863 152.5083)" class="st10 st11 st12">30</text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 20.9863 88.6113)" class="st10 st11 st12">40</text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 20.9863 24.7134)" class="st10 st11 st12">50</text>
-</g>
-<line class="st0" x1="48.19" y1="343.99" x2="48.19" y2="19.7"/>
-<g>
+<g id="heat_x5F_island_x5F_chart4_x5F_background_x5F_mob">
 	<g>
-		<line class="st0" x1="48.19" y1="343.99" x2="42.31" y2="343.99"/>
-		<line class="st0" x1="48.19" y1="279.13" x2="42.31" y2="279.13"/>
-		<line class="st0" x1="48.19" y1="214.27" x2="42.31" y2="214.27"/>
-		<line class="st0" x1="48.19" y1="149.42" x2="42.31" y2="149.42"/>
-		<line class="st0" x1="48.19" y1="84.56" x2="42.31" y2="84.56"/>
-		<line class="st0" x1="48.19" y1="19.7" x2="42.31" y2="19.7"/>
+		<text transform="matrix(1.0052 0 0 1 27.9316 343.2026)" class="st0 st1 st2">0</text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 18.9863 279.3052)" class="st0 st1 st2">10</text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 18.9863 215.4072)" class="st0 st1 st2">20</text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 18.9863 151.5083)" class="st0 st1 st2">30</text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 18.9863 87.6113)" class="st0 st1 st2">40</text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 18.9863 23.7134)" class="st0 st1 st2">50</text>
+	</g>
+	<line class="st3" x1="46.19" y1="342.99" x2="46.19" y2="18.7"/>
+	<g>
+		<g>
+			<line class="st3" x1="46.19" y1="342.99" x2="40.31" y2="342.99"/>
+			<line class="st3" x1="46.19" y1="278.13" x2="40.31" y2="278.13"/>
+			<line class="st3" x1="46.19" y1="213.27" x2="40.31" y2="213.27"/>
+			<line class="st3" x1="46.19" y1="148.42" x2="40.31" y2="148.42"/>
+			<line class="st3" x1="46.19" y1="83.56" x2="40.31" y2="83.56"/>
+			<line class="st3" x1="46.19" y1="18.7" x2="40.31" y2="18.7"/>
+		</g>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 60.9912 358.4829)"><tspan x="0" y="0" class="st0 st1 st4">O3</tspan><tspan x="-7" y="16.8" class="st0 st1 st4">(ppb)</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 139.3369 358.4829)"><tspan x="0" y="0" class="st0 st1 st4">PM10</tspan><tspan x="-5.97" y="16.8" class="st0 st1 st4">(μg/m3)</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 323.8213 358.4829)"><tspan x="0" y="0" class="st0 st1 st4">CO</tspan><tspan x="-7.78" y="16.8" class="st0 st1 st4">(ppm)</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 389.4902 358.4829)"><tspan x="0" y="0" class="st0 st1 st4">SO2</tspan><tspan x="-2.33" y="16.8" class="st0 st1 st4">(ppb)</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 232.7861 358.4829)"><tspan x="0" y="0" class="st0 st1 st4">PM2.5</tspan><tspan x="-4.03" y="16.8" class="st0 st1 st4">(μg/m3)</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1.0052 0 0 1 463.8242 358.4829)"><tspan x="0" y="0" class="st0 st1 st4">NO2</tspan><tspan x="-1.95" y="16.8" class="st0 st1 st4">(ppb)</tspan></text>
+	</g>
+	<line class="st3" x1="46.19" y1="343.61" x2="504.5" y2="343.61"/>
+	<g>
+		<text transform="matrix(1.046 0 0 1 382.2158 19.8647)" class="st0 st5 st2">熱浪</text>
+	</g>
+	<g>
+		<text transform="matrix(1.046 0 0 1 454.0771 19.8647)" class="st0 st5 st2">非熱浪</text>
+	</g>
+	<rect x="368" y="9.08" class="st6" width="10.06" height="9.42"/>
+	<rect x="439" y="9.08" class="st7" width="10.06" height="9.42"/>
+</g>
+<g id="heat_x5F_island_x5F_chart4_x5F_mob">
+	<g>
+		<rect x="254.76" y="266.84" class="st7" width="9.58" height="76.15"/>
+		<rect x="241.19" y="258.84" class="st6" width="9.58" height="84.14"/>
+	</g>
+	<g>
+		<rect x="161.2" y="174.94" class="st7" width="9.58" height="167.81"/>
+		<rect x="147" y="139.78" class="st6" width="9.58" height="203.21"/>
+	</g>
+	<g>
+		<rect x="468.7" y="234.07" class="st6" width="9.58" height="108.92"/>
+		<rect x="482.11" y="228.48" class="st7" width="9.58" height="114.51"/>
+	</g>
+	<g>
+		<rect x="74.34" y="190.12" class="st7" width="9.58" height="152.87"/>
+		<rect x="60.13" y="81.49" class="st6" width="9.58" height="261.5"/>
+	</g>
+	<g>
+		<rect x="406.6" y="321.97" class="st7" width="9.58" height="21.02"/>
+		<rect x="393.67" y="315.58" class="st6" width="9.58" height="27.41"/>
+	</g>
+	<g>
+		<rect x="335.68" y="339.55" class="st7" width="9.58" height="3.44"/>
+		<rect x="322.75" y="339.91" class="st6" width="9.58" height="3.08"/>
 	</g>
 </g>
-<g>
-	<rect x="256.76" y="267.84" class="st1" width="9.58" height="76.15"/>
-	<rect x="243.19" y="259.84" class="st2" width="9.58" height="84.14"/>
-</g>
-<g>
-	<rect x="163.2" y="175.94" class="st1" width="9.58" height="167.81"/>
-	<rect x="149" y="140.78" class="st2" width="9.58" height="203.21"/>
-</g>
-<g>
-	<rect x="470.7" y="235.07" class="st2" width="9.58" height="108.92"/>
-	<rect x="484.11" y="229.48" class="st1" width="9.58" height="114.51"/>
-</g>
-<g>
-	<rect x="76.34" y="191.12" class="st1" width="9.58" height="152.87"/>
-	<rect x="62.13" y="82.49" class="st2" width="9.58" height="261.5"/>
-</g>
-<g>
-	<rect x="408.6" y="322.97" class="st1" width="9.58" height="21.02"/>
-	<rect x="395.67" y="316.58" class="st2" width="9.58" height="27.41"/>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 62.9912 359.4829)"><tspan x="0" y="0" class="st10 st11 st13">O3</tspan><tspan x="-7" y="16.8" class="st10 st11 st13">(ppb)</tspan></text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 141.3369 359.4829)"><tspan x="0" y="0" class="st10 st11 st13">PM10</tspan><tspan x="-5.97" y="16.8" class="st10 st11 st13">(μg/m3)</tspan></text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 325.8213 359.4829)"><tspan x="0" y="0" class="st10 st11 st13">CO</tspan><tspan x="-7.78" y="16.8" class="st10 st11 st13">(ppm)</tspan></text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 391.4902 359.4829)"><tspan x="0" y="0" class="st10 st11 st13">SO2</tspan><tspan x="-2.33" y="16.8" class="st10 st11 st13">(ppb)</tspan></text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 234.7861 359.4829)"><tspan x="0" y="0" class="st10 st11 st13">PM2.5</tspan><tspan x="-4.03" y="16.8" class="st10 st11 st13">(μg/m3)</tspan></text>
-</g>
-<g>
-	<text transform="matrix(1.0052 0 0 1 465.8242 359.4829)"><tspan x="0" y="0" class="st10 st11 st13">NO2</tspan><tspan x="-1.95" y="16.8" class="st10 st11 st13">(ppb)</tspan></text>
-</g>
-<g>
-	<rect x="337.68" y="340.55" class="st1" width="9.58" height="3.44"/>
-	<rect x="324.75" y="340.91" class="st2" width="9.58" height="3.08"/>
-</g>
-<line class="st0" x1="48.19" y1="344.61" x2="506.5" y2="344.61"/>
-<g>
-	<text transform="matrix(1.046 0 0 1 384.2158 20.8647)" class="st10 st14 st12">熱浪</text>
-</g>
-<g>
-	<text transform="matrix(1.046 0 0 1 456.0771 20.8647)" class="st10 st14 st12">非熱浪</text>
-</g>
-<rect x="370" y="10.08" class="st2" width="10.06" height="9.42"/>
-<rect x="441" y="10.08" class="st1" width="10.06" height="9.42"/>
 </svg>

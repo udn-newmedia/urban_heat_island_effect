@@ -2,25 +2,65 @@
   <div id="app">
     <div class="cover">
       <div class="cover-section cover-section1">
-        <div ref="content1" class="content content1">
-          <h1>Hello World1</h1>
-        </div> 
-      </div>
-      <div class="cover-section cover-section2">
-        <div ref="content2" class="content content2">
-          <h1>Hello World2</h1>
+        <div class="container">
+          <div ref="content1" class="content content1">
+            <div class="cover-contain">
+              <p>過去8年間，台北市每年平均有近兩個月的溫度<span class="mark">超過35度</span>。</p>
+              <p class="source">資料來源／中央氣象局</p>
+            </div>
+          </div> 
         </div>
       </div>
+      <div class="cover-section cover-section2">
+        <div class="container">
+          <div ref="content2" class="content content2">
+            <div class="cover-contain">
+                <p>高溫讓人「厭世」。</p>
+              </div>
+          </div>
+        </div> 
+      </div>
       <div class="cover-section cover-section3">
-        <div ref="content3" class="content content3">
-          <h1>Hello World3</h1>
+        <div class="container">
+          <div ref="content3" class="content content3">
+              <div class="cover-contain">
+                <p>台北夏季體感溫度若達31.5度，溫度每上升1度，死亡率便提高<span class="mark">5.1%</span>。</p>
+                <br>
+                <p>體感溫度若達30.7度，溫度每上升1度，心血管疾病死亡率便增加<span class="mark">3.5%</span>。</p>
+                <br>
+                <p>體感溫度若達31.4度，溫度每上升1度，呼吸系統疾病死亡率便增加<span class="mark">12.5%</span>。</p>
+                <br>
+                <p class="source">資料來源／台灣大學公共衛生學院教授郭育良</p>
+              </div>
+          </div>
         </div>
       </div>
       <div class="cover-section cover-section4">
-        <div ref="content4" class="content content4">
-          <h1>Hello World4</h1>
+        <div class="container">
+          <div ref="content4" class="content content4">
+            <div class="cover-contain">
+                <p>當寶島變熱島</p>
+                <h1 class="highline">高溫會殺人</h1>
+              </div>
+          </div>
         </div>
       </div>
+      <div :class="{'isCurrentCover': isCurrentCover[0] }" class="cover-background cover-background1">
+        <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[0]), require('../public/images/' + coverBackgrounds[0]))" alt="">
+      </div>
+      <div :class="{'isCurrentCover': isCurrentCover[1] }" class="cover-background cover-background2">
+        <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[1]), require('../public/images/' + coverBackgrounds[1]))" alt="">
+      </div>
+      <div :class="{'isCurrentCover': isCurrentCover[2] }" class="cover-background cover-background3">
+        <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[2]), require('../public/images/' + coverBackgrounds[2]))" alt="">
+      </div>
+      <div :class="{'isCurrentCover': isCurrentCover[3] }" class="cover-background cover-background4">
+        <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[3]), require('../public/images/' + coverBackgrounds[3]))" alt="">
+      </div>
+
+      <!-- 
+        
+      2019/5/24砍掉  
       <div key="1" :class="{'cover-background-current': backgrounds[0]}" class="cover-background cover-background1">
           <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource1" autobuffer autoplay loop muted playsinline>
             <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource1" webkit-playsinline="true"></source>
@@ -41,8 +81,74 @@
       <div key="4" :class="{'cover-background-current': backgrounds[3]}" class="cover-background cover-background4">
           <img src="../public/images/heat_island_img2.jpg" alt="">
       </div>
+      
+      -->
+
     </div>
-    <div class="contain-wrapper">
+    <div class="introduction">
+      <div class="content">
+        <div class="container"> 
+          <p>熱、好熱、非常熱！還不到5月，台北市已飆出攝氏35.9度高溫，高掛的太陽把路上民眾曬昏了頭，腳下的柏油路也冒著熱氣，許多民眾邊擦汗邊問：「怎麼會這麼熱？」</p>
+          <br>
+          <p>「熱島效應」是造成都會區溫度不斷飆升的原因之一，汽車排廢、易吸熱的柏油路、不通風的密集街區等因素，以及無法散熱的盆地地形，導致台北市政府都市發展局的數據顯示，台北都市中心溫度與郊區最低溫之溫差可達6度。</p>
+          <br>
+          <p>隨著熱被困在都市中無法散去，也使空氣汙染愈來愈嚴重、民眾面臨更高的健康風險，學者呼籲，各縣市政府應透過都市規劃減緩熱島效應，讓民眾擁有更舒適的生活環境。</p>
+          <div class="share">
+            <i class="facebook i-facebook-1"></i><i class="line i-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="introduction-videowrapper" ref="introduction-videowrapper" class="introduction-video">
+      <div id="video-wrapper">
+        <video id="video-covor-background" ref="introduction-video" class="video-player" width="100vw" preload="metadata" :src="srcRWD(introductionVideoMob, introductionVideo)" autobuffer autoplay loop muted playsinline>
+          <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)" webkit-playsinline="true"></source>
+          <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)"></source>
+          <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)"></source>
+        </video>
+      </div>
+      <div id="video-covor-content" class="video-covor-content">
+        <div class="main-title">發燒的都市</div>
+      </div>
+      <div class="content">
+        <div class="container"> 
+          <p>在高樓櫛次鱗比的都市叢林裡，許多人為因素均造成熱島效應不斷發威，導致都市的「高燒不退」。</p>
+          <br>
+          <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，未來20年內，台北市中午會經常有高達40度的高溫。</p>
+          <br>
+          <br>
+          <h3>大台北地區於2018年8月1日的溫度分布圖</h3>
+        </div>
+      </div>
+      <video  width="100vw" preload="metadata" :src="srcRWD(mapVideoMob, mapVideo)" autobuffer autoplay loop muted playsinline>
+        <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)" webkit-playsinline="true"></source>
+        <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
+        <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
+      </video>
+      <p>資料來源／中央氣象局</p>
+      <div class="content">
+        <div class="container"> 
+          <h3>熱島效應特色一：集中在都會區</h3>
+          <br>
+          <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
+          <br>
+          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+          <br>
+          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+          <br>
+          <br>
+          <img src="../public/images/heat_island_img1.jpg" alt="">
+        </div>
+      </div>
+      <div class="content">
+        <div class="container"> 
+          <h3>台北和淡水歷年均溫走勢圖</h3>
+        </div>
+        <chart></chart>
+      </div>
+    </div>
+
+    <!-- <div class="contain-wrapper">
       <div class="container">
         <div class="introduction">
           <p>熱、好熱、非常熱！還不到5月，台北市已飆出攝氏35.9度高溫，高掛的太陽把路上民眾曬昏了頭，腳下的柏油路也冒著熱氣，許多民眾邊擦汗邊問：「怎麼會這麼熱？」</p>
@@ -68,13 +174,7 @@
           <br>
           <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，<b>未來20年內，台北市中午會經常有高達40度的高溫。</b></p>
           <br>
-
           <h1></h1>
-          <!-- <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource1" autobuffer autoplay loop muted playsinline>
-            <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource1" webkit-playsinline="true"></source>
-            <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="videoSource1"></source>
-            <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSource1"></source>
-          </video> -->
           <img src="../public/images/heat_island_img4.jpg" alt="">
         </div>     
       </div>
@@ -90,79 +190,128 @@
           <bar-chart></bar-chart>
         </div>     
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import giraffe from '../public/video/heat_island_v2.mp4'
-import hippo from '../public/video/heat_island_v1.mp4'
+import srcRWD from './mixin/srcRWD.js'
 import chart from './components/chart.vue'
 import barChart from './components/barChart.vue'
+import ScrollMagic from 'scrollmagic'
 
 export default {
   name: 'app',
   data () {
     return {
-      videoSource1: hippo,
-      videoSource2: giraffe,
+      isNotCover: false,
+      currentCover: 0,
+      currentCoverMob: 0,
+      isCurrentCover: [true, false, false, false],
+      isCurrentCoverMob: [true, false, false, false],
+      coverBackgrounds: ['heat_island_bg1.jpg', 'heat_island_bg2.jpg', 'heat_island_bg3.jpg', 'heat_island_bg4.jpg'],
+      coverBackgroundMobs: ['heat_island_bg1_mob.jpg', 'heat_island_bg2_mob.jpg', 'heat_island_bg3_mob.jpg', 'heat_island_bg4_mob.jpg'],
+      introductionVideo: require('../public/video/heat_island_v1.mp4'),
+      introductionVideoMob: require('../public/video/heat_island_v1_mob.mp4'),
+      mapVideo: require('../public/video/heat_island_chart1.mp4'),
+      mapVideoMob: require('../public/video/heat_island_chart1_mob.mp4'),
+      img1: 'heat_island_img1',
       videoSource3: null,
       videoSource4: null,
       currentBackground: 0,
       backgrounds: [true, false, false , false],
-      isMainTitle: false
+      isMainTitle: false,
+      isNotCover: false
     }
   },
   components: {
     chart,
     barChart
   },
+  mixins: [srcRWD],
   mounted () {
+    let vm = this
     window.addEventListener('scroll', this.handleScroll)
+
+    var controller = new ScrollMagic.Controller();
+    var slides = document.querySelector("#video-wrapper");
+                
+    new ScrollMagic.Scene({
+        triggerElement: slides,
+        triggerHook: 'onLeave',
+        duration: "100%",
+        offset: 'center'
+      })
+      .setPin(slides, {pushFollowers: false})
+      // .addIndicators() // add indicators (requires plugin)
+      .addTo(controller);
+
+    // new ScrollMagic.Scene({
+    //       triggerElement: slides2,
+    //       triggerHook: 'onLeave',
+    //       duration: "200%",
+    //       offset: 0
+		// 		})
+		// 		.setPin(slides2, {pushFollowers: false})
+		// 		// .addIndicators() // add indicators (requires plugin)
+    //     .addTo(controller);
+        
   },
   methods: {
     isElementInViewport (el) {
-      var rect = el.getBoundingClientRect();
 
-      return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
-      );
+      if (el) {
+        var rect = el.getBoundingClientRect();
+
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+        );
+      } else {
+        return false
+      }
+      
     },
     handleScroll () {
+      
       let vm = this
+      
       if (this.isElementInViewport(vm.$refs['content1'])) {
-        this.currentBackground = 0
-        this.backgrounds.fill(false)
-        this.$set(this.backgrounds, this.currentBackground, true)
+        this.currentCoverMob = 0
+        this.currentCover = 0       
       } else if (this.isElementInViewport(vm.$refs['content2'])) {
-        this.currentBackground = 1
-        this.backgrounds.fill(false)
-        this.$set(this.backgrounds, this.currentBackground, true)
+        this.currentCoverMob = 1
+        this.currentCover = 1
       } else if (this.isElementInViewport(vm.$refs['content3'])) {
-        this.currentBackground = 2
-        this.backgrounds.fill(false)
-        this.$set(this.backgrounds, this.currentBackground, true)
+        this.currentCoverMob = 2
+        this.currentCover = 2
       } else if (this.isElementInViewport(vm.$refs['content4'])) {
-        this.currentBackground = 3
-        this.backgrounds.fill(false)
-        this.$set(this.backgrounds, this.currentBackground, true)
-      } else {
-        this.backgrounds.fill(false)
+        this.currentCoverMob = 3
+        this.currentCover = 3
       }
 
-      if (vm.$refs['main-title-background'].getBoundingClientRect().top < 0 && vm.$refs['main-title-background'].getBoundingClientRect().bottom > 0) {
-        this.isMainTitle = true
-      } else {
-        this.isMainTitle = false
-      }
+      vm.isCurrentCover.fill(false)
+      vm.isCurrentCoverMob.fill(false)
+      vm.$set(vm.isCurrentCover, vm.currentCover, true)
+      vm.$set(vm.isCurrentCoverMob, vm.currentCoverMob, true )
+      
+      
+
+      // if (vm.$refs['main-title-background'].getBoundingClientRect().top < 0 && vm.$refs['main-title-background'].getBoundingClientRect().bottom > 0) {
+      //   this.isMainTitle = true
+      // } else {
+      //   this.isMainTitle = false
+      // }
     }
   },
   watch: {
-    currentBackground (value) {
+    currentCoverMob (value) {
       console.log(value)
+    },
+    currentCover () {
+
     }
   }
 }
@@ -171,7 +320,7 @@ export default {
 <style lang="scss">
 @import './assets/baseSCSS/reset.scss';
 @import './assets/baseSCSS/UdnFontSize.scss';
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+// @import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import './assets/baseSCSS/theme.scss';
 
 html, body {
@@ -179,74 +328,162 @@ html, body {
 
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  .cover {
-    position: relative;
+  .container {
+    padding: 20px;
   }
-  .cover-section {
-    height: 100vh;
-    width: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .cover-background {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: -20;
-    .video-player {
-        width: 100%;
-        height: 100vh;
-        z-index: -100;
-        object-fit: fill;
+  .content {
+    padding: 154px 0 0px;
+    img {
+      width: 100%;;
     }
   }
-  .cover-background-current {
-    z-index: 10;
-    animation: fade 1s ease-in-out forwards;
+  .cover {
+    position: relative;
+    .cover-section {
+      height: 100vh;
+      width: 100;
+      display: flex;
+      align-items: center;
+      .cover-contain {
+        position: relative;
+        z-index: 100;
+        padding: 17px;
+        background-color: white;
+        .mark {
+          color: red;
+        }
+        .source {
+          color: #7d7d7d;
+          font-size: 15px;
+        }
+        .highline {
+          padding-top: 6px;
+        }
+      }
+    }
+    .cover-background {
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      img {
+          width: 100%;
+      }
+    }
+
+    .cover-background1 {
+      z-index: 40
+    }
+    .cover-background2 {
+      z-index: 30
+    }
+    .cover-background3 {
+      z-index: 20
+    }
+    .cover-background4 {
+      z-index: 10
+    }
+    .isCurrentCover {
+      opacity: 1;
+      z-index: 50;
+      animation: fade 1s ease-in-out forwards;    
+    }
+    @keyframes fade {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+    //當在 cover position 以內的時候不出現 
+    .isNotCover {
+      position: absolute;
+      bottom: 0;
+    }
   }
+
+  .introduction {
+    position: relative;
+     z-index: 100;
+    background-color: #f2f2f2;
+    .share {
+      padding-top: 66.8px;
+      text-align: center;
+      font-size: 37px;
+    }
+  }
+  .introduction-video {
+    position: relative;
+    z-index: 90;
+    background-color: #f2f2f2;
+    video {
+      width: 100%;
+      height: 100vh;
+      object-fit: fill;
+      z-index: 90;
+    }
+    .video-covor-content {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      .main-title {
+        background-color: #ffffff;
+        font-size: 25px;
+      }
+    }
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+  // .cover-background-current {
+  //   z-index: 10;
+  //   animation: fade 1s ease-in-out forwards;
+  // }
   @keyframes fade {
     from { opacity: 0.5; }
     to { opacity: 1; }
   }
-  .introduction {
-    margin: 154px 0 140px;
-  }
-  .main-title-wrapper {
-    height: 200vh;
-    position: relative;
-    background: url("../public/images/heat_island_img3.jpg") no-repeat;
-    background-attachment: fixed;
-    z-index: 5;
-    .main-title-background {
-       height: 100vh;
-    }
-    .main-title-content {
-        height: 100vh;
-        position: relative;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  // .introduction {
+  //   margin: 154px 0 140px;
+  // }
+  // .main-title-wrapper {
+  //   height: 200vh;
+  //   position: relative;
+  //   background: url("../public/images/heat_island_img3.jpg") no-repeat;
+  //   background-attachment: fixed;
+  //   z-index: 5;
+  //   .main-title-background {
+  //      height: 100vh;
+  //   }
+  //   .main-title-content {
+  //       height: 100vh;
+  //       position: relative;
+  //       bottom: 0;
+  //       display: flex;
+  //       justify-content: center;
+  //       align-items: center;
+  //   }
     
-  }
-  .report-content {
-    img {
-      width: 100%;
-    }
-  }
-  .contain-wrapper {
-    padding: 300px 0;
-    z-index: 100;
-    width: 100%;
-    position: absolute;
-  }
+  // }
+  // .report-content {
+  //   img {
+  //     width: 100%;
+  //   }
+  // }
+  // .contain-wrapper {
+  //   padding: 300px 0;
+  //   z-index: 100;
+  //   width: 100%;
+  //   position: absolute;
+  // }
 }
 </style>
