@@ -57,33 +57,6 @@
       <div :class="{'isCurrentCover': isCurrentCover[3] }" class="cover-background cover-background4">
         <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[3]), require('../public/images/' + coverBackgrounds[3]))" alt="">
       </div>
-
-      <!-- 
-        
-      2019/5/24砍掉  
-      <div key="1" :class="{'cover-background-current': backgrounds[0]}" class="cover-background cover-background1">
-          <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource1" autobuffer autoplay loop muted playsinline>
-            <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource1" webkit-playsinline="true"></source>
-            <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="videoSource1"></source>
-            <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSource1"></source>
-          </video>
-      </div>
-      <div key="2" :class="{'cover-background-current': backgrounds[1]}" class="cover-background cover-background2">
-        <video ref="video" class="video-player" width="100vw" preload="metadata" :src="videoSource2" autobuffer autoplay loop muted playsinline>
-          <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource2" webkit-playsinline="true"></source>
-          <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="videoSource2"></source>
-          <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSource2"></source>
-        </video>
-      </div>
-      <div key="3" :class="{'cover-background-current': backgrounds[2]}" class="cover-background cover-background3">
-          <img src="../public/images/heat_island_img1.jpg" alt="">
-      </div>
-      <div key="4" :class="{'cover-background-current': backgrounds[3]}" class="cover-background cover-background4">
-          <img src="../public/images/heat_island_img2.jpg" alt="">
-      </div>
-      
-      -->
-
     </div>
     <div class="introduction">
       <div class="content">
@@ -159,69 +132,8 @@
           </div>
         </div>
         <chart3></chart3>
-        <!-- <h1>Hello</h1> -->
-        <!-- <div class="content">
-          <div class="container"> 
-            <h3>熱島效應特色一：集中在都會區</h3>
-            <br>
-            <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
-            <br>
-            <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
-            <br>
-            <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
-            <br>
-            <br>
-            <img src="../public/images/heat_island_img1.jpg" alt="">
-          </div>
-        </div> -->
-      </div>
-      
-    </div>
-    
-
-    <!-- <div class="contain-wrapper">
-      <div class="container">
-        <div class="introduction">
-          <p>熱、好熱、非常熱！還不到5月，台北市已飆出攝氏35.9度高溫，高掛的太陽把路上民眾曬昏了頭，腳下的柏油路也冒著熱氣，許多民眾邊擦汗邊問：「怎麼會這麼熱？」</p>
-          <br>
-          <p>「熱島效應」是造成都會區溫度不斷飆升的原因之一，汽車排廢、易吸熱的柏油路、不通風的密集街區等因素，以及無法散熱的盆地地形，導致台北市政府都市發展局的數據顯示，台北都市中心溫度與郊區最低溫之溫差可達6度。</p>
-          <br>
-          <p>隨著熱被困在都市中無法散去，也使空氣汙染愈來愈嚴重、民眾面臨更高的健康風險，學者呼籲，各縣市政府應透過都市規劃減緩熱島效應，讓民眾擁有更舒適的生活環境。</p>
-        </div>
       </div>
     </div>
-    <div ref="main-title-wrapper"  :class="{'main-title-current': isMainTitle}" class="main-title-wrapper"> 
-      <div ref="main-title-background" class="main-title-background">
-        
-      </div>
-      <div  ref="main-title" class="main-title-content">
-        <h1>Hello</h1>
-      </div>
-    </div>
-    <div class="contain-wrapper">
-      <div class="container">
-        <div class="report-content">
-          <p>在高樓櫛次鱗比的都市叢林裡，許多人為因素均造成熱島效應不斷發威，導致都市的「高燒不退」。</p>
-          <br>
-          <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，<b>未來20年內，台北市中午會經常有高達40度的高溫。</b></p>
-          <br>
-          <h1></h1>
-          <img src="../public/images/heat_island_img4.jpg" alt="">
-        </div>     
-      </div>
-    </div>
-    <chart></chart>
-    <div class="contain-wrapper">
-      <div class="container">
-        <div class="report-content">
-          <p>在高樓櫛次鱗比的都市叢林裡，許多人為因素均造成熱島效應不斷發威，導致都市的「高燒不退」。</p>
-          <br>
-          <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，<b>未來20年內，台北市中午會經常有高達40度的高溫。</b></p>
-          <br>
-          <bar-chart></bar-chart>
-        </div>     
-      </div>
-    </div> -->
   </div>
 </template>
 

@@ -1,7 +1,6 @@
 <template>
   <div class="chart2">
-    <div class="scrollContent">
-      <section  id="chart-background">
+      <section  id="chart2-background">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
         <g id="heat_x5F_island_x5F_chart1_x5F_background_x5F_mob">
@@ -211,7 +210,7 @@
           </div>
         </div>   
       </div>
-    </div>
+
   </div>
 </template>
 
@@ -241,8 +240,8 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
 
     var controller = new ScrollMagic.Controller();
-    var scene1 = new ScrollMagic.Scene({triggerElement: "#chart-background", duration: '600%', triggerHook: 'onLeave'})
-                    .setPin("#chart-background", {pushFollowers: false})
+    var scene1 = new ScrollMagic.Scene({triggerElement: "#chart2-background", duration: '600%', triggerHook: 'onLeave'})
+                    .setPin("#chart2-background", {pushFollowers: false})
                     .addTo(controller);
 
     
@@ -266,7 +265,6 @@ export default {
       }
       this.steps.fill(false)
       this.steps[this.currentStep] = true
-      console.log(this.steps)
     }
   },
   computed: {
@@ -307,7 +305,7 @@ export default {
   background-color: white;
   //.st8 主要線
   //.st9 次要線
-  #chart-background {
+  #chart2-background {
     .st0{fill:#707070;}
     .st1{fill:#EA0303;}
     .st2{fill:#605F5F;}
@@ -330,7 +328,6 @@ export default {
       stroke-width:1.5;
       stroke-miterlimit:10;
       stroke-dasharray: 2520;
-      stroke-dashoffset: 2520;
       // animation: gray 5s linear infinite;
     }
     .st10{font-family:'Arial-BoldMT';}
@@ -413,9 +410,9 @@ export default {
       align-items: center;
       background-color: white;
       .chart-content {
-        // background-color: white;
-        // // position: relative;
-        // z-index: 100;
+        background-color: white;
+        position: relative;
+        z-index: 100;
       }
   }
 }
