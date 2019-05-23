@@ -197,9 +197,81 @@
             <br>
             <p>亞洲大學附設醫院心臟內科醫師張育晟說，美國心臟醫學會去年發表文章，戶外溫度的劇烈變化，尤其在溫度較高的時候，會增加心肌梗塞的風險；溫差每增加溫度，心肌梗塞的風險會增加2%，尤其平均溫度上升與溫差增加，會造成心肌梗塞的風險提高。</p>
             <br>
+            <img :src="srcRWD(require('../public/images/' + subtitleImgMob3) , require('../public/images/' + subtitleImg3))" alt="">
+          </div>
+        </div>
+        <div class="content">
+          <div class="container">      
+            <h3>空氣愈來愈髒</h3>
+            <br>
+            <p>近年來備受關注的空汙問題，也因為都市熱島效應的影響而更加嚴重。</p>
+            <br>
+            <p>中研院環境變遷研究中心研究員林傳堯的研究顯示，分析台北、台中、高雄在熱浪來襲時，空氣汙染物中的臭氧、PM10、PM2.5均高於非熱浪日，顯見高溫會造成臭氧的增加，也會加速光化反應產生二次氣膠，使得懸浮微粒濃度增加。</p>
+            <br>
+            <p>林傳堯說，都市熱島效應下的高溫，除了熱對人體造成危害，隨著高溫而增加的空氣汙染物，尤其是PM2.5細懸浮微粒的增加，對人體健康的危害值得關注。</p>
+            <br>
+            <p>都會區建築物密集，通風環境較差，空汙擴散不易，加上汽機車、工廠排放的廢氣與都市高溫化，空氣汙染物更容易累積與形成；學理推論，熱島中心的溫度較高，氣流會上升流動，形成郊區吹向都市中心的微風，儘管空汙從都市中心被帶動空中，在郊區沉降後，又被吹往都市中心，反覆循環的過程，使得都會區空汙濃度持續增加。</p>
+            <br>
+            <p>林傳堯針對2014年7月與2015年7、8月台北、台中與高雄等3都的空氣品質，以最熱的5%氣溫定義為熱浪日，台北為35.2度、台中為34度、高雄為33.3度以上，探討熱浪日與非熱浪日的空氣品質。</p>
+            <br>
+            <p>觀測結果發現，臭氧、PM10、PM2.5在熱浪日都明顯高於非熱浪日，但其他的空氣汙染物如氮氧化物、硫氧化物等，則沒有明顯差異；透過數值模擬，也呈現一致趨勢，顯示高溫確實對空汙造成影響。</p>
+            <br>
+            <p>林傳堯說，研究顯示熱島效應對環境的影響，有其重要性，尤其空氣汙染物中的PM2.5對人體健康的影響不容忽視，儘管目前在熱浪期間，PM2.5濃度也未達到警示等級，但隨著都市逐漸發展，空汙與熱島效應的議題仍值得重視。</p>
+            <br>
+          </div>
+        </div>
+        <div class="content">
+          <div class="container">      
+            <h3>台北熱浪日與非熱浪日的空氣品質研究</h3>
+            <br>
+            <p>當台北出現熱浪時，PM2.5、PM10、臭氧等空氣汙染物的濃度都會較非熱浪日高，顯示高溫確實對空汙造成影響。</p>
+            <br>
+            <chart4></chart4>
+            <br>
+            <p>註：熱浪與非熱浪個案是取自2014年7月和2015年7、8月三個月。此研究所定義的熱浪為台北日最高溫大於35.2度，低於33.2度則為非熱浪。</p>
+            <br>
+            <p>資料來源／中研院永續科學研究計畫-整合性多元高解析度資訊之台灣熱浪脆弱度評估</p>
+            <br>
           </div>
         </div>
       </div>
+    </div>
+    <div class="end">
+      <div id="end-background-video">
+        <video ref="end-background-video" width="100vw" preload="metadata" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)" autobuffer autoplay loop muted playsinline>
+          <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)" webkit-playsinline="true"></source>
+          <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"></source>
+          <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"></source>
+        </video>
+      </div>
+      <div class="content">
+        <div class="container"> 
+          <h3>熱島效應特色一：集中在都會區</h3>
+          <br>
+          <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
+          <br>
+          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+          <br>
+          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+          <br>
+          <br>
+          <img src="../public/images/heat_island_img1.jpg" alt="">
+        </div>
+      </div>
+      <div class="content">
+        <div class="container"> 
+          <h3>熱島效應特色一：集中在都會區</h3>
+          <br>
+          <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
+          <br>
+          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+          <br>
+          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+          <br>
+          <br>
+          <img src="../public/images/heat_island_img1.jpg" alt="">
+        </div>
+      </div> 
     </div>
   </div>
 </template>
@@ -209,6 +281,7 @@ import srcRWD from './mixin/srcRWD.js'
 import myMixin from './mixin/myMixin.js'
 import chart2 from './components/chart2.vue'
 import chart3 from './components/chart3.vue'
+import chart4 from './components/chart4.vue'
 import numberBox from './components/numberBox.vue'
 import barChart from './components/barChart.vue'
 import ScrollMagic from 'scrollmagic'
@@ -226,11 +299,15 @@ export default {
       coverBackgroundMobs: ['heat_island_bg1_mob.jpg', 'heat_island_bg2_mob.jpg', 'heat_island_bg3_mob.jpg', 'heat_island_bg4_mob.jpg'],
       introductionVideo: require('../public/video/heat_island_v1.mp4'),
       introductionVideoMob: require('../public/video/heat_island_v1_mob.mp4'),
+      endBackgroundVideo: require('../public/video/heat_island_v2.mp4'),
+      endBackgroundVideoMob: require('../public/video/heat_island_v2_mob.mp4'),
       mapVideo: require('../public/video/heat_island_chart1.mp4'),
       mapVideoMob: require('../public/video/heat_island_chart1_mob.mp4'),
       img1: 'heat_island_img1',
       subtitleImg2: 'heat_island_img5.jpg',
       subtitleImgMob2: 'heat_island_img5_mob.jpg',
+      subtitleImg3: 'heat_island_img6.jpg',
+      subtitleImgMob3: 'heat_island_img6_mob.jpg',
       videoSource3: null,
       videoSource4: null,
       currentBackground: 0,
@@ -242,6 +319,7 @@ export default {
   components: {
     chart2,
     chart3,
+    chart4,
     numberBox,
     barChart
   },
@@ -255,6 +333,7 @@ export default {
 
     var slides = document.querySelector("#video-wrapper");
     var cover3 = document.querySelector("#follow-up-subtile-background");
+    var end = document.querySelector("#end-background-video");
                 
     new ScrollMagic.Scene({
         triggerElement: slides,
@@ -271,6 +350,15 @@ export default {
         duration: "100%"
       })
       .setPin(cover3, {pushFollowers: false})
+      // .addIndicators() // add indicators (requires plugin)
+      .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: end,
+        triggerHook: 'onLeave',
+        duration: "400%"
+      })
+      .setPin(end, {pushFollowers: false})
       // .addIndicators() // add indicators (requires plugin)
       .addTo(controller);
         
@@ -405,7 +493,6 @@ html, body {
       width: 100%;
       height: 100vh;
       object-fit: fill;
-      z-index: 90;
     }
     .video-covor-content {
       position: relative;
@@ -450,58 +537,22 @@ html, body {
         background-color: #f2f2f2;
       }
   }
-  
-  
 
-
-
-
-
-
-
-
-
-
-  // .cover-background-current {
-  //   z-index: 10;
-  //   animation: fade 1s ease-in-out forwards;
-  // }
-  @keyframes fade {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
+  .end {
+    position: relative;
+    background-color:white;
+    z-index: 50;
+    #end-background-video {
+      video {
+        width: 100%;
+        height: 100vh;
+        object-fit: fill;
+      }
+    }
+    .content {
+      position: relative;
+      z-index: 60;
+    }
   }
-  // .introduction {
-  //   margin: 154px 0 140px;
-  // }
-  // .main-title-wrapper {
-  //   height: 200vh;
-  //   position: relative;
-  //   background: url("../public/images/heat_island_img3.jpg") no-repeat;
-  //   background-attachment: fixed;
-  //   z-index: 5;
-  //   .main-title-background {
-  //      height: 100vh;
-  //   }
-  //   .main-title-content {
-  //       height: 100vh;
-  //       position: relative;
-  //       bottom: 0;
-  //       display: flex;
-  //       justify-content: center;
-  //       align-items: center;
-  //   }
-    
-  // }
-  // .report-content {
-  //   img {
-  //     width: 100%;
-  //   }
-  // }
-  // .contain-wrapper {
-  //   padding: 300px 0;
-  //   z-index: 100;
-  //   width: 100%;
-  //   position: absolute;
-  // }
 }
 </style>
