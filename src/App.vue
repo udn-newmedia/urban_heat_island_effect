@@ -128,10 +128,77 @@
             <br>
             <p>中研院環境變遷研究中心研究員林傳堯的研究也顯示，近40年來，台北7、8月的溫度不斷升高，其中以夜間的溫度增幅較明顯。</p>
             <br>
-            <p></p>
           </div>
         </div>
         <chart3></chart3>
+      </div>
+    </div>
+    <div class="follow-up">
+      <div id="follow-up-subtile-background" class="follow-up-subtile-background">
+        <img :src="srcRWD(require('../public/images/' + subtitleImgMob2) , require('../public/images/' + subtitleImg2))" alt="">
+      </div>
+      <div class="follow-up-subtile">
+        <div class="follow-up-subtile-content">
+          變成熱島後...
+        </div>
+      </div>
+      <div class="content">
+        <div class="container"> 
+          <div class="follow-up-content">
+            <p>熱島效應不僅使城市環境越來越熱，也會對民眾的身心理健康、生產力等各層面造成影響，甚至導致空氣汙染加劇。</p>
+            <br>
+            </div>
+        </div>
+      </div>
+      <div class="number-group">
+        <div class="content">
+          <div class="container">
+            <numberBox
+              :percent="3.76"
+              describe="每增溫1°C，農業生產力減損3.76%。 "
+              sourceInfo="資料來源：中央研究院"
+            >
+            </numberBox>
+            <numberBox
+              :percent="5.49"
+              describe="熱島效應強度增加1℃，可能會使得老年人口之自殺死亡率相對上升5.49%。 "
+              sourceInfo="資料來源：國家衛生研究院、中央研究院等研究機構合作的研究"
+            >
+            </numberBox>
+            <numberBox
+              :percent="11"
+              describe="只要溫度超過33.5度，年齡高於65歲的民眾的總死亡率及因熱相關症狀而看急診的比率便會上升11%。"
+              sourceInfo="資料來源：中研院環變中心龍世俊研究員"
+            >
+            </numberBox>
+            <numberBox
+              :percent="6"
+              describe="外氣溫度每上升一度，全國夏季尖峰耗電量增加6%。"
+              sourceInfo="資料來源：台灣電力公司"
+            >
+            </numberBox>
+          </div>
+        </div>
+      </div>
+      <div class="follow-up-content">
+        <div class="content">
+          <div class="container">      
+            <h3>人體健康面臨衝擊</h3>
+            <br>
+            <p>天氣愈來愈熱，對健康帶來嚴重衝擊；除了中暑、熱衰竭等相關疾病，研究顯示，氣溫上升會提高死亡風險，對於心血管疾病患者，也會帶來健康危害。</p>
+            <br>
+            <p>國家衛生研究院進行的「氣候變遷與健康調適策略」研究計畫中，比對1994年到2007年的年均溫變化與死亡人數，發現台灣最低死亡風險溫度為攝氏25-27度（補相關數據）。</p>
+            <br>
+            <p>協同研究員陳乃慈說，65歲以上族群或慢性病患者等，身體排熱能力不佳，當氣溫逐漸上升，身體會出現急性反應，尤其在城市中的弱族群，更要特別關注。</p>
+            <br>
+            <p>（待訪：台大醫院新竹分院環境及職業醫學部主治醫師陳啟信說）</p>
+            <br>
+            <p>（待訪：台灣大學醫學院環境及職業醫學科教授郭育良說 ）</p>
+            <br>
+            <p>亞洲大學附設醫院心臟內科醫師張育晟說，美國心臟醫學會去年發表文章，戶外溫度的劇烈變化，尤其在溫度較高的時候，會增加心肌梗塞的風險；溫差每增加溫度，心肌梗塞的風險會增加2%，尤其平均溫度上升與溫差增加，會造成心肌梗塞的風險提高。</p>
+            <br>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -142,6 +209,7 @@ import srcRWD from './mixin/srcRWD.js'
 import myMixin from './mixin/myMixin.js'
 import chart2 from './components/chart2.vue'
 import chart3 from './components/chart3.vue'
+import numberBox from './components/numberBox.vue'
 import barChart from './components/barChart.vue'
 import ScrollMagic from 'scrollmagic'
 
@@ -161,6 +229,8 @@ export default {
       mapVideo: require('../public/video/heat_island_chart1.mp4'),
       mapVideoMob: require('../public/video/heat_island_chart1_mob.mp4'),
       img1: 'heat_island_img1',
+      subtitleImg2: 'heat_island_img5.jpg',
+      subtitleImgMob2: 'heat_island_img5_mob.jpg',
       videoSource3: null,
       videoSource4: null,
       currentBackground: 0,
@@ -172,6 +242,7 @@ export default {
   components: {
     chart2,
     chart3,
+    numberBox,
     barChart
   },
   mixins: [srcRWD, myMixin],
@@ -181,7 +252,9 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
 
     var controller = new ScrollMagic.Controller();
+
     var slides = document.querySelector("#video-wrapper");
+    var cover3 = document.querySelector("#follow-up-subtile-background");
                 
     new ScrollMagic.Scene({
         triggerElement: slides,
@@ -192,15 +265,14 @@ export default {
       // .addIndicators() // add indicators (requires plugin)
       .addTo(controller);
 
-    // new ScrollMagic.Scene({
-    //       triggerElement: slides2,
-    //       triggerHook: 'onLeave',
-    //       duration: "200%",
-    //       offset: 0
-		// 		})
-		// 		.setPin(slides2, {pushFollowers: false})
-		// 		// .addIndicators() // add indicators (requires plugin)
-    //     .addTo(controller);
+    new ScrollMagic.Scene({
+        triggerElement: cover3,
+        triggerHook: 'onLeave',
+        duration: "100%"
+      })
+      .setPin(cover3, {pushFollowers: false})
+      // .addIndicators() // add indicators (requires plugin)
+      .addTo(controller);
         
   },
   methods: {
@@ -226,14 +298,7 @@ export default {
       vm.isCurrentCoverMob.fill(false)
       vm.$set(vm.isCurrentCover, vm.currentCover, true)
       vm.$set(vm.isCurrentCoverMob, vm.currentCoverMob, true )
-      
-      
 
-      // if (vm.$refs['main-title-background'].getBoundingClientRect().top < 0 && vm.$refs['main-title-background'].getBoundingClientRect().bottom > 0) {
-      //   this.isMainTitle = true
-      // } else {
-      //   this.isMainTitle = false
-      // }
     }
   }
 }
@@ -354,6 +419,36 @@ html, body {
         font-size: 25px;
       }
     }
+  }
+  .follow-up {
+    position: relative;
+    z-index: 50;
+    background-color: #fff;
+    #follow-up-subtile-background {
+      height: 100vh;
+      img {
+        width: 100%;
+      }
+    }
+    .follow-up-subtile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 100vh;
+      .follow-up-subtile-content {
+        font-size: 25px;
+        background-color: #ffffff;
+        padding: 5px 13px;
+      }
+    }
+    .follow-up-content {
+
+      
+    }
+    .number-group {
+        background-color: #f2f2f2;
+      }
   }
   
   

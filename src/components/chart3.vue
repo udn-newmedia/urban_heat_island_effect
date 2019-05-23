@@ -287,7 +287,7 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
 
     var controller = new ScrollMagic.Controller();
-    var scene1 = new ScrollMagic.Scene({triggerElement: "#chart3-background", duration: '600%', triggerHook: 'onLeave'})
+    var scene1 = new ScrollMagic.Scene({triggerElement: "#chart3-background", duration: '300%', triggerHook: 'onLeave'})
                     .setPin("#chart3-background", {pushFollowers: false})
                     .addTo(controller);
 
@@ -295,8 +295,6 @@ export default {
     var path2 = document.querySelector('.st16'); //570
     var length = path.getTotalLength();
     var length2 = path2.getTotalLength();
-    console.log(length)
-    console.log(length2)
   },
   methods: {
     handleScroll () {
