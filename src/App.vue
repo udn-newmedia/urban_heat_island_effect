@@ -144,9 +144,40 @@
         <div class="container"> 
           <h3>台北和淡水歷年均溫走勢圖</h3>
         </div>
-        <chart></chart>
+        <chart2></chart2>
+        <div class="content">
+          <div class="container"> 
+            <h3>熱島效應特色二：夜間增溫比白天明顯</h3>
+            <br>
+            <p>成大建築系特聘教授林子平表示，熱島效應在夜間的增溫幅度比在白天明顯。台灣街區的建築密集，散熱速度不夠快，白天蓄積熱量無法於夜間散熱，到了隔天早上，又開始吸收太陽的輻射熱。</p>
+            <br>
+            <p>氣象局的溫度數據指出，在2011年至2018年間，台北夜間最低溫高於25度的平均天數為109天，遠高於1991年至2000年的81天。</p>
+            <br>
+            <p>中研院環境變遷研究中心研究員林傳堯的研究也顯示，近40年來，台北7、8月的溫度不斷升高，其中以夜間的溫度增幅較明顯。</p>
+            <br>
+            <p></p>
+          </div>
+        </div>
+        <chart3></chart3>
+        <!-- <h1>Hello</h1> -->
+        <!-- <div class="content">
+          <div class="container"> 
+            <h3>熱島效應特色一：集中在都會區</h3>
+            <br>
+            <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
+            <br>
+            <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+            <br>
+            <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+            <br>
+            <br>
+            <img src="../public/images/heat_island_img1.jpg" alt="">
+          </div>
+        </div> -->
       </div>
+      
     </div>
+    
 
     <!-- <div class="contain-wrapper">
       <div class="container">
@@ -196,7 +227,9 @@
 
 <script>
 import srcRWD from './mixin/srcRWD.js'
-import chart from './components/chart.vue'
+import myMixin from './mixin/myMixin.js'
+import chart2 from './components/chart2.vue'
+import chart3 from './components/chart3.vue'
 import barChart from './components/barChart.vue'
 import ScrollMagic from 'scrollmagic'
 
@@ -225,11 +258,13 @@ export default {
     }
   },
   components: {
-    chart,
+    chart2,
+    chart3,
     barChart
   },
-  mixins: [srcRWD],
+  mixins: [srcRWD, myMixin],
   mounted () {
+    
     let vm = this
     window.addEventListener('scroll', this.handleScroll)
 
@@ -239,8 +274,7 @@ export default {
     new ScrollMagic.Scene({
         triggerElement: slides,
         triggerHook: 'onLeave',
-        duration: "100%",
-        offset: 'center'
+        duration: "100%"
       })
       .setPin(slides, {pushFollowers: false})
       // .addIndicators() // add indicators (requires plugin)
@@ -258,22 +292,6 @@ export default {
         
   },
   methods: {
-    isElementInViewport (el) {
-
-      if (el) {
-        var rect = el.getBoundingClientRect();
-
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
-        );
-      } else {
-        return false
-      }
-      
-    },
     handleScroll () {
       
       let vm = this
@@ -305,14 +323,6 @@ export default {
       //   this.isMainTitle = false
       // }
     }
-  },
-  watch: {
-    currentCoverMob (value) {
-      console.log(value)
-    },
-    currentCover () {
-
-    }
   }
 }
 </script>
@@ -337,6 +347,9 @@ html, body {
       width: 100%;;
     }
   }
+  .mark {
+          color: red;
+        }
   .cover {
     position: relative;
     .cover-section {
@@ -349,9 +362,7 @@ html, body {
         z-index: 100;
         padding: 17px;
         background-color: white;
-        .mark {
-          color: red;
-        }
+        
         .source {
           color: #7d7d7d;
           font-size: 15px;
