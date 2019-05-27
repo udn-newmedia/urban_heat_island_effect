@@ -83,43 +83,41 @@
       <div id="video-covor-content" class="video-covor-content">
         <div class="main-title">發燒的都市</div>
       </div>
-      <div class="content">
-        <div class="container"> 
-          <p>在高樓櫛次鱗比的都市叢林裡，許多人為因素均造成熱島效應不斷發威，導致都市的「高燒不退」。</p>
-          <br>
-          <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，未來20年內，台北市中午會經常有高達40度的高溫。</p>
-          <br>
-          <br>
-          <h3>大台北地區於2018年8月1日的溫度分布圖</h3>
-        </div>
-      </div>
-      <video  width="100vw" preload="metadata" :src="srcRWD(mapVideoMob, mapVideo)" autobuffer autoplay loop muted playsinline>
-        <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)" webkit-playsinline="true"></source>
-        <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
-        <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
-      </video>
-      <p>資料來源／中央氣象局</p>
-      <div class="content">
-        <div class="container"> 
-          <h3>熱島效應特色一：集中在都會區</h3>
-          <br>
-          <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
-          <br>
-          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
-          <br>
-          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
-          <br>
-          <br>
-          <img src="../public/images/heat_island_img1.jpg" alt="">
-        </div>
-      </div>
-      <div class="content">
-        <div class="container"> 
-          <h3>台北和淡水歷年均溫走勢圖</h3>
-        </div>
-        <chart2></chart2>
+      <div class="fever-city">
         <div class="content">
           <div class="container"> 
+            <p>在高樓櫛次鱗比的都市叢林裡，許多人為因素均造成熱島效應不斷發威，導致都市的「高燒不退」。</p>
+            <br>
+            <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，未來20年內，台北市中午會經常有高達40度的高溫。</p>
+            <br>
+            <br>
+            <h3>大台北地區於2018年8月1日的溫度分布圖</h3>
+            <br>
+            <video  width="100vw" preload="metadata" :src="srcRWD(mapVideoMob, mapVideo)" autobuffer autoplay loop muted playsinline>
+              <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)" webkit-playsinline="true"></source>
+              <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
+              <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
+            </video>
+            <p>資料來源／中央氣象局</p>
+            <br>
+            <br>
+            <h3>熱島效應特色一：集中在都會區</h3>
+            <br>
+            <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
+            <br>
+            <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+            <br>
+            <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+            <br>
+            <br>
+            <img src="../public/images/heat_island_img1.jpg" alt="">
+            <br>
+            <h3>台北和淡水歷年均溫走勢圖</h3>
+          </div>
+          <chart2></chart2>
+          <div class="container">
+            <br>
+            <br>
             <h3>熱島效應特色二：夜間增溫比白天明顯</h3>
             <br>
             <p>成大建築系特聘教授林子平表示，熱島效應在夜間的增溫幅度比在白天明顯。台灣街區的建築密集，散熱速度不夠快，白天蓄積熱量無法於夜間散熱，到了隔天早上，又開始吸收太陽的輻射熱。</p>
@@ -128,9 +126,11 @@
             <br>
             <p>中研院環境變遷研究中心研究員林傳堯的研究也顯示，近40年來，台北7、8月的溫度不斷升高，其中以夜間的溫度增幅較明顯。</p>
             <br>
+            <br>
+            <h3>台北7、8月每小時均溫走勢圖</h3>
           </div>
+          <chart3></chart3>
         </div>
-        <chart3></chart3>
       </div>
     </div>
     <div class="follow-up">
@@ -182,7 +182,9 @@
       </div>
       <div class="follow-up-content">
         <div class="content">
-          <div class="container">      
+          <div class="container">
+            <br>
+            <br>    
             <h3>人體健康面臨衝擊</h3>
             <br>
             <p>天氣愈來愈熱，對健康帶來嚴重衝擊；除了中暑、熱衰竭等相關疾病，研究顯示，氣溫上升會提高死亡風險，對於心血管疾病患者，也會帶來健康危害。</p>
@@ -201,7 +203,9 @@
           </div>
         </div>
         <div class="content">
-          <div class="container">      
+          <div class="container">
+            <br>
+            <br>      
             <h3>空氣愈來愈髒</h3>
             <br>
             <p>近年來備受關注的空汙問題，也因為都市熱島效應的影響而更加嚴重。</p>
@@ -244,34 +248,84 @@
           <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"></source>
         </video>
       </div>
-      <div class="content">
-        <div class="container"> 
-          <h3>熱島效應特色一：集中在都會區</h3>
-          <br>
-          <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
-          <br>
-          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
-          <br>
-          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
-          <br>
-          <br>
-          <img src="../public/images/heat_island_img1.jpg" alt="">
+      <div class="ending">
+        <div class="content">
+          <div class="container"> 
+            <div class="end-report">
+              <h3 class="end-report-title">
+                <span class="mark">當寶島變熱島</span>系列專題
+              </h3>
+              <div class="end-report-related-first-layer">
+                <div class="left">
+                  <div class="box">
+                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                    <div class="describe">
+                      <p>文字文字文字</p>
+                    </div>           
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="box">
+                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                    <div class="describe">
+                      <p>文字文字文字</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="end-report-related-sec-layer">
+                <div class="left">
+                  <div class="box">
+                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                    <div class="describe">
+                      <p>文字文字文字</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="middle-left">
+                  <div class="box">
+                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                    <div class="describe">
+                      <p>文字文字文字</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="middle-right">
+                  <div class="box">
+                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                    <div class="describe">
+                      <p>文字文字文字</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="box">
+                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                    <div class="describe">
+                      <p>文字文字文字</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="content">
-        <div class="container"> 
-          <h3>熱島效應特色一：集中在都會區</h3>
-          <br>
-          <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
-          <br>
-          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
-          <br>
-          <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
-          <br>
-          <br>
-          <img src="../public/images/heat_island_img1.jpg" alt="">
+        <div class="content">
+          <div class="container">
+            <editor>
+              <div>採訪團隊：李樹人、鄧桂芬、陳雨鑫、簡浩正、魏忻忻、羅真、劉嘉韻、陳婕翎</div>
+              <div>影像：邱德祥、報系資料照、123RF</div>
+              <div>製作人：蔡佩蓉</div>
+              <div>視覺設計：張心慈</div>
+              <div>插畫：黃微庭</div>
+              <div>網頁製作：胡凈悟</div>
+              <div>監製：林秀姿、潘如瑩、董谷音</div>
+              <div>2019.05.09</div>
+            </editor>
+            
+          </div>
         </div>
-      </div> 
+      </div>   
     </div>
   </div>
 </template>
@@ -405,9 +459,18 @@ html, body {
 #app {
   .container {
     padding: 20px;
+    @media screen and (min-width: 321px) and (max-width: 520px) {
+      padding: 0 35px;
+    }
+    @media screen and (min-width: 521px) and (max-width: 768px) {
+      padding: 0 109px;
+    }
+    @media screen and (min-width: 769px) {
+      padding: 0 325px;
+    }
   }
   .content {
-    padding: 154px 0 0px;
+    // padding: 154px 0 0px;
     img {
       width: 100%;;
     }
@@ -431,9 +494,11 @@ html, body {
         .source {
           color: #7d7d7d;
           font-size: 15px;
+          padding-top: 10px;
         }
         .highline {
           padding-top: 6px;
+          
         }
       }
     }
@@ -477,12 +542,14 @@ html, body {
 
   .introduction {
     position: relative;
-     z-index: 100;
+    z-index: 100;
     background-color: #f2f2f2;
+    padding: 154px 0 140px 0;
     .share {
       padding-top: 66.8px;
       text-align: center;
       font-size: 37px;
+      color: #535353;
     }
   }
   .introduction-video {
@@ -491,7 +558,6 @@ html, body {
     background-color: #f2f2f2;
     video {
       width: 100%;
-      height: 100vh;
       object-fit: fill;
     }
     .video-covor-content {
@@ -504,6 +570,7 @@ html, body {
       .main-title {
         background-color: #ffffff;
         font-size: 25px;
+        padding: 7px;
       }
     }
   }
@@ -549,9 +616,114 @@ html, body {
         object-fit: fill;
       }
     }
-    .content {
+    .box {
+      padding: 12px 0;
+        &::after {
+          content: '';
+          display: block;
+          clear: both;
+          @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+          }
+          @media screen and (min-width: 521px) and (max-width: 768px) {
+            padding: 10px;
+          }
+          @media screen and (min-width: 769px) {
+            padding: 10px;
+          }
+        }
+        img {
+          float: right;
+          width: 60%;
+          @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+          }
+          @media screen and (min-width: 521px) and (max-width: 768px) {      
+            width: 100%;
+            float: none;
+          }
+          @media screen and (min-width: 769px) {
+            width: 100%;
+            float: none;
+          }
+        }
+        .describe {
+          float: left;
+          @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+          }
+          @media screen and (min-width: 521px) and (max-width: 768px) {
+
+            float: none;
+          }
+          @media screen and (min-width: 769px) {
+            float: none;
+          }
+        }
+        
+     }
+    .ending {
+      // border: solid 1.5em rgba(white);
+      background: linear-gradient(rgba(#FFFFFF, 0.1), rgba(black, 1));
       position: relative;
-      z-index: 60;
+      z-index: 110;
+      color: white;
+      .end-report {
+        .end-report-title {
+          color: black;
+        }
+        .end-report-related-first-layer {
+          @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+          }
+          @media screen and (min-width: 521px) and (max-width: 768px) {
+            display: flex; 
+          }
+          @media screen and (min-width: 769px) {
+            display: flex;
+          }
+          .left, .right {
+            @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+            }
+            @media screen and (min-width: 521px) and (max-width: 768px) {
+              width: 50%;
+              padding-right: 12px;
+            }
+            @media screen and (min-width: 769px) {
+              width: 50%;
+              padding-right: 12px;
+            }
+            
+          }
+        }
+        .end-report-related-sec-layer {
+          
+          @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+          }
+          @media screen and (min-width: 521px) and (max-width: 768px) {
+            display: flex; 
+          }
+          @media screen and (min-width: 769px) {
+            display: flex;
+          }
+          .left, .middle-left, .middle-right, .right {
+            @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+            }
+            @media screen and (min-width: 521px) and (max-width: 768px) {
+ 
+              padding-right: 12px;
+            }
+            @media screen and (min-width: 769px) {
+
+              padding-right: 12px;
+            }
+            
+          }
+        }
+      }    
     }
   }
 }

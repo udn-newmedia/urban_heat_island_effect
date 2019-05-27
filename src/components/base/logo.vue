@@ -27,12 +27,12 @@ export default {
               {
                   name: '聯合新聞網',
                   link: 'https://udn.com/news/index',
-                  logo: require('@/../public/images/logo/logo_udn2.jpg')
+                //   logo: require('@/../public/images/logo/logo_udn2.jpg')
               },
               {
                   name: '新媒體中心',
                   link: '.',
-                  logo: require('@/../public/images/logo/logo_new_media_center2.jpg')
+                //   logo: require('@/../public/images/logo/logo_new_media_center2.jpg')
               }
           ]
       }

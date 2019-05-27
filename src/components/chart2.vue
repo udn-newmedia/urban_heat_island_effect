@@ -177,36 +177,31 @@
       <div class="section section3">
         <div class="container">
           <div ref="chart-content3" class="chart-content chart-content3">
-            <p>但自1985年起，兩站氣溫差距增至 <span class="mark">0.7度</span>，到了2018年已經<span class="mark">超過1度</span>。</p>
-            <br>
-            <p>推究其因，1985年前後是台北氣象站周邊地表環境改變最大的時刻。</p>
+            <p>1980年，中正紀念堂落成</p>
+            <img src="../../public/images/heat_island_img2.jpg" alt="">
           </div>
         </div>   
       </div>
       <div class="section section4">
         <div class="container">
           <div ref="chart-content4" class="chart-content chart-content4">
-            <p>但自1985年起，兩站氣溫差距增至 <span class="mark">0.7度</span>，到了2018年已經<span class="mark">超過1度</span>。</p>
-            <br>
-            <p>推究其因，1985年前後是台北氣象站周邊地表環境改變最大的時刻。</p>
+            <p>1986年，國家圖書館啟用</p>
+            <img src="../../public/images/heat_island_img3.jpg" alt="">
           </div>
         </div>   
       </div>
       <div class="section section5">
         <div class="container">
           <div ref="chart-content5" class="chart-content chart-content5">
-            <p>但自1985年起，兩站氣溫差距增至 <span class="mark">0.7度</span>，到了2018年已經<span class="mark">超過1度</span>。</p>
-            <br>
-            <p>推究其因，1985年前後是台北氣象站周邊地表環境改變最大的時刻。</p>
+            <p>1986年，國家圖書館啟用</p>
+            <img src="../../public/images/heat_island_img4.jpg" alt="">
           </div>
         </div>   
       </div>
       <div class="section section6">
         <div class="container">
           <div ref="chart-content6" class="chart-content chart-content6">
-            <p>但自1985年起，兩站氣溫差距增至 <span class="mark">0.7度</span>，到了2018年已經<span class="mark">超過1度</span>。</p>
-            <br>
-            <p>推究其因，1985年前後是台北氣象站周邊地表環境改變最大的時刻。</p>
+            <p>這些新落成的大面積水泥鋪面與建築物，均是造成台北氣象站周圍溫度上升的因素。</p>
           </div>
         </div>   
       </div>
@@ -218,6 +213,7 @@
 import ScrollMagic from 'scrollmagic'
 import { setTimeout } from 'timers';
 import myMixin from '../mixin/myMixin.js'
+import srcRWD from '../mixin/srcRWD.js'
 
 export default {
   name: 'chart2',
@@ -230,7 +226,7 @@ export default {
   props: {
     msg: String
   },
-  mixins: [myMixin],
+  mixins: [srcRWD, myMixin],
   mounted () {
 
     let vm = this
