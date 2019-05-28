@@ -1,13 +1,17 @@
 <template>
   <div class="numberBox">
-    <div class="number">
-      {{ percent }}%
-    </div>
-    <div class="describe">
-      {{ describe }}
-    </div>
-    <div class="source-info">
-      {{ sourceInfo }}
+    <div class="left">
+       <div class="number">
+        {{ percent }}%
+      </div>
+    </div> 
+    <div class="right">
+      <div class="describe">
+        {{ describe }}
+      </div>
+      <div class="source-info">
+        {{ sourceInfo }}
+      </div>
     </div>
   </div>
 </template>
@@ -29,19 +33,50 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .numberBox {
-  border-left: solid 3px #f2f2f2;
+  border-left: solid 1px #7d7d7d;
   padding-left: 10px;
   margin-bottom: 38px;
-  .number {
-    color: #fe0000;
-    font-size: 25px;
-  }
-  .describe {
+  @media screen and (min-width: 321px) {
 
   }
-  .source-info {
-    color: #7d7d7d;
-    font-size: 12.5px;
+  @media screen and (min-width: 521px) {
+    border: 0;
+    padding: 0;
+    display: flex;
+  }
+  @media screen and (min-width: 769px) {
+
+  }
+  .left {
+    @media screen and (min-width: 521px) {
+      width: 20%;
+      text-align: right;
+      padding-right: 14px;
+    }
+    @media screen and (min-width: 769px) {
+      
+    }
+    .number {
+      color: #fe0000;
+      font-size: 25px;
+    }
+  }
+  .right {
+    @media screen and (min-width: 521px) {
+      width: 80%;
+      padding-left: 20px;
+      border-left: solid 1px #7d7d7d;
+    }
+    @media screen and (min-width: 769px) {
+      
+    }
+    .describe {
+
+    }
+    .source-info {
+      color: #7d7d7d;
+      font-size: 12.5px;
+    }
   }
 }
 </style>

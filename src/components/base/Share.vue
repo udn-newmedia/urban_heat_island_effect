@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .share-block{
       margin: 10px 0px;
       height: 28px;
@@ -67,6 +67,9 @@ export default {
   .line-block{
       float: left;
       cursor: pointer;
-      margin-left: 3px;
+      margin: 4px 0 0 3px;
+      img {
+        width: auto;
+      }
   }
 </style>

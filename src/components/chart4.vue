@@ -1,5 +1,6 @@
 <template>
   <div class="chart4">
+    <h3>台北熱浪日與非熱浪日的空氣品質研究</h3>
     <section  id="chart4-background">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 800 430" style="enable-background:new 0 0 800 430;" xml:space="preserve">

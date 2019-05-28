@@ -45,17 +45,21 @@
           </div>
         </div>
       </div>
-      <div :class="{'isCurrentCover': isCurrentCover[0] }" class="cover-background cover-background1">
-        <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[0]), require('../public/images/' + coverBackgrounds[0]))" alt="">
+      <div :class="{'isCurrentCover': isCurrentCover[0] }"
+           :style="{ 'background-image': 'url(' + srcRWD(require('../public/images/' + coverBackgroundMobs[0]), require('../public/images/' + coverBackgrounds[0])) + ')' }"
+            class="cover-background cover-background1">
       </div>
-      <div :class="{'isCurrentCover': isCurrentCover[1] }" class="cover-background cover-background2">
-        <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[1]), require('../public/images/' + coverBackgrounds[1]))" alt="">
+      <div :class="{'isCurrentCover': isCurrentCover[1] }"
+           :style="{ 'background-image': 'url(' + srcRWD(require('../public/images/' + coverBackgroundMobs[1]), require('../public/images/' + coverBackgrounds[1])) + ')' }"
+           class="cover-background cover-background2">
       </div>
-      <div :class="{'isCurrentCover': isCurrentCover[2] }" class="cover-background cover-background3">
-        <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[2]), require('../public/images/' + coverBackgrounds[2]))" alt="">
+      <div :class="{'isCurrentCover': isCurrentCover[2] }"
+           :style="{ 'background-image': 'url(' + srcRWD(require('../public/images/' + coverBackgroundMobs[2]), require('../public/images/' + coverBackgrounds[2])) + ')' }"
+           class="cover-background cover-background3">
       </div>
-      <div :class="{'isCurrentCover': isCurrentCover[3] }" class="cover-background cover-background4">
-        <img :src="srcRWD(require('../public/images/' + coverBackgroundMobs[3]), require('../public/images/' + coverBackgrounds[3]))" alt="">
+      <div :class="{'isCurrentCover': isCurrentCover[3] }"
+           :style="{ 'background-image': 'url(' + srcRWD(require('../public/images/' + coverBackgroundMobs[3]), require('../public/images/' + coverBackgrounds[3])) + ')' }"
+           class="cover-background cover-background4">
       </div>
     </div>
     <div class="introduction">
@@ -63,9 +67,9 @@
         <div class="container"> 
           <p>熱、好熱、非常熱！還不到5月，台北市已飆出攝氏35.9度高溫，高掛的太陽把路上民眾曬昏了頭，腳下的柏油路也冒著熱氣，許多民眾邊擦汗邊問：「怎麼會這麼熱？」</p>
           <br>
-          <p>「熱島效應」是造成都會區溫度不斷飆升的原因之一，汽車排廢、易吸熱的柏油路、不通風的密集街區等因素，以及無法散熱的盆地地形，導致台北市政府都市發展局的數據顯示，台北都市中心溫度與郊區最低溫之溫差可達6度。</p>
+          <p>除了受全球暖化影響，都市熱島效應（Urban Heat Island Effect）也是增溫的關鍵推手。汽車排廢、易吸熱的柏油路、不通風的密集街區等因素，以及無法散熱的盆地地形，導致成功大學建築學系特聘教授林子平研究團隊的調查發現，在台北車站與西門商圈周邊等台北市最熱的地區，夏季平均溫度與木柵、關渡等台北郊區的差距最多達4度。</p>
           <br>
-          <p>隨著熱被困在都市中無法散去，也使空氣汙染愈來愈嚴重、民眾面臨更高的健康風險，學者呼籲，各縣市政府應透過都市規劃減緩熱島效應，讓民眾擁有更舒適的生活環境。</p>
+          <p>隨著高溫熱氣被困在都市建物中無法散去，不僅讓民眾感到厭世、高溫自殺率屢屢攀高外，空汙的程度也跟高溫有關。對岸的香港政府更研究發現，2003年爆發嚴重的SARS疫情，疫情擴散也與都市建築物密集，導致空氣不流通有關。要如何減緩熱島效應，讓台灣島不「發燒」，已經刻不容緩。</p>
           <div class="share">
             <i class="facebook i-facebook-1"></i><i class="line i-line"></i>
           </div>
@@ -86,9 +90,7 @@
       <div class="fever-city">
         <div class="content">
           <div class="container"> 
-            <p>在高樓櫛次鱗比的都市叢林裡，許多人為因素均造成熱島效應不斷發威，導致都市的「高燒不退」。</p>
-            <br>
-            <p>天氣風險管理公司總經理彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，未來20年內，台北市中午會經常有高達40度的高溫。</p>
+            <p>氣象專家彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，未來20年內，台北市中午會經常有高達40度的高溫。</p>
             <br>
             <br>
             <h3>大台北地區於2018年8月1日的溫度分布圖</h3>
@@ -103,16 +105,16 @@
             <br>
             <h3>熱島效應特色一：集中在都會區</h3>
             <br>
-            <p>伴隨居住人口及開發密度上升，空調系統和汽機車的人工排熱使得都市愈趨高溫化，這些熱量又被鐵皮屋、柏油路等人工地表和材料吸收。此外，台灣不如歐美國家城鎮距離遠，衛星城市緊密連接的下場是「島島相連」加乘作用，形成多島效應，熱上加熱。</p>
+            <p>什麼是都市熱島效應？林子平教授說，都會區人口聚集、開發密度上升，導致水泥建築、柏油路面增加，這些材質都會蓄積熱能，交通工具、空調系統也會排放廢熱，加上綠地減少、通風變差，都會區像是個悶燒鍋，市中心比周邊溫度還要高，在全球氣候變遷與溫室效應的影響下，更加劇都市高溫化。</p>
             <br>
-            <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+            <p>國家災害防救科技中心氣候變遷組指出，台灣都會區極端高溫的次數越來越頻繁，以去年5月為例，台北測站超過37度的高溫日數有4天、超過35度的有13天，都打破台北站5月的高溫日數紀錄；去年8月5-20日連續10天高溫超過36度，更改寫了2012年7月8-16日連續9天的120年紀錄。</p>
             <br>
-            <p>自1950年代以來，台北市的10年均溫已從22.3度提高至23.5度，增幅達1度多。中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
+            <p>中央氣象局測政組組長李育棋表示，可以從台北、淡水氣象站的氣溫差距，看出都市開發對氣象站所測溫度的影響。</p>
             <br>
             <br>
-            <img src="../public/images/heat_island_img1.jpg" alt="">
+            <img class="motos" src="../public/images/heat_island_img1.jpg" alt="">
+            <p>圖說：台灣汽機車密度極高，而車輛排熱是也導致都市溫度增高的因素之一。圖／杜建重 </p>
             <br>
-            <h3>台北和淡水歷年均溫走勢圖</h3>
           </div>
           <chart2></chart2>
           <div class="container">
@@ -120,42 +122,38 @@
             <br>
             <h3>熱島效應特色二：夜間增溫比白天明顯</h3>
             <br>
-            <p>成大建築系特聘教授林子平表示，熱島效應在夜間的增溫幅度比在白天明顯。台灣街區的建築密集，散熱速度不夠快，白天蓄積熱量無法於夜間散熱，到了隔天早上，又開始吸收太陽的輻射熱。</p>
+            <p>都市熱島效應夜間比白天影響更大，水泥建築在白天吸收的熱能，入夜後釋放出來，照理說太陽下山後，氣溫會逐漸下降，但這些人工熱能持續悶燒，讓都市夜間增溫。</p>
             <br>
-            <p>氣象局的溫度數據指出，在2011年至2018年間，台北夜間最低溫高於25度的平均天數為109天，遠高於1991年至2000年的81天。</p>
+            <p>如果夜間最低氣溫高於25度，就像熱帶地區的夜間溫度，稱為「夜間熱帶」（The Trapical Night）。夜間高溫日數越多，代表熱島效應影響越顯著。</p>
             <br>
-            <p>中研院環境變遷研究中心研究員林傳堯的研究也顯示，近40年來，台北7、8月的溫度不斷升高，其中以夜間的溫度增幅較明顯。</p>
+            <p>根據中央氣象局資料，1991-2000年每年平均夜間高溫日數為9.5日，2001-2010年為11日，但2011-2018年提高到16天。</p>
+            <br>
+            <p>中央研究院環境變遷研究中心研究員林傳堯，分析台北市7、8月每小時均溫的長期趨勢，也證實台北市夜晚越來越熱；以每日最低溫出現的清晨5點來看，1971-1980年每日平均溫度為25.6度，但2001-2010年則提高到27.3度。</p>
+            <br>
+            <p>長期觀測氣象資訊的中央氣象局氣象科技中心科長陳孟詩就說，天氣越來越熱，當晚間溫度超過28度，就需要開冷氣，否則根本沒辦法好好睡，但開冷氣睡覺的天數不斷增加，電力使用增加，加上空調熱氣都讓戶外溫度再上升，就更得依靠冷氣，簡直是惡性循環。</p>
             <br>
             <br>
-            <h3>台北7、8月每小時均溫走勢圖</h3>
           </div>
           <chart3></chart3>
         </div>
       </div>
     </div>
     <div class="follow-up">
-      <div id="follow-up-subtile-background" class="follow-up-subtile-background">
-        <img :src="srcRWD(require('../public/images/' + subtitleImgMob2) , require('../public/images/' + subtitleImg2))" alt="">
-      </div>
+      <div id="follow-up-subtile-background" class="follow-up-subtile-background"></div>
       <div class="follow-up-subtile">
         <div class="follow-up-subtile-content">
           變成熱島後...
         </div>
       </div>
-      <div class="content">
-        <div class="container"> 
-          <div class="follow-up-content">
-            <p>熱島效應不僅使城市環境越來越熱，也會對民眾的身心理健康、生產力等各層面造成影響，甚至導致空氣汙染加劇。</p>
-            <br>
-            </div>
-        </div>
-      </div>
       <div class="number-group">
         <div class="content">
           <div class="container">
+            <br>
+            <p>熱島效應不僅使城市環境越來越熱，也會對民眾的身心理健康、生產力等各層面造成影響，甚至導致空氣汙染加劇。</p>
+            <br>
             <numberBox
               :percent="3.76"
-              describe="每增溫1°C，農業生產力減損3.76%。 "
+              describe="每增溫1°C，農業生產力減損3.76%。"
               sourceInfo="資料來源：中央研究院"
             >
             </numberBox>
@@ -164,17 +162,17 @@
               describe="熱島效應強度增加1℃，可能會使得老年人口之自殺死亡率相對上升5.49%。 "
               sourceInfo="資料來源：國家衛生研究院、中央研究院等研究機構合作的研究"
             >
-            </numberBox>
-            <numberBox
-              :percent="11"
-              describe="只要溫度超過33.5度，年齡高於65歲的民眾的總死亡率及因熱相關症狀而看急診的比率便會上升11%。"
-              sourceInfo="資料來源：中研院環變中心龍世俊研究員"
-            >
-            </numberBox>
+            </numberBox>  
             <numberBox
               :percent="6"
               describe="外氣溫度每上升一度，全國夏季尖峰耗電量增加6%。"
               sourceInfo="資料來源：台灣電力公司"
+            >
+            </numberBox>
+            <numberBox
+              :percent="11"
+              describe="只要溫度超過33.5度，65歲以上老人掛急診的比率提高11%。"
+              sourceInfo="資料來源：中研院環變中心龍世俊研究員"
             >
             </numberBox>
           </div>
@@ -185,21 +183,21 @@
           <div class="container">
             <br>
             <br>    
-            <h3>人體健康面臨衝擊</h3>
+            <h3>高溫讓人厭世</h3>
             <br>
-            <p>天氣愈來愈熱，對健康帶來嚴重衝擊；除了中暑、熱衰竭等相關疾病，研究顯示，氣溫上升會提高死亡風險，對於心血管疾病患者，也會帶來健康危害。</p>
+            <p>對於心血管、呼吸道等慢性病患，不只寒流來要小心，天氣太熱也會提高致死率。多數人認為好天氣會有好心情，但研究顯示，天氣太熱時自殺率會上升，精神疾病發作率也會增加。</p>
             <br>
-            <p>國家衛生研究院進行的「氣候變遷與健康調適策略」研究計畫中，比對1994年到2007年的年均溫變化與死亡人數，發現台灣最低死亡風險溫度為攝氏25-27度（補相關數據）。</p>
+            <p>台大醫學院環境職業醫學科教授郭育良說，高溫除帶來中暑、熱衰竭等熱傷害，還會影響身心健康，尤其受到都市熱島效應的影響，都會區的脆弱族群如65歲以上老人、14歲以下兒少、慢性病患者或社經地位較低的民眾等，都要及早調適。</p>
             <br>
-            <p>協同研究員陳乃慈說，65歲以上族群或慢性病患者等，身體排熱能力不佳，當氣溫逐漸上升，身體會出現急性反應，尤其在城市中的弱族群，更要特別關注。</p>
+            <p>事實上，熱不只帶來中暑、熱衰竭等健康衝擊，對健康的衝擊比想像的更全面。郭育良分析1994-2003年全台灣死因資料庫，發現最低死亡率的宜居溫度為26-27度，當氣溫超過31度，每增加1度整體死亡率提高5%。郭育良說，在心血管、呼吸系統疾病的死亡率上，當夏季的每日平均體感溫度達到30.7度、31.4度，每上升1度死亡率就增加3.5%、12.5%；簡言之，當日均氣溫超過31度時，高溫對健康的衝擊就很明顯，值得各單位重視。</p>
             <br>
-            <p>（待訪：台大醫院新竹分院環境及職業醫學部主治醫師陳啟信說）</p>
+            <p>郭育良與中、日、南韓學者的跨國研究中，分析各國的自殺人數與氣溫變化，發現高溫會影響人的精神狀態。以台灣為例，當氣溫上升2.3度，自殺風險提高7.8%；在南韓氣溫增加4.7度，自殺率提高6.8%；而在日本氣溫增加4.2度，自殺率提高4.5%。他解釋，不管在台灣、日本或南韓，分析結果都顯示氣溫增加到一定程度，自殺率就會提高。</p>
             <br>
-            <p>（待訪：台灣大學醫學院環境及職業醫學科教授郭育良說 ）</p>
+            <p>郭育良說，憂鬱症與高溫也有關聯，他與國家衛生研究院合作探討台灣氣相因子與憂鬱症發生的關係，發現在台灣憂鬱症的最低發生風險之死亡風險溫度為20-23度，年均溫在23度以上的地區，每增加1度，憂鬱症罹患率提高7%。他強調，高溫與自殺率、憂鬱症相關的發現，顛覆了一般認為天氣陰冷容易心情低落的觀念，但自殺或精神疾病的成因很複雜，仍有待研究。</p>
             <br>
-            <p>亞洲大學附設醫院心臟內科醫師張育晟說，美國心臟醫學會去年發表文章，戶外溫度的劇烈變化，尤其在溫度較高的時候，會增加心肌梗塞的風險；溫差每增加溫度，心肌梗塞的風險會增加2%，尤其平均溫度上升與溫差增加，會造成心肌梗塞的風險提高。</p>
             <br>
-            <img :src="srcRWD(require('../public/images/' + subtitleImgMob3) , require('../public/images/' + subtitleImg3))" alt="">
+            <img class="hot-city" :src="srcRWD(require('../public/images/' + subtitleImgMob3) , require('../public/images/' + subtitleImg3))" alt="">
+            <p>圖說：都市高溫使人體健康面臨衝擊，除了中暑、熱衰竭等相關疾病，氣溫上升也會提高死亡風險。圖／報系資料庫</p>
           </div>
         </div>
         <div class="content">
@@ -208,33 +206,20 @@
             <br>      
             <h3>空氣愈來愈髒</h3>
             <br>
-            <p>近年來備受關注的空汙問題，也因為都市熱島效應的影響而更加嚴重。</p>
+            <p>近來備受關注的空汙議題，因為都市熱島效應可能更趨嚴重。中研院研究發現，當氣溫升高時，都會區空汙濃度隨之上升，台北市PM2.5日平均濃度增加4成，台中、高雄則增加約一倍，儘管都未超過環保署的空品標準，仍值得關注。學者也發現，都會區在入夜後，空氣品質因為都市熱島效應而惡化。</p>
             <br>
-            <p>中研院環境變遷研究中心研究員林傳堯的研究顯示，分析台北、台中、高雄在熱浪來襲時，空氣汙染物中的臭氧、PM10、PM2.5均高於非熱浪日，顯見高溫會造成臭氧的增加，也會加速光化反應產生二次氣膠，使得懸浮微粒濃度增加。</p>
+            <p>中研院研究員林傳堯，分析2014年7月與2015年7、8月期間，台北、台中與高雄三都的空氣品質與氣溫變化，研究發現，當夏季高溫發生時，在太平洋高壓影響下，風速微弱，污染物擴散不良、容易累積，以致於高溫期間都會區內部分空氣汙染物的濃度也容易增加。</p>
             <br>
-            <p>林傳堯說，都市熱島效應下的高溫，除了熱對人體造成危害，隨著高溫而增加的空氣汙染物，尤其是PM2.5細懸浮微粒的增加，對人體健康的危害值得關注。</p>
-            <br>
-            <p>都會區建築物密集，通風環境較差，空汙擴散不易，加上汽機車、工廠排放的廢氣與都市高溫化，空氣汙染物更容易累積與形成；學理推論，熱島中心的溫度較高，氣流會上升流動，形成郊區吹向都市中心的微風，儘管空汙從都市中心被帶動空中，在郊區沉降後，又被吹往都市中心，反覆循環的過程，使得都會區空汙濃度持續增加。</p>
-            <br>
-            <p>林傳堯針對2014年7月與2015年7、8月台北、台中與高雄等3都的空氣品質，以最熱的5%氣溫定義為熱浪日，台北為35.2度、台中為34度、高雄為33.3度以上，探討熱浪日與非熱浪日的空氣品質。</p>
-            <br>
-            <p>觀測結果發現，臭氧、PM10、PM2.5在熱浪日都明顯高於非熱浪日，但其他的空氣汙染物如氮氧化物、硫氧化物等，則沒有明顯差異；透過數值模擬，也呈現一致趨勢，顯示高溫確實對空汙造成影響。</p>
-            <br>
-            <p>林傳堯說，研究顯示熱島效應對環境的影響，有其重要性，尤其空氣汙染物中的PM2.5對人體健康的影響不容忽視，儘管目前在熱浪期間，PM2.5濃度也未達到警示等級，但隨著都市逐漸發展，空汙與熱島效應的議題仍值得重視。</p>
-            <br>
-          </div>
-        </div>
-        <div class="content">
-          <div class="container">      
-            <h3>台北熱浪日與非熱浪日的空氣品質研究</h3>
-            <br>
-            <p>當台北出現熱浪時，PM2.5、PM10、臭氧等空氣汙染物的濃度都會較非熱浪日高，顯示高溫確實對空汙造成影響。</p>
+            <p>這項研究把過去40年每日最高溫的前5%溫度定義為高溫日標準，台北為攝氏35.2度、台中34度、高雄33.3度；換句話說，當每日最高溫超過標準值，就屬於高溫日，低於標準值2度定義為非高溫日。</p>
             <br>
             <chart4></chart4>
             <br>
-            <p>註：熱浪與非熱浪個案是取自2014年7月和2015年7、8月三個月。此研究所定義的熱浪為台北日最高溫大於35.2度，低於33.2度則為非熱浪。</p>
+            <p>以環保署測站資料研究分析發現，當高溫日發生時，空氣中臭氧、PM10、PM2.5的濃度均明顯高於非高溫日，但一氧化碳、NO2、SO2 沒有明顯差異；透過數值模擬，也得到類似的結果。林傳堯說，高溫會造成臭氧增加，高溫期間，細懸浮微粒中二次氣膠所占比例也大幅提高，同時也可能影響空氣中的懸浮微粒濃度。</p>
             <br>
-            <p>資料來源／中研院永續科學研究計畫-整合性多元高解析度資訊之台灣熱浪脆弱度評估</p>
+            <p>以民眾最關注的PM2.5為例，台北市在高溫日的濃度比非高溫日高出43.8%，高雄市、台中市PM2.5濃度，在高溫日都比非高溫日多出91.7%、115%，儘管都未超過環保署的標準值（35微克／立方公尺），但仍代表高溫對空汙造成影響。</p>
+            <br>
+            <p>林傳堯說，都市熱島效應帶來的高溫，除了熱本身會影響健康，隨溫度升高而增加的空汙濃度，儘管目前仍未超過標準值，但隨著都市氣候越來越熱，對人體的危害值得關注。</p>
+            <br>
             <br>
           </div>
         </div>
@@ -312,17 +297,23 @@
         </div>
         <div class="content">
           <div class="container">
+            <share></share>
             <editor>
-              <div>採訪團隊：李樹人、鄧桂芬、陳雨鑫、簡浩正、魏忻忻、羅真、劉嘉韻、陳婕翎</div>
-              <div>影像：邱德祥、報系資料照、123RF</div>
-              <div>製作人：蔡佩蓉</div>
-              <div>視覺設計：張心慈</div>
-              <div>插畫：黃微庭</div>
+              <div>採訪團隊：鄭朝陽、洪敬浤、徐如宜、鄭維真、張裕珍、魏翊庭</div>
+              <div>影像：王騰毅、林澔一、杜建重、黃仲裕、報系資料照</div>
+              <div>製作人：謝汶均</div>
+              <div>視覺設計：許瑋琳</div>
               <div>網頁製作：胡凈悟</div>
-              <div>監製：林秀姿、潘如瑩、董谷音</div>
-              <div>2019.05.09</div>
+              <div>監製：林秀姿、董谷音、潘如瑩</div>
+              <div>2019.06.18</div>
             </editor>
-            
+          </div>
+        </div>
+        <div class="share">
+          <div class="content">
+            <div class="container">
+              <fb-comment  href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/"></fb-comment>
+            </div>
           </div>
         </div>
       </div>   
@@ -471,9 +462,9 @@ html, body {
   }
   .content {
     // padding: 154px 0 0px;
-    img {
-      width: 100%;;
-    }
+    // img {
+    //   width: 100%;
+    // }
   }
   .mark {
           color: red;
@@ -490,7 +481,6 @@ html, body {
         z-index: 100;
         padding: 17px;
         background-color: white;
-        
         .source {
           color: #7d7d7d;
           font-size: 15px;
@@ -507,9 +497,7 @@ html, body {
       top: 0;
       height: 100vh;
       width: 100%;
-      img {
-          width: 100%;
-      }
+      background-size: cover;
     }
 
     .cover-background1 {
@@ -556,8 +544,9 @@ html, body {
     position: relative;
     z-index: 90;
     background-color: #f2f2f2;
-    video {
+    #video-covor-background {
       width: 100%;
+      height: 100vh;
       object-fit: fill;
     }
     .video-covor-content {
@@ -574,15 +563,37 @@ html, body {
       }
     }
   }
+  .fever-city {
+    video {
+      width: 100%;
+    }
+    .motos {
+      width: 100%;
+    }
+  }
   .follow-up {
     position: relative;
     z-index: 50;
     background-color: #fff;
     #follow-up-subtile-background {
       height: 100vh;
-      img {
-        width: 100%;
+      background: url('../public/images/heat_island_img5_mob.jpg') no-repeat;
+      background-size: cover;
+      @media screen and (min-width: 321px) and (max-width: 520px) {
+
       }
+      @media screen and (min-width: 521px) and (max-width: 768px) {
+        background-position: left bottom;
+      }
+      @media screen and (min-width: 769px) {
+        background: url('../public/images/heat_island_img5.jpg') no-repeat;
+        background-position: right bottom;
+      }
+      // background-position: 0 50%;
+      // <img :src="srcRWD(require('../public/images/' + subtitleImgMob2) , require('../public/images/' + subtitleImg2))" alt="">
+      // img {
+      //   width: 100%;
+      // }
     }
     .follow-up-subtile {
       display: flex;
@@ -597,8 +608,9 @@ html, body {
       }
     }
     .follow-up-content {
-
-      
+      .hot-city {
+        width: 100%;
+      }
     }
     .number-group {
         background-color: #f2f2f2;
@@ -723,7 +735,10 @@ html, body {
             
           }
         }
-      }    
+      }
+      .share {
+        background-color: white;
+      }
     }
   }
 }
