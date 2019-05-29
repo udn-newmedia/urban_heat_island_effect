@@ -555,7 +555,7 @@
           <g  :class="{'current_group': steps[2] }" class="chart3_sec_group" id="heat_x5F_island_x5F_chart3_x5F_05_x5F_word">
             <path class="st16" d="M318.81,273.54h-71.63c-2.86,0-5.19-2.32-5.19-5.19v-25.71c0-2.86,2.32-5.19,5.19-5.19h71.63
               c2.86,0,5.19,2.32,5.19,5.19v25.71C324,271.22,321.68,273.54,318.81,273.54z"/>
-            <text transform="matrix(1 0 0 1 248.666 261.7598)" class="st23 st24 st25">上升2度</text>
+            <text transform="matrix(1 0 0 1 248.666 261.7598)" class="st23 st24 st25">上升大約2度</text>
           </g>
           <g  :class="{'current_group': steps[3] }" class="chart3_third_group" id="heat_x5F_island_x5F_chart3_x5F_12">
             <circle class="st16" cx="626" cy="150.5" r="6"/>
@@ -731,9 +731,6 @@ export default {
       .st18{font-family:'MicrosoftJhengHeiBold';}
       .st19{font-family:'Arial-BoldMT';}
       .st20{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3,2,3,2,3,2;}
-      
-
-
     }
     .chart3-web {
       height: 100vh;
