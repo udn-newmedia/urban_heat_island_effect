@@ -498,6 +498,7 @@ html, body {
       height: 100vh;
       width: 100%;
       background-size: cover;
+      will-change: transform;
     }
 
     .cover-background1 {
