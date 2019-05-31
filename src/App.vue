@@ -76,16 +76,16 @@
         </div>
       </div>
     </div>
-    <div id="introduction-videowrapper" ref="introduction-videowrapper" class="introduction-video">
-      <div id="video-wrapper">
-        <video id="video-covor-background" ref="introduction-video" class="video-player" width="100vw" preload="metadata" :src="srcRWD(introductionVideoMob, introductionVideo)" autobuffer autoplay loop muted playsinline>
+    <div class="introduction-video">
+      <div ref="video-wrapper" id="video-wrapper">
+        <video :class="{'video-covor-background-active': isCoverActive}" class="video-covor-background video-player" width="100vw" preload="metadata" :src="srcRWD(introductionVideoMob, introductionVideo)" autobuffer autoplay loop muted playsinline>
           <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)" webkit-playsinline="true"></source>
           <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)"></source>
           <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)"></source>
         </video>
-      </div>
-      <div id="video-covor-content" class="video-covor-content">
-        <div class="main-title">發燒的都市</div>
+        <div class="video-covor-content">
+          <div class="main-title">發燒的都市</div>
+        </div>
       </div>
       <div class="fever-city">
         <div class="content">
@@ -95,11 +95,14 @@
             <br>
             <h3>大台北地區於2018年8月1日的溫度分布圖</h3>
             <br>
-            <video  width="100vw" preload="metadata" :src="srcRWD(mapVideoMob, mapVideo)" autobuffer autoplay loop muted playsinline>
-              <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)" webkit-playsinline="true"></source>
-              <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
-              <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
-            </video>
+            <div class="spreadOfTemperature">
+              <video  width="100vw" preload="metadata" :src="srcRWD(mapVideoMob, mapVideo)" autobuffer autoplay loop muted playsinline>
+                <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)" webkit-playsinline="true"></source>
+                <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
+                <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
+              </video>
+              <img class="charText" :src="srcRWD(require('../public/images/' + chartOneTextImgMob), require('../public/images/' + chartOneTextImg))" alt="">
+            </div>
             <p>資料來源／中央氣象局</p>
             <br>
             <br>
@@ -113,7 +116,7 @@
             <br>
             <br>
             <img class="motos" src="../public/images/heat_island_img1.jpg" alt="">
-            <p>圖說：台灣汽機車密度極高，而車輛排熱是也導致都市溫度增高的因素之一。圖／杜建重 </p>
+            <p>台灣汽機車密度極高，而車輛排熱是也導致都市溫度增高的因素之一。圖／杜建重 </p>
             <br>
           </div>
           <chart2></chart2>
@@ -197,7 +200,7 @@
             <br>
             <br>
             <img class="hot-city" :src="srcRWD(require('../public/images/' + subtitleImgMob3) , require('../public/images/' + subtitleImg3))" alt="">
-            <p>圖說：都市高溫使人體健康面臨衝擊，除了中暑、熱衰竭等相關疾病，氣溫上升也會提高死亡風險。圖／報系資料庫</p>
+            <p>都市高溫使人體健康面臨衝擊，除了中暑、熱衰竭等相關疾病，氣溫上升也會提高死亡風險。圖／報系資料庫</p>
           </div>
         </div>
         <div class="content">
@@ -261,34 +264,42 @@
               <div class="end-report-related-sec-layer">
                 <div class="left">
                   <div class="box">
-                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
-                    <div class="describe">
-                      <p>文字文字文字</p>
-                    </div>
+                    <a href="https://udn.com/news/story/11319/3302778">
+                      <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                      <div class="describe">
+                        <p>勞工高溫休息於法有據 醫籲落實勞檢</p>
+                      </div>
+                    </a>
                   </div>
                 </div>
                 <div class="middle-left">
                   <div class="box">
-                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
-                    <div class="describe">
-                      <p>文字文字文字</p>
-                    </div>
+                    <a href="https://udn.com/news/story/11321/3283436">
+                      <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                      <div class="describe">
+                        <p>聯合筆記／走路有風的城市</p>
+                      </div>
+                    </a>
                   </div>
                 </div>
                 <div class="middle-right">
                   <div class="box">
-                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
-                    <div class="describe">
-                      <p>文字文字文字</p>
-                    </div>
+                    <a href="https://udn.com/news/story/7323/3787399">
+                      <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                      <div class="describe">
+                        <p>減緩短暫強降雨致災情況 公私合作打造新北海綿城市</p>
+                      </div>
+                    </a>   
                   </div>
                 </div>
                 <div class="right">
                   <div class="box">
-                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
-                    <div class="describe">
-                      <p>文字文字文字</p>
-                    </div>
+                    <a href="https://vision.udn.com/vision/story/12840/3829036">
+                      <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                      <div class="describe">
+                        <p>超「綠」辦公樓 出差要買碳排費</p>
+                      </div>
+                    </a>   
                   </div>
                 </div>
               </div>
@@ -348,6 +359,8 @@ export default {
       endBackgroundVideoMob: require('../public/video/heat_island_v2_mob.mp4'),
       mapVideo: require('../public/video/heat_island_chart1.mp4'),
       mapVideoMob: require('../public/video/heat_island_chart1_mob.mp4'),
+      chartOneTextImg: 'heat_island_chart1_bg.svg',
+      chartOneTextImgMob: 'heat_island_chart1_bg_mob.svg',
       img1: 'heat_island_img1',
       subtitleImg2: 'heat_island_img5.jpg',
       subtitleImgMob2: 'heat_island_img5_mob.jpg',
@@ -358,7 +371,8 @@ export default {
       currentBackground: 0,
       backgrounds: [true, false, false , false],
       isMainTitle: false,
-      isNotCover: false
+      isNotCover: false,
+      isCoverActive: false
     }
   },
   components: {
@@ -376,18 +390,18 @@ export default {
 
     var controller = new ScrollMagic.Controller();
 
-    var slides = document.querySelector("#video-wrapper");
+    // var slides = document.querySelector("#video-wrapper");
     var cover3 = document.querySelector("#follow-up-subtile-background");
     var end = document.querySelector("#end-background-video");
                 
-    new ScrollMagic.Scene({
-        triggerElement: slides,
-        triggerHook: 'onLeave',
-        duration: "100%"
-      })
-      .setPin(slides, {pushFollowers: false})
-      // .addIndicators() // add indicators (requires plugin)
-      .addTo(controller);
+    // new ScrollMagic.Scene({
+    //     triggerElement: slides,
+    //     triggerHook: 'onLeave',
+    //     duration: "100%"
+    //   })
+    //   .setPin(slides, {pushFollowers: false})
+    //   // .addIndicators() // add indicators (requires plugin)
+    //   .addTo(controller);
 
     new ScrollMagic.Scene({
         triggerElement: cover3,
@@ -412,6 +426,7 @@ export default {
     handleScroll () {
       
       let vm = this
+      let mainTitleVideo = vm.$refs['video-wrapper']
       
       if (this.isElementInViewport(vm.$refs['content1'])) {
         this.currentCoverMob = 0
@@ -425,6 +440,13 @@ export default {
       } else if (this.isElementInViewport(vm.$refs['content4'])) {
         this.currentCoverMob = 3
         this.currentCover = 3
+      }
+
+
+      if ( mainTitleVideo != null & mainTitleVideo.getBoundingClientRect().top < 0 & 0 < mainTitleVideo.getBoundingClientRect().top + mainTitleVideo.getBoundingClientRect().height ) {
+        vm.isCoverActive = true
+      } else {
+        vm.isCoverActive = false
       }
 
       vm.isCurrentCover.fill(false)
@@ -543,20 +565,33 @@ html, body {
   }
   .introduction-video {
     position: relative;
-    z-index: 90;
     background-color: #f2f2f2;
-    #video-covor-background {
+    #video-wrapper {
+      height: 200vh;
+      position: relative;
+    }
+    .video-covor-background {
       width: 100%;
       height: 100vh;
+      position: absolute;
+      top: 0;
       object-fit: fill;
+      z-index: 80;
+      background-color: white;
+    }
+    .video-covor-background-active {
+      position: fixed;
     }
     .video-covor-content {
-      position: relative;
+      position: absolute;
+      width: 100%;
       height: 100vh;
       display: flex;
       z-index: 100;
       justify-content: center;
       align-items: center;
+      bottom: 0;
+      left: 0;
       .main-title {
         background-color: #ffffff;
         font-size: 25px;
@@ -565,16 +600,29 @@ html, body {
     }
   }
   .fever-city {
-    video {
-      width: 100%;
+    position: relative;
+    z-index: 100;
+    background-color: white;
+    .spreadOfTemperature {
+      position: relative;
+      video {
+        width: 100%;
+      }
+      .charText {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+      }
     }
+    
     .motos {
       width: 100%;
     }
   }
   .follow-up {
     position: relative;
-    z-index: 50;
+    z-index: 100;
     background-color: #fff;
     #follow-up-subtile-background {
       height: 100vh;
@@ -621,7 +669,7 @@ html, body {
   .end {
     position: relative;
     background-color:white;
-    z-index: 50;
+    z-index: 100;
     #end-background-video {
       video {
         width: 100%;
@@ -677,10 +725,12 @@ html, body {
      }
     .ending {
       // border: solid 1.5em rgba(white);
-      background: linear-gradient(rgba(#FFFFFF, 0.1), rgba(black, 1));
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 32%, rgba(33, 33, 33, 0.85) 74%, rgba(0, 0, 0, 0.3));
       position: relative;
       z-index: 110;
       color: white;
+      height: 200vh;
+      padding: 500px 0;
       .end-report {
         .end-report-title {
           color: black;

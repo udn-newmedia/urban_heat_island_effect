@@ -622,13 +622,13 @@ export default {
                     .setPin("#chart3-background", {pushFollowers: false})
                     .addTo(controller);
 
-    var path = document.querySelector('.weblineone'); //603
-    var path2 = document.querySelector('.weblinetwo'); //570
-    var length = path.getTotalLength();
-    var length2 = path2.getTotalLength();
+    // var path = document.querySelector('.weblineone'); //603
+    // var path2 = document.querySelector('.weblinetwo'); //570
+    // var length = path.getTotalLength();
+    // var length2 = path2.getTotalLength();
 
-    console.log(length)
-    console.log(length2)
+    // console.log(length)
+    // console.log(length2)
 
   },
   methods: {
