@@ -433,10 +433,10 @@ export default {
     detactSVG () {
       var path = document.querySelector('.st8');
       var length = path.getTotalLength();
-      console.log(length)
+
       var path2 = document.querySelector('.st9');
       var length2 = path2.getTotalLength();
-      console.log(length2)
+
     }
   },
   computed: {
@@ -558,11 +558,14 @@ export default {
     .step1-mob {
       .st8 {
         opacity: 1;
-        stroke-dashoffset: 1020;
+        stroke-dashoffset: 1090;
       }
       .st9 {
         opacity: 1;
-        stroke-dashoffset: 1028;
+        stroke-dashoffset: 1000;
+      }
+      #heat_x5F_island_x5F_chart1_x5F_1985_x5F_mob {
+        opacity: 1;
       }
     }
     .step2-mob {
@@ -574,6 +577,9 @@ export default {
         opacity: 1;
         stroke-dashoffset: 0;
       }
+      #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob {
+        opacity: 1;
+      }
     }
     .step3-mob {
       .st8 {
@@ -583,6 +589,9 @@ export default {
       .st9 {
         opacity: 1;
         stroke-dashoffset: 0;
+      }
+      #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob {
+        opacity: 1;
       }
     }
     .step4-mob {
@@ -639,7 +648,6 @@ export default {
       justify-content: center;
       align-items: center;
       background-color: white;
-      border: solid 1px blue;
       .chart-content {
         background-color: white;
         position: relative;

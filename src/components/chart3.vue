@@ -624,6 +624,7 @@ export default {
                     .setPin("#chart3-background", {pushFollowers: false})
                     .addTo(controller);
 
+    this.detactSVG()
   },
   methods: {
     handleScroll () {
@@ -640,13 +641,23 @@ export default {
       this.steps[this.currentStep] = true
     },
     detactSVG () {
-      var path = document.querySelector('.path');
+      var path = document.querySelector('.st15');
       var length = path.getTotalLength();
+      console.log('st15', length)
+      var path2 = document.querySelector('.st16');
+      var length2 = path2.getTotalLength();
+      console.log(length2)
     }
   },
   computed: {
     controlAnimationProcessMob () {
-      return 'default-mob'
+      return {
+        'default-mob': (this.currentStep == 0) ? true: false,
+        'step1-mob': (this.currentStep == 1) ? true: false,
+        'step2-mob': (this.currentStep == 2) ? true: false,
+        'step3-mob': (this.currentStep == 3) ? true: false,
+        'step4-mob': (this.currentStep == 4) ? true: false,
+      }
     },
     controlAnimationProcessWeb () {
       return 'default-web'
@@ -715,14 +726,24 @@ export default {
       .st12{fill:none;stroke:#282828;stroke-miterlimit:10;}
       .st13{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
       .st14{clip-path:url(#SVGID_4_);}
-      .st15{fill:none;stroke:#707070;stroke-width:1.5;stroke-miterlimit:10;}
-      .st16{fill:none;stroke:#EA0303;stroke-width:1.5;stroke-miterlimit:10;}
+      .st15{
+        fill:none;
+        stroke:#707070;
+        stroke-width:1.5;
+        stroke-miterlimit:10;
+        stroke-dasharray: 603;
+      }
+      .st16{
+        fill:none;
+        stroke:#EA0303;
+        stroke-width:1.5;
+        stroke-miterlimit:10;
+        stroke-dasharray: 570;
+      }
       .st17{fill:#FFFFFF;}
       .st18{font-family:'MicrosoftJhengHeiBold';}
       .st19{font-family:'Arial-BoldMT';}
       .st20{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3,2,3,2,3,2;}
-    }
-    .default-mob {
       .st15, .st16,
       #heat_x5F_island_x5F_chart3_x5F_background_x5F_12,
       #heat_x5F_island_x5F_chart3_x5F_background_x5F_05,
@@ -730,6 +751,54 @@ export default {
       #heat_x5F_island_x5F_chart3_x5F_05_x5F_word,
       #heat_x5F_island_x5F_chart3_x5F_05 {
         opacity: 0;
+        transition: all 1s; 
+      }
+    }
+    .default-mob {
+      .st15 {
+        stroke-dashoffset: 603;
+      }
+      .st16 {
+        stroke-dashoffset: 570;
+      } 
+    }
+    .step1-mob {
+      .st15 {
+        opacity: 1;
+        stroke-dashoffset: 1206;
+      }
+      .st16 {
+        opacity: 1;
+        stroke-dashoffset: 1140;
+      }
+      #heat_x5F_island_x5F_chart3_x5F_05_x5F_word, #heat_x5F_island_x5F_chart3_x5F_background_x5F_05, #heat_x5F_island_x5F_chart3_x5F_05 {
+        opacity: 1;
+      }
+    }
+    .step2-mob {
+      .st15 {
+        opacity: 1;
+        stroke-dashoffset: 1206;
+      }
+      .st16 {
+        opacity: 1;
+        stroke-dashoffset: 1140;
+      }
+      #heat_x5F_island_x5F_chart3_x5F_12, #heat_x5F_island_x5F_chart3_x5F_background_x5F_12 {
+        opacity: 1;
+      }
+    }
+    .step3-mob {
+      .st15 {
+        opacity: 1;
+        stroke-dashoffset: 1206;
+      }
+      .st16 {
+        opacity: 1;
+        stroke-dashoffset: 1140;
+      }
+      #heat_x5F_island_x5F_chart3_x5F_12, #heat_x5F_island_x5F_chart3_x5F_background_x5F_12 {
+        opacity: 1;
       }
     }
     .chart3-web {
