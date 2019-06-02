@@ -1,9 +1,9 @@
 <template>
   <div class="chart2">
       <h3>台北和淡水歷年均溫走勢圖</h3>
-      <section  id="chart2-background">
+      <section id="chart2-background">
         <mq-layout :mq="['xs', 's', 'm']">
-          <svg class="chart2-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          <svg :class="controlAnimationProcessMob" class="chart2-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
             <g id="heat_x5F_island_x5F_chart1_x5F_background_x5F_mob">
               <rect x="432.23" y="170.25" class="st0" width="13.88" height="13"/>
@@ -161,7 +161,7 @@
             </svg>
         </mq-layout>
         <mq-layout :mq="['l', 'xl']">
-          <svg class="chart2-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          <svg :class="controlAnimationProcessWeb" class="chart2-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
             <g id="heat_x5F_island_x5F_chart1_x5F_background">
               <line class="st0" x1="155.77" y1="600.36" x2="1144.76" y2="600.36"/>
@@ -319,49 +319,33 @@
             </svg>
         </mq-layout>  
       </section>
-      <div class="section section1">
+      <div ref="chart-section1" class="section section1">
         <div class="container">
-          <div ref="chart-content1" class="chart-content chart-content1">
+          <div  class="chart-content chart-content1">
             <p>台北、淡水氣象站的氣溫早期十分接近。</p>
           </div>
         </div>  
       </div>
-      <div class="section section2">
+      <div ref="chart-section2" class="section section2">
         <div class="container">
-          <div ref="chart-content2" class="chart-content chart-content2">
+          <div class="chart-content chart-content2">
             <p>但自1985年起，兩站氣溫差距增至 <span class="mark">0.7度</span>，到了2018年已經<span class="mark">超過1度</span>。</p>
             <br>
             <p>推究其因，1985年前後是台北氣象站周邊地表環境改變最大的時刻。</p>
           </div>
         </div>   
       </div>
-      <div class="section section3">
+      <div  ref="chart-section3" class="section section3">
         <div class="container">
-          <div ref="chart-content3" class="chart-content chart-content3">
-            <p>1980年，中正紀念堂落成</p>
-            <img src="../../public/images/heat_island_img2.jpg" alt="">
-          </div>
-        </div>   
-      </div>
-      <div class="section section4">
-        <div class="container">
-          <div ref="chart-content4" class="chart-content chart-content4">
-            <p>1986年，國家圖書館啟用</p>
-            <img src="../../public/images/heat_island_img3.jpg" alt="">
-          </div>
-        </div>   
-      </div>
-      <div class="section section5">
-        <div class="container">
-          <div ref="chart-content5" class="chart-content chart-content5">
+          <div class="chart-content chart-content5">
             <p>1986年，國家圖書館啟用</p>
             <img src="../../public/images/heat_island_img4.jpg" alt="">
           </div>
         </div>   
       </div>
-      <div class="section section6">
+      <div ref="chart-section4" class="section section4">
         <div class="container">
-          <div ref="chart-content6" class="chart-content chart-content6">
+          <div class="chart-content chart-content6">
             <p>這些新落成的大面積水泥鋪面與建築物，均是造成台北氣象站周圍溫度上升的因素。</p>
           </div>
         </div>   
@@ -397,33 +381,79 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
 
     var controller = new ScrollMagic.Controller();
-    var scene1 = new ScrollMagic.Scene({triggerElement: "#chart2-background", duration: '600%', triggerHook: 'onLeave'})
+    var scene1 = new ScrollMagic.Scene({triggerElement: "#chart2-background", duration: '400%', triggerHook: 'onLeave'})
                     .setPin("#chart2-background", {pushFollowers: false})
                     .addTo(controller);
     
+    this.detactSVG()
   },
   methods: {
     handleScroll () {
-      if(this.isElementInViewport(this.$refs['chart-content1'])) {
+
+      //最後變成剩下四段
+      let section1Rect = this.$refs['chart-section1'].getBoundingClientRect()
+      let section2Rect = this.$refs['chart-section2'].getBoundingClientRect()
+      let section3Rect = this.$refs['chart-section3'].getBoundingClientRect()
+      let section4Rect = this.$refs['chart-section4'].getBoundingClientRect()
+
+      if ( section1Rect != 'undefined' && (section1Rect.height)*-1 < section1Rect.top && section1Rect.top < section1Rect.height ) {
         this.currentStep = 1
-      } else if(this.isElementInViewport(this.$refs['chart-content2'])) {
+      } else if ( section2Rect != 'undefined' && 0 < section2Rect.bottom && section2Rect.bottom < section2Rect.height) {
         this.currentStep = 2
-      } else if(this.isElementInViewport(this.$refs['chart-content3'])) {
+      } else if ( section3Rect != 'undefined' && 0 < section3Rect.bottom && section3Rect.bottom < section3Rect.height) {
         this.currentStep = 3
-      } else if(this.isElementInViewport(this.$refs['chart-content4'])) {
+      } else if ( section4Rect != 'undefined' && 0 < section4Rect.bottom && section4Rect.bottom < section4Rect.height) {
         this.currentStep = 4
-      } else if(this.isElementInViewport(this.$refs['chart-content5'])) {
-        this.currentStep = 5
-      } else if(this.isElementInViewport(this.$refs['chart-content6'])) {
-        this.currentStep = 6
       } else {
         this.currentStep = 0
       }
+
+
+      // console.log(this.$refs['chart-section1'].getBoundingClientRect().top)
+      // if(this.isElementInViewport(this.$refs['chart-section1'])) {
+      //   console.log("hello section1")
+      //   this.currentStep = 1
+      // } else if(this.isElementInViewport(this.$refs['chart-section2'])) {
+      //   console.log("hello section2")
+      //   this.currentStep = 2
+      // } else if(this.isElementInViewport(this.$refs['chart-section3'])) {
+      //   this.currentStep = 3
+      // } else if(this.isElementInViewport(this.$refs['chart-section4'])) {
+      //   this.currentStep = 4
+      // } else if(this.isElementInViewport(this.$refs['chart-section5'])) {
+      //   this.currentStep = 5
+      // } else if(this.isElementInViewport(this.$refs['chart-section6'])) {
+      //   this.currentStep = 6
+      // } else {
+      //   this.currentStep = 0
+      // }
       this.steps.fill(false)
       this.steps[this.currentStep] = true
+    },
+    detactSVG () {
+      var path = document.querySelector('.st8');
+      var length = path.getTotalLength();
+      console.log(length)
+      var path2 = document.querySelector('.st9');
+      var length2 = path2.getTotalLength();
+      console.log(length2)
     }
   },
   computed: {
+    controlAnimationProcessMob () {
+      return {
+        'default-mob': (this.currentStep == 0) ? true: false,
+        'step1-mob': (this.currentStep == 1) ? true: false,
+        'step2-mob': (this.currentStep == 2) ? true: false,
+        'step3-mob': (this.currentStep == 3) ? true: false,
+        'step4-mob': (this.currentStep == 4) ? true: false,
+      }
+    },
+    controlAnimationProcessWeb () {
+      return {
+        'default-web': (this.currentStep == 0) ? true: false
+      }
+    },
     lineOne () {
       return {
         'line_one_default': (this.currentStep == 0) ? true: false,
@@ -489,14 +519,81 @@ export default {
       .st5{fill:none;stroke:#969696;stroke-width:0.25;stroke-miterlimit:10;}
       .st6{font-family:'ArialMT';}
       .st7{font-size:22.08px;}
-      .st8{fill:none;stroke:#EA0303;stroke-width:1.5;stroke-miterlimit:10;}
-      .st9{fill:none;stroke:#707070;stroke-width:1.5;stroke-miterlimit:10;}
+      .st8{
+        fill:none;
+        stroke:#EA0303;
+        stroke-width:1.5;
+        stroke-miterlimit:10;
+        stroke-dasharray: 2520;
+      }
+      .st9{
+        fill:none;
+        stroke:#707070;
+        stroke-width:1.5;
+        stroke-miterlimit:10;
+        stroke-dasharray: 2228;
+      }
       .st10{font-family:'Arial-BoldMT';}
       .st11{font-size:21px;}
       .st12{fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;}
       .st13{fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:5.0668,3.0401,5.0668,3.0401;}
-      
-        .st14{fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:5.0668,3.0401,5.0668,3.0401,5.0668,3.0401;}
+      .st14{fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:5.0668,3.0401,5.0668,3.0401,5.0668,3.0401;}
+      .st8, .st9, #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1985_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob {
+        opacity: 0;
+        transition: all 1s; 
+      }
+    }
+    .default-mob {
+      .st8 {
+        stroke-dashoffset: 2520;
+      }
+      .st9 {
+        stroke-dashoffset: 2228;
+      }
+      .st8, .st9, #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1985_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob {
+        opacity: 0;
+        
+      }
+    }
+    .step1-mob {
+      .st8 {
+        opacity: 1;
+        stroke-dashoffset: 1020;
+      }
+      .st9 {
+        opacity: 1;
+        stroke-dashoffset: 1028;
+      }
+    }
+    .step2-mob {
+      .st8 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      .st9 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+    }
+    .step3-mob {
+      .st8 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      .st9 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+    }
+    .step4-mob {
+      .st8 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      .st9 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
     }
     .chart2-web {
       height: 100vh;
@@ -510,15 +607,30 @@ export default {
       .st6{font-size:15.0895px;glyph-orientation-vertical:0;writing-mode:tb;}
       .st7{font-size:17.0895px;}
       .st8{fill:#353535;}
-      .st9{fill:none;stroke:#EA0303;stroke-width:3;stroke-miterlimit:10;}
-      .st10{fill:none;stroke:#707070;stroke-width:3;stroke-miterlimit:10;}
+      .st9{
+        fill:none;
+        stroke:#EA0303;
+        stroke-width:3;
+        stroke-miterlimit:10;
+      }
+      .st10{
+        fill:none;
+        stroke:#707070;
+        stroke-width:3;
+        stroke-miterlimit:10;
+      }
       .st11{font-family:'Arial-BoldMT';}
       .st12{font-size:21px;}
       .st13{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;}
       .st14{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:4.9579,2.9747,4.9579,2.9747;}
       
-        .st15{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:4.9579,2.9747,4.9579,2.9747,4.9579,2.9747;}
+      .st15{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:4.9579,2.9747,4.9579,2.9747,4.9579,2.9747;}
       .st16{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:5,3,5,3,5,3;}
+    }
+    .default-web {
+      .st9, .st10, #heat_x5F_island_x5F_chart1_x5F_1980, #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1987, #heat_x5F_island_x5F_chart1_x5F_1986, #heat_x5F_island_x5F_chart1_x5F_1985 {
+        opacity: 0;
+      }
     }
   }
   .section {  
@@ -527,6 +639,7 @@ export default {
       justify-content: center;
       align-items: center;
       background-color: white;
+      border: solid 1px blue;
       .chart-content {
         background-color: white;
         position: relative;

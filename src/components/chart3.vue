@@ -3,7 +3,7 @@
     <h3>台北7、8月每小時均溫走勢圖</h3>
     <section  id="chart3-background">
       <mq-layout :mq="['xs', 's', 'm']">
-      <svg class="chart3-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <svg :class="controlAnimationProcessMob" class="chart3-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
           <g id="heat_x5F_island_x5F_chart3_x5F_background_x5F_05">
             <rect x="46.38" y="255.93" class="st0" width="94.5" height="414.45"/>
@@ -241,7 +241,7 @@
           </svg>
       </mq-layout>
       <mq-layout :mq="['l', 'xl']">
-        <svg class="chart3-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg :class="controlAnimationProcessWeb" class="chart3-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
           <g id="heat_x5F_island_x5F_chart3_x5F_background_x5F_05">
             <rect x="128" y="99" class="st0" width="208" height="440"/>
@@ -624,14 +624,6 @@ export default {
                     .setPin("#chart3-background", {pushFollowers: false})
                     .addTo(controller);
 
-    // var path = document.querySelector('.weblineone'); //603
-    // var path2 = document.querySelector('.weblinetwo'); //570
-    // var length = path.getTotalLength();
-    // var length2 = path2.getTotalLength();
-
-    // console.log(length)
-    // console.log(length2)
-
   },
   methods: {
     handleScroll () {
@@ -646,9 +638,19 @@ export default {
       }
       this.steps.fill(false)
       this.steps[this.currentStep] = true
+    },
+    detactSVG () {
+      var path = document.querySelector('.path');
+      var length = path.getTotalLength();
     }
   },
   computed: {
+    controlAnimationProcessMob () {
+      return 'default-mob'
+    },
+    controlAnimationProcessWeb () {
+      return 'default-web'
+    },
     lineOne () {
       return {
         'line_one_default': (this.currentStep == 0) ? true: false,
@@ -720,6 +722,16 @@ export default {
       .st19{font-family:'Arial-BoldMT';}
       .st20{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3,2,3,2,3,2;}
     }
+    .default-mob {
+      .st15, .st16,
+      #heat_x5F_island_x5F_chart3_x5F_background_x5F_12,
+      #heat_x5F_island_x5F_chart3_x5F_background_x5F_05,
+      #heat_x5F_island_x5F_chart3_x5F_12,
+      #heat_x5F_island_x5F_chart3_x5F_05_x5F_word,
+      #heat_x5F_island_x5F_chart3_x5F_05 {
+        opacity: 0;
+      }
+    }
     .chart3-web {
       .st0{fill:#F4F4F4;}
       .st1{fill:#F2F2F2;}
@@ -749,7 +761,20 @@ export default {
       .st25{font-size:19px;}
       .st26{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3,2,3,2,3,2;}
     }
-    
+    .default-web {
+      .st13, .st14, .st15,
+        #heat_x5F_island_x5F_chart3_x5F_12,
+        #heat_x5F_island_x5F_chart3_x5F_05_x5F_word,
+        #heat_x5F_island_x5F_chart3_x5F_05,
+        #heat_x5F_island_x5F_chart3_x5F_2001word,
+        #heat_x5F_island_x5F_chart3_x5F_1971word,
+        #heat_x5F_island_x5F_chart3_x5F_1981word,
+        #heat_x5F_island_x5F_chart3_x5F_1991word,
+        #heat_x5F_island_x5F_chart3_x5F_background_x5F_12,
+        #heat_x5F_island_x5F_chart3_x5F_background_x5F_05 {
+        opacity: 0;
+      }
+    }
   }
   .section {  
       height: 100vh;
