@@ -1,7 +1,7 @@
 <template>
   <div class="chart3">
-    <h3>台北7、8月每小時均溫走勢圖</h3>
-    <section  id="chart3-background">
+    <section id="chart3-background">
+      <p class="chart3-title">台北7、8月每小時均溫走勢圖</p>
       <mq-layout :mq="['xs', 's', 'm']">
       <svg :class="controlAnimationProcessMob" class="chart3-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
@@ -572,24 +572,24 @@
           </svg>
       </mq-layout>
     </section>
-    <div class="section section1">
+    <div ref="chart3-section1" class="section section1">
         <div class="container">
-          <div ref="chart2-content1" class="chart-content chart-content1">
+          <div class="chart-content chart-content1">
             <p>這是台北在7、8月間不同時刻的溫度走勢圖。</p>
           </div>
         </div>  
       </div>
-      <div class="section section2">
+      <div ref="chart3-section2" class="section section2">
         <div class="container">
-          <div ref="chart2-content2" class="chart-content chart-content2">
+          <div class="chart-content chart-content2">
             <p>自1971年至2010年，台北在夜間及清晨的溫度約<span class="mark">上升2度。</span></p>
             
           </div>
         </div>   
       </div>
-      <div class="section section3">
+      <div ref="chart3-section3" class="section section3">
         <div class="container">
-          <div ref="chart2-content3" class="chart-content chart-content3">
+          <div class="chart-content chart-content3">
             <p>同一時期，台北在中午的溫度則<span class="mark">僅上升1度左右</span>，顯示受熱島效應影影響，都市在夜間的溫度增幅較明顯。</p>
           </div>
         </div>   
@@ -624,29 +624,24 @@ export default {
                     .setPin("#chart3-background", {pushFollowers: false})
                     .addTo(controller);
 
-    this.detactSVG()
   },
   methods: {
     handleScroll () {
-      if(this.isElementInViewport(this.$refs['chart2-content1'])) {
+      let section1Rect = this.$refs['chart3-section1'].getBoundingClientRect()
+      let section2Rect = this.$refs['chart3-section2'].getBoundingClientRect()
+      let section3Rect = this.$refs['chart3-section3'].getBoundingClientRect()
+
+      if ( section1Rect != 'undefined' && section1Rect.top < section1Rect.height && section2Rect.top > section2Rect.height ) {
         this.currentStep = 1
-      } else if(this.isElementInViewport(this.$refs['chart2-content2'])) {
+      } else if ( section2Rect != 'undefined' && section2Rect.top < section2Rect.height && section3Rect.top > section3Rect.height) {
         this.currentStep = 2
-      } else if(this.isElementInViewport(this.$refs['chart2-content3'])) {
+      } else if ( section2Rect != 'undefined' && section3Rect.top < section3Rect.height && section3Rect.bottom > 0) {
         this.currentStep = 3
       } else {
         this.currentStep = 0
       }
       this.steps.fill(false)
       this.steps[this.currentStep] = true
-    },
-    detactSVG () {
-      var path = document.querySelector('.st15');
-      var length = path.getTotalLength();
-      console.log('st15', length)
-      var path2 = document.querySelector('.st16');
-      var length2 = path2.getTotalLength();
-      console.log(length2)
     }
   },
   computed: {
@@ -660,44 +655,12 @@ export default {
       }
     },
     controlAnimationProcessWeb () {
-      return 'default-web'
-    },
-    lineOne () {
       return {
-        'line_one_default': (this.currentStep == 0) ? true: false,
-        'line_one_step1': (this.currentStep == 1) ? true: false,
-        'line_one_other_step': (this.currentStep == 2) ? true: false
-      }
-    },
-    lineTwo () {
-      return {
-        'line_two_default': (this.currentStep == 0) ? true: false,
-        'line_two_step1': (this.currentStep == 1) ? true: false,
-        'line_two_other_step': (this.currentStep == 2) ? true: false
-      }
-    },
-    lineOneWeb () {
-      return {
-        'line_one_web_default': (this.currentStep == 0) ? true: false,
-        'line_one_web_step1': (this.currentStep == 1) ? true: false,
-        'line_one_web_other_step': (this.currentStep == 2) ? true: false
-      }
-    },
-    lineTwoWeb () {
-      return {
-        'line_two_web_default': (this.currentStep == 0) ? true: false,
-        'line_two_web_step1': (this.currentStep == 1) ? true: false,
-        'line_two_web_other_step': (this.currentStep == 2) ? true: false
-      }
-    },
-    textOne () {
-      return {
-        'current_group': (this.currentStep == 0) ? false: true,
-      }
-    },
-    textTwo () {
-      return {
-        'current_group': (this.currentStep == 0) ? false: true
+        'default-web': (this.currentStep == 0) ? true: false,
+        'step1-web': (this.currentStep == 1) ? true: false,
+        'step2-web': (this.currentStep == 2) ? true: false,
+        'step3-web': (this.currentStep == 3) ? true: false,
+        'step4-web': (this.currentStep == 4) ? true: false,
       }
     }
   }
@@ -710,7 +673,26 @@ export default {
   z-index: 100;
   background-color: white;
   #chart3-background {
+    position: relative;
+    .chart3-title {
+      position: absolute;
+      font-size: 17px;
+      font-weight: bold;
+      top: 70px;
+      left: 13px;
+      @media screen and (min-width: 321px) {
+
+      }
+      @media screen and (min-width: 521px) {
+        left: 100px;
+      }
+      @media screen and (min-width: 769px) {
+        left: 250px;
+      }
+    }
     .chart3-mob {
+      width: 100%;
+      height: 100vh;
       .st0{fill:#F2F2F2;}
       .st1{fill:#707070;}
       .st2{font-family:'ARHeiB5-Light-B5pc-H';}
@@ -771,9 +753,6 @@ export default {
         opacity: 1;
         stroke-dashoffset: 1140;
       }
-      #heat_x5F_island_x5F_chart3_x5F_05_x5F_word, #heat_x5F_island_x5F_chart3_x5F_background_x5F_05, #heat_x5F_island_x5F_chart3_x5F_05 {
-        opacity: 1;
-      }
     }
     .step2-mob {
       .st15 {
@@ -784,7 +763,7 @@ export default {
         opacity: 1;
         stroke-dashoffset: 1140;
       }
-      #heat_x5F_island_x5F_chart3_x5F_12, #heat_x5F_island_x5F_chart3_x5F_background_x5F_12 {
+      #heat_x5F_island_x5F_chart3_x5F_05_x5F_word, #heat_x5F_island_x5F_chart3_x5F_background_x5F_05, #heat_x5F_island_x5F_chart3_x5F_05 {
         opacity: 1;
       }
     }
@@ -802,6 +781,8 @@ export default {
       }
     }
     .chart3-web {
+      width: 100%;
+      height: 100vh;
       .st0{fill:#F4F4F4;}
       .st1{fill:#F2F2F2;}
       .st2{fill:#707070;}
@@ -815,9 +796,30 @@ export default {
       .st10{fill:none;stroke:#282828;stroke-miterlimit:10;}
       .st11{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
       .st12{clip-path:url(#SVGID_4_);}
-      .st13{fill:none;stroke:#C9C9C9;stroke-miterlimit:10;}
-      .st14{fill:none;stroke:#707070;stroke-width:3;stroke-miterlimit:10;}
-      .st15{fill:none;stroke:#EA0303;stroke-width:3;stroke-miterlimit:10;}
+      .st13{
+        fill:none;
+        stroke:#C9C9C9;
+        stroke-miterlimit:10;
+        stroke-dasharray: 1055;
+        //1041.093017578125
+//1055.300537109375
+//1065.7431640625
+//1040.2020263671875
+      }
+      .st14{
+        fill:none;
+        stroke:#707070;
+        stroke-width:3;
+        stroke-miterlimit:10;
+        stroke-dasharray: 1066;
+      }
+      .st15{
+        fill:none;
+        stroke:#EA0303;
+        stroke-width:3;
+        stroke-miterlimit:10;
+        stroke-dasharray: 1040;
+      }
       .st16{fill:#EA0303;}
       .st17{font-size:18.3414px;}
       .st18{fill:#C9C9C9;}
@@ -829,6 +831,23 @@ export default {
       .st24{font-family:'MicrosoftJhengHeiBold';}
       .st25{font-size:19px;}
       .st26{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3,2,3,2,3,2;}
+      .st13, .st14, .st15 {
+        opacity: 0;
+        transition: all 1s;
+      }
+        #heat_x5F_island_x5F_chart3_x5F_12,
+        #heat_x5F_island_x5F_chart3_x5F_05_x5F_word,
+        #heat_x5F_island_x5F_chart3_x5F_05,
+        #heat_x5F_island_x5F_chart3_x5F_2001word,
+        #heat_x5F_island_x5F_chart3_x5F_1971word,
+        #heat_x5F_island_x5F_chart3_x5F_1981word,
+        #heat_x5F_island_x5F_chart3_x5F_1991word,
+        #heat_x5F_island_x5F_chart3_x5F_background_x5F_12,
+        #heat_x5F_island_x5F_chart3_x5F_background_x5F_05 {
+        opacity: 0;
+        transition: all 1s;
+        transition-delay: 1s;
+      }
     }
     .default-web {
       .st13, .st14, .st15,
@@ -842,6 +861,70 @@ export default {
         #heat_x5F_island_x5F_chart3_x5F_background_x5F_12,
         #heat_x5F_island_x5F_chart3_x5F_background_x5F_05 {
         opacity: 0;
+      }
+      .st13 {
+        stroke-dashoffset: 1055;
+      }
+      .st14 {
+        stroke-dashoffset: 1066;
+      }
+      .st15 {
+        stroke-dashoffset: 1040;
+      }
+    }
+    .step1-web {
+      .st13 {
+        opacity: 1;
+        stroke-dashoffset: 2110;
+      }
+      .st14 {
+        opacity: 1;
+        stroke-dashoffset: 2132;
+      }
+      .st15 {
+        opacity: 1;
+        stroke-dashoffset: 2080;
+      }
+      #heat_x5F_island_x5F_chart3_x5F_2001word,
+      #heat_x5F_island_x5F_chart3_x5F_1971word,
+      #heat_x5F_island_x5F_chart3_x5F_1981word,
+      #heat_x5F_island_x5F_chart3_x5F_1991word {
+        opacity: 1;
+      }
+    }
+    .step2-web {
+      .st14 {
+        opacity: 1;
+        stroke-dashoffset: 2132;
+      }
+      .st15 {
+        opacity: 1;
+        stroke-dashoffset: 2080;
+      }
+      
+      #heat_x5F_island_x5F_chart3_x5F_2001word,
+      #heat_x5F_island_x5F_chart3_x5F_1971word,
+      #heat_x5F_island_x5F_chart3_x5F_05_x5F_word,
+      #heat_x5F_island_x5F_chart3_x5F_05,
+      #heat_x5F_island_x5F_chart3_x5F_background_x5F_05 {
+        opacity: 1;
+      }
+    }
+    .step3-web {
+      .st14 {
+        opacity: 1;
+        stroke-dashoffset: 2132;
+      }
+      .st15 {
+        opacity: 1;
+        stroke-dashoffset: 2080;
+      }
+      #heat_x5F_island_x5F_chart3_x5F_05,
+      #heat_x5F_island_x5F_chart3_x5F_12,
+      #heat_x5F_island_x5F_chart3_x5F_2001word,
+      #heat_x5F_island_x5F_chart3_x5F_1971word,
+      #heat_x5F_island_x5F_chart3_x5F_background_x5F_12 {
+        opacity: 1;
       }
     }
   }

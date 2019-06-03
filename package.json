@@ -9,6 +9,8 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
     "scrollmagic": "^2.0.6",
     "udn-newmedia-utils": "^1.1.0",
     "vue": "^2.6.10",

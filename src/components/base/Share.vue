@@ -53,7 +53,7 @@ export default {
   .share-block{
       margin: 10px 0px;
       height: 28px;
-      
+      display: flex;
   }
   .fb-send-block{
       float: left;

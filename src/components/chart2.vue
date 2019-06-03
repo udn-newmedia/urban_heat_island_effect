@@ -1,7 +1,7 @@
 <template>
   <div class="chart2">
-      <h3>台北和淡水歷年均溫走勢圖</h3>
       <section id="chart2-background">
+        <p class="chart2-title">台北和淡水歷年均溫走勢圖</p>
         <mq-layout :mq="['xs', 's', 'm']">
           <svg :class="controlAnimationProcessMob" class="chart2-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
@@ -338,7 +338,9 @@
       <div  ref="chart-section3" class="section section3">
         <div class="container">
           <div class="chart-content chart-content5">
+            <p>1980年，中正紀念堂落成</p>
             <p>1986年，國家圖書館啟用</p>
+            <p>1987年，兩廳院啟用</p>
             <img src="../../public/images/heat_island_img4.jpg" alt="">
           </div>
         </div>   
@@ -384,8 +386,7 @@ export default {
     var scene1 = new ScrollMagic.Scene({triggerElement: "#chart2-background", duration: '400%', triggerHook: 'onLeave'})
                     .setPin("#chart2-background", {pushFollowers: false})
                     .addTo(controller);
-    
-    this.detactSVG()
+
   },
   methods: {
     handleScroll () {
@@ -395,48 +396,20 @@ export default {
       let section2Rect = this.$refs['chart-section2'].getBoundingClientRect()
       let section3Rect = this.$refs['chart-section3'].getBoundingClientRect()
       let section4Rect = this.$refs['chart-section4'].getBoundingClientRect()
-
-      if ( section1Rect != 'undefined' && (section1Rect.height)*-1 < section1Rect.top && section1Rect.top < section1Rect.height ) {
+      if ( section1Rect != 'undefined' && section1Rect.top < section1Rect.height && section2Rect.top > section2Rect.height ) {
         this.currentStep = 1
-      } else if ( section2Rect != 'undefined' && 0 < section2Rect.bottom && section2Rect.bottom < section2Rect.height) {
+      } else if ( section2Rect != 'undefined' && section2Rect.top < section2Rect.height && section3Rect.top > section3Rect.height) {
         this.currentStep = 2
-      } else if ( section3Rect != 'undefined' && 0 < section3Rect.bottom && section3Rect.bottom < section3Rect.height) {
+      } else if ( section2Rect != 'undefined' && section3Rect.top < section3Rect.height && section4Rect.top > section4Rect.height) {
         this.currentStep = 3
-      } else if ( section4Rect != 'undefined' && 0 < section4Rect.bottom && section4Rect.bottom < section4Rect.height) {
+      } else if ( section2Rect != 'undefined' && section4Rect.top < section4Rect.height && section4Rect.bottom > 0) {
         this.currentStep = 4
       } else {
         this.currentStep = 0
       }
 
-
-      // console.log(this.$refs['chart-section1'].getBoundingClientRect().top)
-      // if(this.isElementInViewport(this.$refs['chart-section1'])) {
-      //   console.log("hello section1")
-      //   this.currentStep = 1
-      // } else if(this.isElementInViewport(this.$refs['chart-section2'])) {
-      //   console.log("hello section2")
-      //   this.currentStep = 2
-      // } else if(this.isElementInViewport(this.$refs['chart-section3'])) {
-      //   this.currentStep = 3
-      // } else if(this.isElementInViewport(this.$refs['chart-section4'])) {
-      //   this.currentStep = 4
-      // } else if(this.isElementInViewport(this.$refs['chart-section5'])) {
-      //   this.currentStep = 5
-      // } else if(this.isElementInViewport(this.$refs['chart-section6'])) {
-      //   this.currentStep = 6
-      // } else {
-      //   this.currentStep = 0
-      // }
       this.steps.fill(false)
       this.steps[this.currentStep] = true
-    },
-    detactSVG () {
-      var path = document.querySelector('.st8');
-      var length = path.getTotalLength();
-
-      var path2 = document.querySelector('.st9');
-      var length2 = path2.getTotalLength();
-
     }
   },
   computed: {
@@ -451,49 +424,11 @@ export default {
     },
     controlAnimationProcessWeb () {
       return {
-        'default-web': (this.currentStep == 0) ? true: false
-      }
-    },
-    lineOne () {
-      return {
-        'line_one_default': (this.currentStep == 0) ? true: false,
-        'line_one_step1': (this.currentStep == 1) ? true: false,
-        'line_one_step2': (this.currentStep == 2) ? true: false,
-        'line_one_other_step': (this.currentStep == 3) || (this.currentStep == 4) || (this.currentStep == 5) || (this.currentStep == 6) ? true: false
-      }
-    },
-    lineTwo () {
-      return {
-        'line_two_default': (this.currentStep == 0) ? true: false,
-        'line_two_step1': (this.currentStep == 1) ? true: false,
-        'line_two_step2': (this.currentStep == 2) ? true: false,
-        'line_two_other_step': (this.currentStep == 3) || (this.currentStep == 4) || (this.currentStep == 5) || (this.currentStep == 6) ? true: false
-      }
-    },
-    lineOneWeb () {
-      return {
-        'line_one_web_default': (this.currentStep == 0) ? true: false,
-        'line_one_web_step1': (this.currentStep == 1) ? true: false,
-        'line_one_web_step2': (this.currentStep == 2) ? true: false,
-        'line_one_web_other_step': (this.currentStep == 3) || (this.currentStep == 4) || (this.currentStep == 5) || (this.currentStep == 6) ? true: false
-      }
-    },
-    lineTwoWeb () {
-      return {
-        'line_two_web_default': (this.currentStep == 0) ? true: false,
-        'line_two_web_step1': (this.currentStep == 1) ? true: false,
-        'line_two_web_step2': (this.currentStep == 2) ? true: false,
-        'line_two_web_other_step': (this.currentStep == 3) || (this.currentStep == 4) || (this.currentStep == 5) || (this.currentStep == 6) ? true: false
-      }
-    },
-    groupTwo () {
-      return {
-        'current_group': (this.currentStep == 0 ) || (this.currentStep == 1) ? false : true
-      }
-    },
-    groupFive () {
-      return {
-        'current_group': (this.currentStep == 5) || (this.currentStep == 6) ? true: false
+        'default-web': (this.currentStep == 0) ? true: false,
+        'step1-web': (this.currentStep == 1) ? true: false,
+        'step2-web': (this.currentStep == 2) ? true: false,
+        'step3-web': (this.currentStep == 3) ? true: false,
+        'step4-web': (this.currentStep == 4) ? true: false,
       }
     }
   }
@@ -505,9 +440,25 @@ export default {
 .chart2 {
   z-index: 100;
   background-color: white;
-  //.st8 主要線
-  //.st9 次要線
+  position: relative;
   #chart2-background {
+    position: relative;
+    .chart2-title {
+      position: absolute;
+      font-size: 17px;
+      font-weight: bold;
+      top: 70px;
+      left: 13px;
+      @media screen and (min-width: 321px) {
+
+      }
+      @media screen and (min-width: 521px) {
+        left: 100px;
+      }
+      @media screen and (min-width: 769px) {
+        left: 250px;
+      }
+    }
     .chart2-mob {
       height: 100vh;
       width: 100%;
@@ -603,6 +554,9 @@ export default {
         opacity: 1;
         stroke-dashoffset: 0;
       }
+      #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob {
+        opacity: 1;
+      }
     }
     .chart2-web {
       height: 100vh;
@@ -621,12 +575,14 @@ export default {
         stroke:#EA0303;
         stroke-width:3;
         stroke-miterlimit:10;
+        stroke-dasharray: 2700;
       }
       .st10{
         fill:none;
         stroke:#707070;
         stroke-width:3;
         stroke-miterlimit:10;
+        stroke-dasharray: 2430;
       }
       .st11{font-family:'Arial-BoldMT';}
       .st12{font-size:21px;}
@@ -635,10 +591,80 @@ export default {
       
       .st15{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:4.9579,2.9747,4.9579,2.9747,4.9579,2.9747;}
       .st16{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:5,3,5,3,5,3;}
+      .st9, .st10 {
+        opacity: 0;
+        transition: all 1s;
+      }
+      #heat_x5F_island_x5F_chart1_x5F_1980, #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1987, #heat_x5F_island_x5F_chart1_x5F_1986, #heat_x5F_island_x5F_chart1_x5F_1985 {
+        opacity: 0;
+        transition: all 1s;
+        transition-delay: 0.5s;
+      }
     }
     .default-web {
       .st9, .st10, #heat_x5F_island_x5F_chart1_x5F_1980, #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1987, #heat_x5F_island_x5F_chart1_x5F_1986, #heat_x5F_island_x5F_chart1_x5F_1985 {
         opacity: 0;
+      }
+      .st9 {
+        opacity: 0;
+        stroke-dashoffset: 2700;
+      }
+      .st10 {
+        opacity: 0;
+        stroke-dashoffset: 2430;
+      }
+    }
+    .step1-web {
+      .st9 {
+        opacity: 1;
+        stroke-dashoffset: 1170;
+      }
+      .st10 {
+        opacity: 1;
+        stroke-dashoffset: 1082;
+       
+      }
+      #heat_x5F_island_x5F_chart1_x5F_1985 {
+        opacity: 1;
+      }
+    }
+    .step2-web {
+      .st9 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      .st10 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      #heat_x5F_island_x5F_chart1_x5F_2018 {
+        opacity: 1;
+      }
+    }
+    .step3-web {
+      .st9 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      .st10 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1987, #heat_x5F_island_x5F_chart1_x5F_1986, #heat_x5F_island_x5F_chart1_x5F_1985 {
+        opacity: 1;
+      }
+    }
+    .step4-web {
+      .st9 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      .st10 {
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+      #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1987, #heat_x5F_island_x5F_chart1_x5F_1986, #heat_x5F_island_x5F_chart1_x5F_1985 {
+        opacity: 1;
       }
     }
   }

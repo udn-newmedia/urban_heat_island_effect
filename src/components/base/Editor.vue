@@ -12,8 +12,9 @@ export default {
 
 <style scoped>
   #editor{
-    color: black;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 20px;
+    line-height: 1.78;
+    opacity: 0.8;
   }
 </style>

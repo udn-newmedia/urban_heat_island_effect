@@ -33,7 +33,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .numberBox {
-  border-left: solid 1px #7d7d7d;
+  border-left: solid 2px #7d7d7d;
   padding-left: 10px;
   margin-bottom: 38px;
   @media screen and (min-width: 321px) {
@@ -59,6 +59,7 @@ export default {
     .number {
       color: #fe0000;
       font-size: 25px;
+      padding-bottom: 10px;
     }
   }
   .right {
@@ -71,7 +72,10 @@ export default {
       
     }
     .describe {
-
+      font-size: 15px;
+      color: #000000;
+      line-height: 2;
+      padding-bottom: 12px;
     }
     .source-info {
       color: #7d7d7d;

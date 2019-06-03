@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <Indicator></Indicator>
+    <Head-Bar head-color="#fff" icon-color="#000">
+      <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
+      <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
+      <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡綠化降溫</a>
+    </Head-Bar>
     <div class="cover">
       <div class="cover-section cover-section1">
         <div class="container">
@@ -93,9 +99,9 @@
             <p>氣象專家彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，未來20年內，台北市中午會經常有高達40度的高溫。</p>
             <br>
             <br>
-            <h3>大台北地區於2018年8月1日的溫度分布圖</h3>
+            <h3 class="chart-title">大台北地區於2018年8月1日的溫度分布圖</h3>
             <br>
-            <div class="spreadOfTemperature">
+            <div class="spread-of-temperature">
               <video  width="100vw" preload="metadata" :src="srcRWD(mapVideoMob, mapVideo)" autobuffer autoplay loop muted playsinline>
                 <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)" webkit-playsinline="true"></source>
                 <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
@@ -106,7 +112,7 @@
             <p>資料來源／中央氣象局</p>
             <br>
             <br>
-            <h3>熱島效應特色一：集中在都會區</h3>
+            <h3 class="feature-title feature-title1">熱島效應特色一：集中在都會區</h3>
             <br>
             <p>什麼是都市熱島效應？林子平教授說，都會區人口聚集、開發密度上升，導致水泥建築、柏油路面增加，這些材質都會蓄積熱能，交通工具、空調系統也會排放廢熱，加上綠地減少、通風變差，都會區像是個悶燒鍋，市中心比周邊溫度還要高，在全球氣候變遷與溫室效應的影響下，更加劇都市高溫化。</p>
             <br>
@@ -116,14 +122,14 @@
             <br>
             <br>
             <img class="motos" src="../public/images/heat_island_img1.jpg" alt="">
-            <p>台灣汽機車密度極高，而車輛排熱是也導致都市溫度增高的因素之一。圖／杜建重 </p>
+            <p class="image-describtion motos-describtion">台灣汽機車密度極高，而車輛排熱是也導致都市溫度增高的因素之一。圖／杜建重 </p>
             <br>
           </div>
           <chart2></chart2>
           <div class="container">
             <br>
             <br>
-            <h3>熱島效應特色二：夜間增溫比白天明顯</h3>
+            <h3 class="feature-title feature-title1">熱島效應特色二：夜間增溫比白天明顯</h3>
             <br>
             <p>都市熱島效應夜間比白天影響更大，水泥建築在白天吸收的熱能，入夜後釋放出來，照理說太陽下山後，氣溫會逐漸下降，但這些人工熱能持續悶燒，讓都市夜間增溫。</p>
             <br>
@@ -142,10 +148,14 @@
       </div>
     </div>
     <div class="follow-up">
-      <div id="follow-up-subtile-background" class="follow-up-subtile-background"></div>
-      <div class="follow-up-subtile">
-        <div class="follow-up-subtile-content">
-          變成熱島後...
+      <div class="follow-up-subtile-wrapper">
+        <div class="follow-up-subtile">
+          <div class="follow-up-subtile-content">
+            <div class="main-title">
+              變成熱島後...
+            </div>
+            
+          </div>
         </div>
       </div>
       <div class="number-group">
@@ -184,9 +194,7 @@
       <div class="follow-up-content">
         <div class="content">
           <div class="container">
-            <br>
-            <br>    
-            <h3>高溫讓人厭世</h3>
+            <h3 class="follow-up-main-title">高溫讓人厭世</h3>
             <br>
             <p>對於心血管、呼吸道等慢性病患，不只寒流來要小心，天氣太熱也會提高致死率。多數人認為好天氣會有好心情，但研究顯示，天氣太熱時自殺率會上升，精神疾病發作率也會增加。</p>
             <br>
@@ -200,14 +208,14 @@
             <br>
             <br>
             <img class="hot-city" :src="srcRWD(require('../public/images/' + subtitleImgMob3) , require('../public/images/' + subtitleImg3))" alt="">
-            <p>都市高溫使人體健康面臨衝擊，除了中暑、熱衰竭等相關疾病，氣溫上升也會提高死亡風險。圖／報系資料庫</p>
+            <p class="hot-city-describtion">都市高溫使人體健康面臨衝擊，除了中暑、熱衰竭等相關疾病，氣溫上升也會提高死亡風險。圖／報系資料庫</p>
           </div>
         </div>
         <div class="content">
           <div class="container">
             <br>
             <br>      
-            <h3>空氣愈來愈髒</h3>
+            <h3 class="follow-up-main-title">空氣愈來愈髒</h3>
             <br>
             <p>近來備受關注的空汙議題，因為都市熱島效應可能更趨嚴重。中研院研究發現，當氣溫升高時，都會區空汙濃度隨之上升，台北市PM2.5日平均濃度增加4成，台中、高雄則增加約一倍，儘管都未超過環保署的空品標準，仍值得關注。學者也發現，都會區在入夜後，空氣品質因為都市熱島效應而惡化。</p>
             <br>
@@ -215,15 +223,20 @@
             <br>
             <p>這項研究把過去40年每日最高溫的前5%溫度定義為高溫日標準，台北為攝氏35.2度、台中34度、高雄33.3度；換句話說，當每日最高溫超過標準值，就屬於高溫日，低於標準值2度定義為非高溫日。</p>
             <br>
+            <h3 class="follow-up-main-title">台北熱浪日與非熱浪日的空氣品質研究</h3>
+            <br>
             <chart4></chart4>
+            <div class="chart-describtion">
+              <p>註：熱浪與非熱浪個案是取自2014年7月和2015年7、8月三個月。此研究所定義的熱浪為台北日最高溫大於35.2度，低於33.2度則為非熱浪。</p>
+              <br>
+              <p>資料來源／中研院永續科學研究計畫-整合性多元高解析度資訊之台灣熱浪脆弱度評估</p>
+            </div>
             <br>
             <p>以環保署測站資料研究分析發現，當高溫日發生時，空氣中臭氧、PM10、PM2.5的濃度均明顯高於非高溫日，但一氧化碳、NO2、SO2 沒有明顯差異；透過數值模擬，也得到類似的結果。林傳堯說，高溫會造成臭氧增加，高溫期間，細懸浮微粒中二次氣膠所占比例也大幅提高，同時也可能影響空氣中的懸浮微粒濃度。</p>
             <br>
             <p>以民眾最關注的PM2.5為例，台北市在高溫日的濃度比非高溫日高出43.8%，高雄市、台中市PM2.5濃度，在高溫日都比非高溫日多出91.7%、115%，儘管都未超過環保署的標準值（35微克／立方公尺），但仍代表高溫對空汙造成影響。</p>
             <br>
             <p>林傳堯說，都市熱島效應帶來的高溫，除了熱本身會影響健康，隨溫度升高而增加的空汙濃度，儘管目前仍未超過標準值，但隨著都市氣候越來越熱，對人體的危害值得關注。</p>
-            <br>
-            <br>
           </div>
         </div>
       </div>
@@ -240,24 +253,28 @@
         <div class="content">
           <div class="container"> 
             <div class="end-report">
-              <h3 class="end-report-title">
-                <span class="mark">當寶島變熱島</span>系列專題
-              </h3>
+              <p class="end-report-title">
+                <span class="end-report-title-mark">當寶島變熱島</span>系列專題
+              </p>
               <div class="end-report-related-first-layer">
                 <div class="left">
                   <div class="box">
-                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
-                    <div class="describe">
-                      <p>文字文字文字</p>
-                    </div>           
+                    <a href="">
+                      <img src="../public/images/relate/relate_2.jpg" alt="">
+                      <div class="describe">
+                        <p>幫都市退燒</p>
+                      </div> 
+                    </a>           
                   </div>
                 </div>
                 <div class="right">
                   <div class="box">
-                    <img src="https://picsum.photos/id/1020/4288/2848" alt="">
-                    <div class="describe">
-                      <p>文字文字文字</p>
-                    </div>
+                    <a href="">
+                      <img src="../public/images/relate/relate_3.jpg" alt="">
+                      <div class="describe">
+                        <p>新加坡用綠化降溫</p>
+                      </div>
+                    </a>         
                   </div>
                 </div>
               </div>
@@ -265,7 +282,7 @@
                 <div class="left">
                   <div class="box">
                     <a href="https://udn.com/news/story/11319/3302778">
-                      <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                      <img src="../public/images/relate/relate_4.jpg" alt="">
                       <div class="describe">
                         <p>勞工高溫休息於法有據 醫籲落實勞檢</p>
                       </div>
@@ -275,7 +292,7 @@
                 <div class="middle-left">
                   <div class="box">
                     <a href="https://udn.com/news/story/11321/3283436">
-                      <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                      <img src="../public/images/relate/relate_5.jpg" alt="">
                       <div class="describe">
                         <p>聯合筆記／走路有風的城市</p>
                       </div>
@@ -285,7 +302,7 @@
                 <div class="middle-right">
                   <div class="box">
                     <a href="https://udn.com/news/story/7323/3787399">
-                      <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                      <img src="../public/images/relate/relate_6.jpg" alt="">
                       <div class="describe">
                         <p>減緩短暫強降雨致災情況 公私合作打造新北海綿城市</p>
                       </div>
@@ -295,7 +312,7 @@
                 <div class="right">
                   <div class="box">
                     <a href="https://vision.udn.com/vision/story/12840/3829036">
-                      <img src="https://picsum.photos/id/1020/4288/2848" alt="">
+                      <img src="../public/images/relate/relate_7.jpg" alt="">
                       <div class="describe">
                         <p>超「綠」辦公樓 出差要買碳排費</p>
                       </div>
@@ -304,11 +321,10 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="content">
-          <div class="container">
             <share></share>
+            <br>
+            <logo></logo>
+            <br>
             <editor>
               <div>採訪團隊：鄭朝陽、洪敬浤、徐如宜、鄭維真、張裕珍、魏翊庭</div>
               <div>影像：王騰毅、林澔一、杜建重、黃仲裕、報系資料照</div>
@@ -320,6 +336,9 @@
             </editor>
           </div>
         </div>
+      </div>   
+    </div>
+    <div class="footer">
         <div class="share">
           <div class="content">
             <div class="container">
@@ -327,7 +346,6 @@
             </div>
           </div>
         </div>
-      </div>   
     </div>
   </div>
 </template>
@@ -391,7 +409,7 @@ export default {
     var controller = new ScrollMagic.Controller();
 
     // var slides = document.querySelector("#video-wrapper");
-    var cover3 = document.querySelector("#follow-up-subtile-background");
+    // var cover3 = document.querySelector("#follow-up-subtile-background");
     var end = document.querySelector("#end-background-video");
                 
     // new ScrollMagic.Scene({
@@ -403,19 +421,19 @@ export default {
     //   // .addIndicators() // add indicators (requires plugin)
     //   .addTo(controller);
 
-    new ScrollMagic.Scene({
-        triggerElement: cover3,
-        triggerHook: 'onLeave',
-        duration: "100%"
-      })
-      .setPin(cover3, {pushFollowers: false})
-      // .addIndicators() // add indicators (requires plugin)
-      .addTo(controller);
+    // new ScrollMagic.Scene({
+    //     triggerElement: cover3,
+    //     triggerHook: 'onLeave',
+    //     duration: "100%"
+    //   })
+    //   .setPin(cover3, {pushFollowers: false})
+    //   // .addIndicators() // add indicators (requires plugin)
+    //   .addTo(controller);
 
     new ScrollMagic.Scene({
         triggerElement: end,
         triggerHook: 'onLeave',
-        duration: "400%"
+        duration: "500%"
       })
       .setPin(end, {pushFollowers: false})
       // .addIndicators() // add indicators (requires plugin)
@@ -470,6 +488,7 @@ html, body {
 
 }
 #app {
+  position: relative;
   .container {
     padding: 20px;
     @media screen and (min-width: 321px) and (max-width: 520px) {
@@ -595,7 +614,7 @@ html, body {
       .main-title {
         background-color: #ffffff;
         font-size: 25px;
-        padding: 7px;
+        padding: 7px 8px;
       }
     }
   }
@@ -603,7 +622,13 @@ html, body {
     position: relative;
     z-index: 100;
     background-color: white;
-    .spreadOfTemperature {
+    padding-top: 104px;
+    .chart-title {
+       font-size: 17px;
+       font-weight: bold;
+       padding-bottom: 63px;
+    }
+    .spread-of-temperature {
       position: relative;
       video {
         width: 100%;
@@ -615,55 +640,77 @@ html, body {
         top: 0;
       }
     }
-    
+    .feature-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
     .motos {
       width: 100%;
+    }
+    .motos-describtion {
+      font-size: 17px;
+      color: #7d7d7d;
     }
   }
   .follow-up {
     position: relative;
     z-index: 100;
     background-color: #fff;
-    #follow-up-subtile-background {
-      height: 100vh;
-      background: url('../public/images/heat_island_img5_mob.jpg') no-repeat;
+    padding-bottom: 176px;
+    .follow-up-main-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .follow-up-subtile-wrapper {
+      height: 200vh;
+      background-image: url('../public/images/heat_island_img5_mob.jpg');
+      background-repeat: no-repeat;
       background-size: cover;
-      @media screen and (min-width: 321px) and (max-width: 520px) {
+      background-attachment: fixed;
+      position: relative;
+      @media screen and (min-width: 321px) {
 
       }
-      @media screen and (min-width: 521px) and (max-width: 768px) {
-        background-position: left bottom;
+      @media screen and (min-width: 521px) {
+
       }
       @media screen and (min-width: 769px) {
-        background: url('../public/images/heat_island_img5.jpg') no-repeat;
-        background-position: right bottom;
+        background-image: url('../public/images/heat_island_img5.jpg');
       }
-      // background-position: 0 50%;
-      // <img :src="srcRWD(require('../public/images/' + subtitleImgMob2) , require('../public/images/' + subtitleImg2))" alt="">
-      // img {
-      //   width: 100%;
-      // }
-    }
-    .follow-up-subtile {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      height: 100vh;
-      .follow-up-subtile-content {
-        font-size: 25px;
-        background-color: #ffffff;
-        padding: 5px 13px;
+      
+      .follow-up-subtile {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .follow-up-subtile-content {
+          background-color: white;
+        }
       }
     }
     .follow-up-content {
+      padding-top: 109px;
+      .main-title {
+        background-color: #ffffff;
+        font-size: 25px;
+        padding: 7px 8px;
+      }
       .hot-city {
+        padding-top: 40px;
         width: 100%;
       }
-    }
-    .number-group {
-        background-color: #f2f2f2;
+      .hot-city-describtion {
+        font-size: 17px;
+        color: #7d7d7d;
       }
+      .chart-describtion {
+          font-size: 12.5px;
+          color: #7d7d7d;
+      }
+    }
   }
 
   .end {
@@ -678,7 +725,7 @@ html, body {
       }
     }
     .box {
-      padding: 12px 0;
+      padding: 12px 0 34px;
         &::after {
           content: '';
           display: block;
@@ -695,7 +742,8 @@ html, body {
         }
         img {
           float: right;
-          width: 60%;
+          width: 100%;
+          padding-bottom: 9.4px;
           @media screen and (min-width: 321px) and (max-width: 520px) {
             
           }
@@ -729,11 +777,16 @@ html, body {
       position: relative;
       z-index: 110;
       color: white;
-      height: 200vh;
-      padding: 500px 0;
+      padding: 500px 0 450px;
       .end-report {
         .end-report-title {
-          color: black;
+          font-size: 15px;
+          padding-bottom: 10px;
+          border-bottom: solid 2px #7d7d7d;
+          .end-report-title-mark {
+            background-color:#ff0000;
+            padding-right: 5px;
+          }
         }
         .end-report-related-first-layer {
           @media screen and (min-width: 321px) and (max-width: 520px) {
@@ -791,6 +844,12 @@ html, body {
         background-color: white;
       }
     }
+  }
+  .footer {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    z-index: 120;
   }
 }
 </style>
