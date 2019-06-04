@@ -46,7 +46,8 @@ export default {
             top: 0,
             isOpen: false,
             menuSlideDirection: "",
-            getTitle: []
+            getTitle: [],
+            lastScrollTop: 0
         }
     },
     computed: {
@@ -102,15 +103,14 @@ export default {
         },
         handleScroll: function(event) {
             let currentH = window.pageYOffset
-            if (currentH < window.innerHeight / 2) {
+            let st = (document.body.getBoundingClientRect()).top
+            
+            if (currentH === 0 || st > this.lastScrollTop ) {
                 this.top = 0
             } else {
-                if (window.innerWidth <= 1024) {
-                    this.top = 2
-                } else {
-                    this.top = 2
-                }
+                this.top = -60
             }
+            this.lastScrollTop = st
         },
         handleBurger: function(event) {
             
@@ -239,6 +239,7 @@ export default {
     left: 0;
     z-index: 200;
     transition: opacity 0.7s ease;
+    transition: all 0.7s ease;
 }
 #icon {
     position: absolute;
