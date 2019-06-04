@@ -11,11 +11,11 @@
                   <img :src="links[1].logo" alt="">
               </a>
           </li>
-          <!-- <li class="list" @click="handleGA(links[2].name)" >
+          <li class="list" @click="handleGA(links[2].name)" >
               <a :href="links[2].link">
                   <img :src="links[2].logo" alt="">
               </a>
-          </li> -->
+          </li>
       </ul>
   </div>
 </template>
@@ -30,6 +30,11 @@ export default {
       return {
           links: [
               {
+                  name: '願景工程',
+                  link: 'https://vision.udn.com/',
+                  logo: require('../../../public/images/logo/vision_logo.svg')
+              },
+              {
                   name: '聯合新聞網',
                   link: 'https://udn.com/news/index',
                   logo: require('../../../public/images/logo/footer_logo_UDN_white.svg')
@@ -38,11 +43,6 @@ export default {
                   name: '新媒體中心',
                   link: '.',
                   logo: require('../../../public/images/logo/footer_logo_newmedia_white.svg')
-              },
-              {
-                  name: '願景工程',
-                  link: 'https://vision.udn.com/',
-                  logo: require('../../../public/images/logo/vision_logo.svg')
               }
           ]
       }
