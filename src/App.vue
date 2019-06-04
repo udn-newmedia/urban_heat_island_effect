@@ -2,9 +2,12 @@
   <div id="app">
     <Indicator></Indicator>
     <Head-Bar head-color="#fff" icon-color="#000">
-      <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
+      <!-- <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
       <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
-      <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡綠化降溫</a>
+      <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡綠化降溫</a> -->
+      <a href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
+      <a href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
+      <a href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡綠化降溫</a>
     </Head-Bar>
     <div class="cover">
       <div class="cover-section cover-section1">
@@ -289,9 +292,7 @@
                       </div>
                     </a>
                   </div>
-                </div>
-                <div class="middle-left">
-                  <div class="box">
+                    <div class="box">
                     <a href="https://udn.com/news/story/11321/3283436">
                       <img src="../public/images/relate/relate_5.jpg" alt="">
                       <div class="describe">
@@ -300,7 +301,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="middle-right">
+                <div class="right">
                   <div class="box">
                     <a href="https://udn.com/news/story/7323/3787399">
                       <img src="../public/images/relate/relate_6.jpg" alt="">
@@ -309,8 +310,6 @@
                       </div>
                     </a>   
                   </div>
-                </div>
-                <div class="right">
                   <div class="box">
                     <a href="https://vision.udn.com/vision/story/12840/3829036">
                       <img src="../public/images/relate/relate_7.jpg" alt="">
@@ -841,7 +840,7 @@ html, body {
             padding-right: 5px;
           }
         }
-        .end-report-related-first-layer {
+        .end-report-related-first-layer, .end-report-related-sec-layer {
           @media screen and (min-width: 321px) and (max-width: 520px) {
             
           }
@@ -851,45 +850,65 @@ html, body {
           @media screen and (min-width: 769px) {
             display: flex;
           }
+
           .left, .right {
             @media screen and (min-width: 321px) and (max-width: 520px) {
             
             }
             @media screen and (min-width: 521px) and (max-width: 768px) {
               width: 50%;
-              padding-right: 12px;
+              
             }
             @media screen and (min-width: 769px) {
               width: 50%;
+            }   
+          }
+          .left {
+            @media screen and (min-width: 521px) and (max-width: 768px) {
+              padding-right: 12px;
+              
+            }
+            @media screen and (min-width: 769px) {
               padding-right: 12px;
             }
-            
           }
         }
         .end-report-related-sec-layer {
-          
-          @media screen and (min-width: 321px) and (max-width: 520px) {
-            
-          }
-          @media screen and (min-width: 521px) and (max-width: 768px) {
-            display: flex; 
-          }
-          @media screen and (min-width: 769px) {
-            display: flex;
-          }
-          .left, .middle-left, .middle-right, .right {
+          .left, .right {
             @media screen and (min-width: 321px) and (max-width: 520px) {
             
             }
             @media screen and (min-width: 521px) and (max-width: 768px) {
- 
-              padding-right: 12px;
+              display: flex;
+              
             }
             @media screen and (min-width: 769px) {
-
-              padding-right: 12px;
+              display: flex;
             }
-            
+            .box {
+              @media screen and (min-width: 321px) and (max-width: 520px) {
+              
+              }
+              @media screen and (min-width: 521px) and (max-width: 768px) {
+                width: 50%;
+                
+              }
+              @media screen and (min-width: 769px) {
+                width: 50%;
+              }
+              &:first-child {
+                @media screen and (min-width: 321px) and (max-width: 520px) {
+              
+                }
+                @media screen and (min-width: 521px) and (max-width: 768px) {
+                  padding-right: 12px;
+                  
+                }
+                @media screen and (min-width: 769px) {
+                  padding-right: 12px;
+                }
+              }
+            }
           }
         }
       }
