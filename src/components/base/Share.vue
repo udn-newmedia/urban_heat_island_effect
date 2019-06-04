@@ -54,6 +54,7 @@ export default {
       margin: 10px 0px;
       height: 28px;
       display: flex;
+      justify-content: center;
   }
   .fb-send-block{
       float: left;

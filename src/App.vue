@@ -77,7 +77,8 @@
           <br>
           <p>隨著高溫熱氣被困在都市建物中無法散去，不僅讓民眾感到厭世、高溫自殺率屢屢攀高外，空汙的程度也跟高溫有關。對岸的香港政府更研究發現，2003年爆發嚴重的SARS疫情，疫情擴散也與都市建築物密集，導致空氣不流通有關。要如何減緩熱島效應，讓台灣島不「發燒」，已經刻不容緩。</p>
           <div class="share">
-            <i class="facebook i-facebook-1"></i><i class="line i-line"></i>
+            <i  @click="FacebookShare(facebookUrl)" class="facebook i-facebook-1"></i>
+            <i  @click="LineShare(lineUrl)" class="line i-line" ></i>
           </div>
         </div>
       </div>
@@ -135,7 +136,7 @@
             <br>
             <p>如果夜間最低氣溫高於25度，就像熱帶地區的夜間溫度，稱為「夜間熱帶」（The Trapical Night）。夜間高溫日數越多，代表熱島效應影響越顯著。</p>
             <br>
-            <p>根據中央氣象局資料，1991-2000年每年平均夜間高溫日數為9.5日，2001-2010年為11日，但2011-2018年提高到16天。</p>
+            <p>根據中央氣象局資料，1991-2000年每年平均夜間高溫日數為81日，2001-2010年為97.5日，但2011-2018年提高到109.9天。</p>
             <br>
             <p>中央研究院環境變遷研究中心研究員林傳堯，分析台北市7、8月每小時均溫的長期趨勢，也證實台北市夜晚越來越熱；以每日最低溫出現的清晨5點來看，1971-1980年每日平均溫度為25.6度，但2001-2010年則提高到27.3度。</p>
             <br>
@@ -321,9 +322,7 @@
                 </div>
               </div>
             </div>
-            <share></share>
-            <br>
-            <logo></logo>
+            <share href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/"></share>
             <br>
             <editor>
               <div>採訪團隊：鄭朝陽、洪敬浤、徐如宜、鄭維真、張裕珍、魏翊庭</div>
@@ -334,6 +333,10 @@
               <div>監製：林秀姿、董谷音、潘如瑩</div>
               <div>2019.06.18</div>
             </editor>
+            <br>
+            <logo></logo>
+            <br>
+            <Question href="https://www.surveycake.com/s/KpQKN" text="填寫閱讀體驗問卷"></Question>
           </div>
         </div>
       </div>   
@@ -359,6 +362,7 @@ import chart4 from './components/chart4.vue'
 import numberBox from './components/numberBox.vue'
 import barChart from './components/barChart.vue'
 import ScrollMagic from 'scrollmagic'
+import Utils from 'udn-newmedia-utils'
 
 export default {
   name: 'app',
@@ -390,7 +394,9 @@ export default {
       backgrounds: [true, false, false , false],
       isMainTitle: false,
       isNotCover: false,
-      isCoverActive: false
+      isCoverActive: false,
+      lineUrl: 'https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/',
+      facebookUrl: 'https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/',
     }
   },
   components: {
@@ -472,7 +478,51 @@ export default {
       vm.$set(vm.isCurrentCover, vm.currentCover, true)
       vm.$set(vm.isCurrentCoverMob, vm.currentCoverMob, true )
 
-    }
+    },
+    LineShare (href) {
+      ga("newmedia.send", {
+        "hitType": "event",
+        "eventCategory": "Line Share",
+        "eventAction": "click",
+        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [line share]"
+      })
+      if (Utils.detectMob()) {
+        // 手機
+        window.open("//line.me/R/msg/text/?" + document.querySelector('title').innerHTML + "%0D%0A%0D%0A" + document.querySelector('meta[property="og:description"]').content + "%0D%0A%0D%0A" + href)
+      } else {
+        window.open("https://lineit.line.me/share/ui?url=" + href)
+      }
+    },
+    FacebookShare (href) {
+      ga("newmedia.send", {
+        "hitType": "event",
+        "eventCategory": "Facebook Share",
+        "eventAction": "click",
+        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [facebook share]"
+      })
+      FB.ui(
+        {
+          method: 'share_open_graph',
+          action_type: 'og.shares',
+          action_properties: JSON.stringify({
+            object: {
+              'og:url': href,
+              'og:title': '你是網路「透明人」嗎？測驗你的隱私危險指數',
+              'og:description': '台灣人愛滑臉書、下載App，卻不知道自己的隱私可能已經悄悄外洩，在網路世界中宛如透明人。你的個資保護夠安全嗎？快透過小測驗評估你的隱私危險指數。',
+              'og:image': 'https://udn.com/upf/newmedia/2019_data/digital_privacy/quiz/meta/meta_quiz.jpg'
+            }
+          })
+        },
+        // callback
+        function(response) {
+          if (response && !response.error_message) {
+            console.log(response);
+          } else {
+            console.log(response.error_message);
+          }
+        }
+      );
+    },
   }
 }
 </script>
@@ -580,6 +630,9 @@ html, body {
       text-align: center;
       font-size: 37px;
       color: #535353;
+      i {
+        cursor: pointer;
+      }
     }
   }
   .introduction-video {
@@ -850,6 +903,7 @@ html, body {
     background-color: white;
     position: relative;
     z-index: 120;
+    padding: 15px 0;
   }
 }
 </style>

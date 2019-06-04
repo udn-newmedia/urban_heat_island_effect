@@ -5,6 +5,7 @@ import store from './store'
 import globalComponents from '@/plugins/baseComponents.js'
 
 Vue.config.productionTip = false
+Vue.use(globalComponents)
 
 Vue.use(VueMq, {
   breakpoints: { 
@@ -17,7 +18,7 @@ Vue.use(VueMq, {
   },
   defaultBreakpoint: 's' // customize this for SSR
 })
-Vue.use(globalComponents)
+
 
 new Vue({
   store,

@@ -1,8 +1,8 @@
 <template>
-  <div class="brand-logo">
+  <div class="logo">
       <ul class="logo-lists">
           <li class="list" @click="handleGA(links[0].name)" >
-              <a target="_blank" :href="links[0].link">
+              <a :href="links[0].link">
                   <img :src="links[0].logo" alt="">
               </a>
           </li>
@@ -11,6 +11,11 @@
                   <img :src="links[1].logo" alt="">
               </a>
           </li>
+          <!-- <li class="list" @click="handleGA(links[2].name)" >
+              <a :href="links[2].link">
+                  <img :src="links[2].logo" alt="">
+              </a>
+          </li> -->
       </ul>
   </div>
 </template>
@@ -27,12 +32,17 @@ export default {
               {
                   name: '聯合新聞網',
                   link: 'https://udn.com/news/index',
-                //   logo: require('@/../public/images/logo/logo_udn2.jpg')
+                  logo: require('../../../public/images/logo/footer_logo_UDN_white.svg')
               },
               {
                   name: '新媒體中心',
                   link: '.',
-                //   logo: require('@/../public/images/logo/logo_new_media_center2.jpg')
+                  logo: require('../../../public/images/logo/footer_logo_newmedia_white.svg')
+              },
+              {
+                  name: '願景工程',
+                  link: 'https://vision.udn.com/',
+                  logo: require('../../../public/images/logo/vision_logo.svg')
               }
           ]
       }
@@ -57,19 +67,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.brand-logo {
-    // margin: 35px 0;
+.logo {
+    margin: 35px 0;
+    display: flex;
+    justify-content: center;
     .logo-lists {
-        // margin: 10px 16px;
+        margin: 10px 16px;
        list-style:none;
        .list {
            display: inline-block;
            width: 128px;
            height: 37px;
            color: white;
-           img {
-                width: 100%;
-           }
        }
     }
 }

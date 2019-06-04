@@ -1,6 +1,8 @@
 <template>
-  <div id="editor">
-    <slot></slot>
+  <div id="editor-wrapper">
+    <div class="editor">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -10,11 +12,16 @@ export default {
 }
 </script>
 
-<style scoped>
-  #editor{
+<style lang="scss" scoped>
+  #editor-wrapper{
     font-weight: normal;
     font-size: 20px;
     line-height: 1.78;
     opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    .editor {
+
+    }
   }
 </style>
