@@ -247,10 +247,20 @@
     </div>
     <div class="end">
       <div id="end-background-video">
-        <video ref="end-background-video" width="100vw" preload="metadata" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)" autobuffer autoplay loop muted playsinline>
-          <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)" webkit-playsinline="true"></source>
-          <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"></source>
-          <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"></source>
+        <video ref="end-background-video"
+          width="100vw"
+          preload="metadata"
+          :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"
+          :poster="srcRWD(require('../public/video/heat_island_v2_mob_bg.jpg'), require('../public/video/heat_island_v2_bg.jpg'))"
+          autobuffer
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <!-- <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)" webkit-playsinline="true"></source>
+          <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"></source> -->
+          <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)" />
         </video>
       </div>
       <div class="ending">
