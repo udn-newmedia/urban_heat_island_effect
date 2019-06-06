@@ -641,6 +641,7 @@ html, body {
       width: 100%;
       background-size: cover;
       will-change: transform;
+      backface-visibility: hidden; 
     }
 
     .cover-background1 {
@@ -704,6 +705,7 @@ html, body {
     }
     .video-covor-background-active {
       position: fixed;
+      backface-visibility: hidden;
     }
     .video-covor-content {
       position: absolute;
