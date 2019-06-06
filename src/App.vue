@@ -141,11 +141,11 @@
             <br>
             <p>如果夜間最低氣溫高於25度，就像熱帶地區的夜間溫度，稱為「夜間熱帶」（The Trapical Night）。夜間高溫日數越多，代表熱島效應影響越顯著。</p>
             <br>
-            <p>根據中央氣象局資料，1991-2000年每年平均夜間高溫日數為81日，2001-2010年為97.5日，但2011-2018年提高到109.9天。</p>
+            <p>根據中央氣象局資料，台北1991-2000年每年平均夜間高溫日數為81日，2001-2010年為97.5日，但2011-2018年提高到109.9天。</p>
             <br>
             <p>中央研究院環境變遷研究中心研究員林傳堯，分析台北市7、8月每小時均溫的長期趨勢，也證實台北市夜晚越來越熱；以每日最低溫出現的清晨5點來看，1971-1980年每日平均溫度為25.6度，但2001-2010年則提高到27.3度。</p>
             <br>
-            <p>長期觀測氣象資訊的中央氣象局氣象科技中心科長陳孟詩就說，天氣越來越熱，當晚間溫度超過28度，就需要開冷氣，否則根本沒辦法好好睡，但開冷氣睡覺的天數不斷增加，電力使用增加，加上空調熱氣都讓戶外溫度再上升，就更得依靠冷氣，簡直是惡性循環。</p>
+            <p>長期觀測氣象資訊的中央氣象局科長陳孟詩就說，天氣越來越熱，當晚間溫度超過28度，就需要開冷氣，否則根本沒辦法好好睡，但開冷氣睡覺的天數不斷增加，電力使用增加，加上空調熱氣都讓戶外溫度再上升，就更得依靠冷氣，簡直是惡性循環。</p>
             <br>
             <br>
           </div>
@@ -464,6 +464,8 @@ export default {
       
       let vm = this
       let mainTitleVideo = vm.$refs['video-wrapper']
+      let body = document.body;
+      let timer;
       
       if (this.isElementInViewport(vm.$refs['content1'])) {
         this.currentCoverMob = 0
@@ -490,6 +492,15 @@ export default {
       vm.isCurrentCoverMob.fill(false)
       vm.$set(vm.isCurrentCover, vm.currentCover, true)
       vm.$set(vm.isCurrentCoverMob, vm.currentCoverMob, true )
+
+      clearTimeout(timer);
+      if(!body.classList.contains('disable-hover')) {
+        body.classList.add('disable-hover')
+      }
+      
+      timer = setTimeout(function(){
+        body.classList.remove('disable-hover')
+      },500);
 
     },
     handleGA (category, tagName) {
@@ -556,6 +567,10 @@ export default {
 
 *, *::after, *::before {
   box-sizing: border-box;
+}
+
+.disable-hover {
+  pointer-events: none;
 }
 
 html, body {
