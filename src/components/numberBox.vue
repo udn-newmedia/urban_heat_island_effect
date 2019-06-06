@@ -2,7 +2,7 @@
   <div class="numberBox">
     <div class="left">
        <div class="number">
-        {{ percent }}%
+        {{ percent }}<span class="percent">%</span>
       </div>
     </div> 
     <div class="right">
@@ -59,7 +59,21 @@ export default {
     .number {
       color: #fe0000;
       font-size: 25px;
+      font-weight: bold;
       padding-bottom: 10px;
+
+      @media screen and (min-width: 321px) {
+
+      }
+      @media screen and (min-width: 521px) {
+
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 40px; 
+      }
+      .percent {
+        font-size: 25px;
+      }
     }
   }
   .right {
@@ -76,10 +90,30 @@ export default {
       color: #000000;
       line-height: 2;
       padding-bottom: 12px;
+      @media screen and (min-width: 321px) {
+
+      }
+      @media screen and (min-width: 521px) {
+
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 21px; 
+        line-height: 1.62;
+        padding: 0;
+      }
     }
     .source-info {
       color: #7d7d7d;
       font-size: 12.5px;
+      @media screen and (min-width: 321px) {
+
+      }
+      @media screen and (min-width: 521px) {
+
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 17px; 
+      }
     }
   }
 }

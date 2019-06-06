@@ -457,6 +457,7 @@ export default {
       }
       @media screen and (min-width: 769px) {
         left: 250px;
+        font-size: 21px;
       }
     }
     .chart2-mob {

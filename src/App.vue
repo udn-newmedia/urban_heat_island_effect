@@ -100,7 +100,7 @@
       <div class="fever-city">
         <div class="content">
           <div class="container"> 
-            <p>氣象專家彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。他預測，未來20年內，台北市中午會經常有高達40度的高溫。</p>
+            <p>氣象專家彭啟明指出，台北市會這麼熱，除了熱島效應外，盆地效應、太平洋高壓籠罩、溫室效應等因素也有影響。<span style="font-weight: bolder">他預測，未來20年內，台北市中午會經常有高達40度的高溫。</span></p>
             <br>
             <br>
             <h3 class="chart-title">大台北地區於2018年8月1日的溫度分布圖</h3>
@@ -114,6 +114,8 @@
               <img class="charText" :src="srcRWD(require('../public/images/' + chartOneTextImgMob), require('../public/images/' + chartOneTextImg))" alt="">
             </div>
             <p>資料來源／中央氣象局</p>
+            <br>
+            <br>
             <br>
             <br>
             <h3 class="feature-title feature-title1">熱島效應特色一：集中在都會區</h3>
@@ -166,7 +168,7 @@
         <div class="content">
           <div class="container">
             <br>
-            <p>熱島效應不僅使城市環境越來越熱，也會對民眾的身心理健康、生產力等各層面造成影響，甚至導致空氣汙染加劇。</p>
+            <p><span style="font-weight: bolder">熱島效應不僅使城市環境越來越熱，也會對民眾的身心理健康、生產力等各層面造成影響，甚至導致空氣汙染加劇。</span></p>
             <br>
             <numberBox
               :percent="3.76"
@@ -198,7 +200,7 @@
       <div class="follow-up-content">
         <div class="content">
           <div class="container">
-            <h3 class="follow-up-main-title">高溫讓人厭世</h3>
+            <div class="follow-up-main-title">高溫讓人厭世</div>
             <br>
             <p>對於心血管、呼吸道等慢性病患，不只寒流來要小心，天氣太熱也會提高致死率。多數人認為好天氣會有好心情，但研究顯示，天氣太熱時自殺率會上升，精神疾病發作率也會增加。</p>
             <br>
@@ -227,13 +229,15 @@
             <br>
             <p>這項研究把過去40年每日最高溫的前5%溫度定義為高溫日標準，台北為攝氏35.2度、台中34度、高雄33.3度；換句話說，當每日最高溫超過標準值，就屬於高溫日，低於標準值2度定義為非高溫日。</p>
             <br>
+            <br>
+            <br>
             <h3 class="follow-up-main-title">台北熱浪日與非熱浪日的空氣品質研究</h3>
             <br>
             <chart4></chart4>
             <div class="chart-describtion">
-              <p>註：熱浪與非熱浪個案是取自2014年7月和2015年7、8月三個月。此研究所定義的熱浪為台北日最高溫大於35.2度，低於33.2度則為非熱浪。</p>
+              <div>註：熱浪與非熱浪個案是取自2014年7月和2015年7、8月三個月。此研究所定義的熱浪為台北日最高溫大於35.2度，低於33.2度則為非熱浪。</div>
               <br>
-              <p>資料來源／中研院永續科學研究計畫-整合性多元高解析度資訊之台灣熱浪脆弱度評估</p>
+              <div>資料來源／中研院永續科學研究計畫-整合性多元高解析度資訊之台灣熱浪脆弱度評估</div>
             </div>
             <br>
             <p>以環保署測站資料研究分析發現，當高溫日發生時，空氣中臭氧、PM10、PM2.5的濃度均明顯高於非高溫日，但一氧化碳、NO2、SO2 沒有明顯差異；透過數值模擬，也得到類似的結果。林傳堯說，高溫會造成臭氧增加，高溫期間，細懸浮微粒中二次氣膠所占比例也大幅提高，同時也可能影響空氣中的懸浮微粒濃度。</p>
@@ -273,7 +277,7 @@
               <div class="end-report-related-first-layer">
                 <div class="left">
                   <div class="box">
-                    <a @click="handleGA('Related_main', 'R1_main')"  href="">
+                    <a @click="handleGA('Related_main', 'R1_main')"  href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">
                       <img src="../public/images/relate/relate_2.jpg" alt="">
                       <div class="describe">
                         <p>幫都市退燒</p>
@@ -283,7 +287,7 @@
                 </div>
                 <div class="right">
                   <div class="box">
-                    <a @click="handleGA('Related_main', 'R2_main')" href="">
+                    <a @click="handleGA('Related_main', 'R2_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">
                       <img src="../public/images/relate/relate_3.jpg" alt="">
                       <div class="describe">
                         <p>新加坡用綠化降溫</p>
@@ -550,22 +554,28 @@ export default {
 // @import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import './assets/baseSCSS/theme.scss';
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
-
 }
 #app {
   position: relative;
   .container {
     padding: 20px;
+    width: 100%;
+    margin: 0 auto;
     @media screen and (min-width: 321px) and (max-width: 520px) {
       padding: 0 35px;
     }
     @media screen and (min-width: 521px) and (max-width: 768px) {
-      padding: 0 109px;
+      max-width: 550px;
     }
     @media screen and (min-width: 769px) {
-      padding: 0 325px;
+      max-width: 880px;
+      // padding: 0 325px;
     }
   }
   .content {
@@ -589,6 +599,15 @@ html, body {
         z-index: 100;
         padding: 17px;
         background-color: white;
+        @media screen and (min-width: 321px) {
+
+        }
+        @media screen and (min-width: 521px) {
+          padding: 27px 35px;
+        }
+        @media screen and (min-width: 769px) {
+          padding: 24px 40px;
+        }
         .source {
           color: #7d7d7d;
           font-size: 15px;
@@ -685,6 +704,15 @@ html, body {
         background-color: #ffffff;
         font-size: 25px;
         padding: 7px 8px;
+        @media screen and (min-width: 321px) {
+
+        }
+        @media screen and (min-width: 521px) {
+          padding: 17px 33px;
+        }
+        @media screen and (min-width: 769px) {
+          font-size: 35px;
+        }
       }
     }
   }
@@ -697,6 +725,15 @@ html, body {
        font-size: 17px;
        font-weight: bold;
        padding-bottom: 63px;
+       @media screen and (min-width: 321px) {
+
+        }
+      @media screen and (min-width: 521px) {
+        
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 25px;
+      }
     }
     .spread-of-temperature {
       position: relative;
@@ -713,6 +750,15 @@ html, body {
     .feature-title {
       font-size: 20px;
       font-weight: bold;
+      @media screen and (min-width: 321px) {
+
+        }
+      @media screen and (min-width: 521px) {
+        
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 25px;
+      }
     }
     .motos {
       width: 100%;
@@ -727,9 +773,27 @@ html, body {
     z-index: 100;
     background-color: #fff;
     padding-bottom: 176px;
+    @media screen and (min-width: 321px) {
+
+      }
+    @media screen and (min-width: 521px) {
+      
+    }
+    @media screen and (min-width: 769px) {
+
+    }
     .follow-up-main-title {
       font-size: 20px;
       font-weight: bold;
+      @media screen and (min-width: 321px) {
+
+        }
+      @media screen and (min-width: 521px) {
+        
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 25px;
+      }
     }
     .follow-up-subtile-wrapper {
       height: 200vh;
@@ -758,15 +822,49 @@ html, body {
         align-items: center;
         .follow-up-subtile-content {
           background-color: white;
+          .main-title {
+            background-color: #ffffff;
+            font-size: 25px;
+            padding: 7px 8px;
+            @media screen and (min-width: 321px) {
+
+            }
+            @media screen and (min-width: 521px) {
+
+            }
+            @media screen and (min-width: 769px) {
+              font-size: 35px;
+              padding: 17px 30px;
+            }
+          }
         }
       }
     }
     .follow-up-content {
       padding-top: 109px;
+      @media screen and (min-width: 321px) {
+
+      }
+      @media screen and (min-width: 521px) {
+
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 35px;
+        padding: 177px 0px;
+      }
       .main-title {
         background-color: #ffffff;
         font-size: 25px;
         padding: 7px 8px;
+        @media screen and (min-width: 321px) {
+
+        }
+        @media screen and (min-width: 521px) {
+          
+        }
+        @media screen and (min-width: 769px) {
+          font-size: 25px;
+        }
       }
       .hot-city {
         padding-top: 40px;
@@ -779,10 +877,30 @@ html, body {
       .chart-describtion {
           font-size: 12.5px;
           color: #7d7d7d;
+          @media screen and (min-width: 321px) {
+
+          }
+          @media screen and (min-width: 521px) {
+            
+          }
+          @media screen and (min-width: 769px) {
+            font-size: 17px;
+          }
       }
     }
   }
+  .number-group {
+    background-color: #f2f2f2;
+    @media screen and (min-width: 321px) {
 
+    }
+    @media screen and (min-width: 521px) {
+
+    }
+    @media screen and (min-width: 769px) {
+      padding: 133px 0 128px;
+    }
+  }
   .end {
     position: relative;
     background-color:white;
@@ -853,6 +971,16 @@ html, body {
           font-size: 15px;
           padding-bottom: 10px;
           border-bottom: solid 2px #7d7d7d;
+          @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+          }
+          @media screen and (min-width: 521px) and (max-width: 768px) {
+            
+          }
+          @media screen and (min-width: 769px) {
+            font-size: 25px;
+            margin-bottom: 33px;
+          }
           .end-report-title-mark {
             background-color:#ff0000;
             padding-right: 5px;
