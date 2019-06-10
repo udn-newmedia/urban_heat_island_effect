@@ -13,7 +13,7 @@
       <div class="cover-section cover-section1">
         <div class="container">
           <div ref="content1" class="content content1">
-            <div class="cover-contain">
+            <div class="cover-contain-full">
               <p>過去8年間，台北市每年平均有近兩個月的溫度<span class="mark">超過35度</span>。</p>
               <p class="source">資料來源／中央氣象局</p>
             </div>
@@ -23,16 +23,16 @@
       <div class="cover-section cover-section2">
         <div class="container">
           <div ref="content2" class="content content2">
-            <div class="cover-contain">
-                <p>高溫讓人「厭世」。</p>
-              </div>
+            <div class="cover-contain-half">
+              <p><span class="half-mark">高溫讓人「厭世」。</span></p>
+            </div>
           </div>
         </div> 
       </div>
       <div class="cover-section cover-section3">
         <div class="container">
           <div ref="content3" class="content content3">
-              <div class="cover-contain">
+              <div class="cover-contain-full">
                 <p>台北夏季體感溫度若達31.5度，溫度每上升1度，死亡率便提高<span class="mark">5.1%</span>。</p>
                 <br>
                 <p>體感溫度若達30.7度，溫度每上升1度，心血管疾病死亡率便增加<span class="mark">3.5%</span>。</p>
@@ -47,9 +47,9 @@
       <div class="cover-section cover-section4">
         <div class="container">
           <div ref="content4" class="content content4">
-            <div class="cover-contain">
-                <p>當寶島變熱島</p>
-                <h1 class="highline">高溫會殺人</h1>
+            <div class="cover-contain-half">
+                <p><span class="half-mark">當寶島變熱島</span></p>
+                <h1 class="highline"><span class="half-mark">高溫會殺人</span></h1>
               </div>
           </div>
         </div>
@@ -168,7 +168,9 @@
         <div class="content">
           <div class="container">
             <br>
-            <p><span style="font-weight: bolder">熱島效應不僅使城市環境越來越熱，也會對民眾的身心理健康、生產力等各層面造成影響，甚至導致空氣汙染加劇。</span></p>
+            <div class="number-group-intro">
+              <p>熱島效應不僅使城市環境越來越熱，也會對民眾的身心理健康、生產力等各層面造成影響，甚至導致空氣汙染加劇。</p>
+            </div>
             <br>
             <numberBox
               :percent="3.76"
@@ -184,13 +186,13 @@
             </numberBox>  
             <numberBox
               :percent="6"
-              describe="外氣溫度每上升一度，全國夏季尖峰耗電量增加6%。"
+              describe="外氣溫度每上升1°C，全國夏季尖峰耗電量增加6%。"
               sourceInfo="資料來源：台灣電力公司"
             >
             </numberBox>
             <numberBox
               :percent="11"
-              describe="只要溫度超過33.5度，65歲以上老人掛急診的比率提高11%。"
+              describe="只要溫度超過33.5°C，65歲以上老人掛急診的比率提高11%。"
               sourceInfo="資料來源：中研院環變中心龍世俊研究員"
             >
             </numberBox>
@@ -280,7 +282,7 @@
                     <a @click="handleGA('Related_main', 'R1_main')"  href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">
                       <img src="../public/images/relate/relate_2.jpg" alt="">
                       <div class="describe">
-                        <p>幫都市退燒</p>
+                        <span>幫都市退燒</span>
                       </div> 
                     </a>           
                   </div>
@@ -290,7 +292,7 @@
                     <a @click="handleGA('Related_main', 'R2_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">
                       <img src="../public/images/relate/relate_3.jpg" alt="">
                       <div class="describe">
-                        <p>新加坡用綠化降溫</p>
+                        <span>新加坡用綠化降溫</span>
                       </div>
                     </a>         
                   </div>
@@ -298,40 +300,48 @@
               </div>
               <div class="end-report-related-sec-layer">
                 <div class="left">
-                  <div class="box">
-                    <a @click="handleGA('Related_main', 'R3_main')" href="https://udn.com/news/story/11319/3302778">
-                      <img src="../public/images/relate/relate_4.jpg" alt="">
-                      <div class="describe">
-                        <p>勞工高溫休息於法有據 醫籲落實勞檢</p>
-                      </div>
-                    </a>
-                  </div>
+                  <div class="middle-left">
                     <div class="box">
-                    <a @click="handleGA('Related_main', 'R4_main')"  href="https://udn.com/news/story/11321/3283436">
-                      <img src="../public/images/relate/relate_5.jpg" alt="">
-                      <div class="describe">
-                        <p>聯合筆記／走路有風的城市</p>
-                      </div>
-                    </a>
+                      <a @click="handleGA('Related_main', 'R3_main')" href="https://udn.com/news/story/11319/3302778">
+                        <img src="../public/images/relate/relate_4.jpg" alt="">
+                        <div class="describe">
+                          <span>勞工高溫休息於法有據 醫籲落實勞檢</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="middle-right">
+                    <div class="box">
+                      <a @click="handleGA('Related_main', 'R4_main')"  href="https://udn.com/news/story/11321/3283436">
+                        <img src="../public/images/relate/relate_5.jpg" alt="">
+                        <div class="describe">
+                          <span>聯合筆記／走路有風的城市</span>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div class="right">
-                  <div class="box">
-                    <a @click="handleGA('Related_main', 'R5_main')"  href="https://udn.com/news/story/7323/3787399">
-                      <img src="../public/images/relate/relate_6.jpg" alt="">
-                      <div class="describe">
-                        <p>減緩短暫強降雨致災情況 公私合作打造新北海綿城市</p>
-                      </div>
-                    </a>   
+                  <div class="middle-left">
+                    <div class="box">
+                      <a @click="handleGA('Related_main', 'R5_main')"  href="https://udn.com/news/story/7323/3787399">
+                        <img src="../public/images/relate/relate_6.jpg" alt="">
+                        <div class="describe">
+                          <span>減緩短暫強降雨致災情況 公私合作打造新北海綿城市</span>
+                        </div>
+                      </a>   
+                    </div>
                   </div>
-                  <div @click="handleGA('Related_main', 'R6_main')"  class="box">
-                    <a href="https://vision.udn.com/vision/story/12840/3829036">
-                      <img src="../public/images/relate/relate_7.jpg" alt="">
-                      <div class="describe">
-                        <p>超「綠」辦公樓 出差要買碳排費</p>
-                      </div>
-                    </a>   
-                  </div>
+                  <div class="middle-right">
+                    <div  class="box">
+                      <a  @click="handleGA('Related_main', 'R6_main')"  href="https://vision.udn.com/vision/story/12840/3829036">
+                        <img src="../public/images/relate/relate_7.jpg" alt="">
+                        <div class="describe">
+                          <span>超「綠」辦公樓 出差要買碳排費</span>
+                        </div>
+                      </a>   
+                    </div>
+                  </div>     
                 </div>
               </div>
             </div>
@@ -408,8 +418,8 @@ export default {
       isMainTitle: false,
       isNotCover: false,
       isCoverActive: false,
-      lineUrl: 'https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/',
-      facebookUrl: 'https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/',
+      lineUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
+      facebookUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
     }
   },
   components: {
@@ -532,28 +542,32 @@ export default {
         "eventAction": "click",
         "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [facebook share]"
       })
-      FB.ui(
-        {
-          method: 'share_open_graph',
-          action_type: 'og.shares',
-          action_properties: JSON.stringify({
-            object: {
-              'og:url': href,
-              'og:title': '你是網路「透明人」嗎？測驗你的隱私危險指數',
-              'og:description': '台灣人愛滑臉書、下載App，卻不知道自己的隱私可能已經悄悄外洩，在網路世界中宛如透明人。你的個資保護夠安全嗎？快透過小測驗評估你的隱私危險指數。',
-              'og:image': 'https://udn.com/upf/newmedia/2019_data/digital_privacy/quiz/meta/meta_quiz.jpg'
-            }
-          })
-        },
-        // callback
-        function(response) {
-          if (response && !response.error_message) {
-            console.log(response);
-          } else {
-            console.log(response.error_message);
-          }
-        }
-      );
+      FB.ui({
+        method: 'share',
+        href: href,
+      }, function(response){});
+      // FB.ui(
+      //   {
+      //     method: 'share_open_graph',
+      //     action_type: 'og.shares',
+      //     action_properties: JSON.stringify({
+      //       object: {
+      //         'og:url': href,
+      //         'og:title': '你是網路「透明人」嗎？測驗你的隱私危險指數',
+      //         'og:description': '台灣人愛滑臉書、下載App，卻不知道自己的隱私可能已經悄悄外洩，在網路世界中宛如透明人。你的個資保護夠安全嗎？快透過小測驗評估你的隱私危險指數。',
+      //         'og:image': 'https://udn.com/upf/newmedia/2019_data/digital_privacy/quiz/meta/meta_quiz.jpg'
+      //       }
+      //     })
+      //   },
+      //   // callback
+      //   function(response) {
+      //     if (response && !response.error_message) {
+      //       console.log(response);
+      //     } else {
+      //       console.log(response.error_message);
+      //     }
+      //   }
+      // );
     },
   }
 }
@@ -600,8 +614,9 @@ html, body {
     // }
   }
   .mark {
-          color: red;
-        }
+    color: red;
+    font-weight: bold;
+  }
   .cover {
     position: relative;
     .cover-section {
@@ -609,11 +624,11 @@ html, body {
       width: 100;
       display: flex;
       align-items: center;
-      .cover-contain {
+      .cover-contain-full {
         position: relative;
         z-index: 100;
         padding: 17px;
-        background-color: white;
+        background-color: #fff;
         @media screen and (min-width: 321px) {
 
         }
@@ -628,9 +643,32 @@ html, body {
           font-size: 15px;
           padding-top: 10px;
         }
+        
+      }
+      .cover-contain-half {
+        position: relative;
+        z-index: 100;
+        padding: 17px;
+        @media screen and (min-width: 321px) {
+
+        }
+        @media screen and (min-width: 521px) {
+          padding: 27px 35px;
+        }
+        @media screen and (min-width: 769px) {
+          padding: 24px 40px;
+        }
+        .half-mark {
+          background-color: #fff;
+          padding: 18px 28px;
+        }
         .highline {
           padding-top: 6px;
-          
+          font-weight: bold;
+          & > .half-mark {
+            background-color: #fff;
+            padding: 9px 28px;
+          }
         }
       }
     }
@@ -909,13 +947,24 @@ html, body {
   .number-group {
     background-color: #f2f2f2;
     @media screen and (min-width: 321px) {
-
+       padding: 120px 0 90px;
     }
     @media screen and (min-width: 521px) {
 
     }
     @media screen and (min-width: 769px) {
       padding: 133px 0 128px;
+    }
+    .number-group-intro {
+      @media screen and (min-width: 321px) {
+
+      }
+      @media screen and (min-width: 521px) {
+
+      }
+      @media screen and (min-width: 769px) {
+        padding-bottom: 50px;
+      }
     }
   }
   .end {
@@ -1001,6 +1050,7 @@ html, body {
           .end-report-title-mark {
             background-color:#ff0000;
             padding-right: 5px;
+            font-weight: bold;
           }
         }
         .end-report-related-first-layer, .end-report-related-sec-layer {
@@ -1012,6 +1062,7 @@ html, body {
           }
           @media screen and (min-width: 769px) {
             display: flex;
+            font-size: 18px;
           }
 
           .left, .right {
@@ -1024,15 +1075,27 @@ html, body {
             }
             @media screen and (min-width: 769px) {
               width: 50%;
-            }   
+            }
+            img {
+              border-radius: 3px;
+            }
           }
           .left {
             @media screen and (min-width: 521px) and (max-width: 768px) {
-              padding-right: 12px;
+              padding-right: 6px;
               
             }
             @media screen and (min-width: 769px) {
-              padding-right: 12px;
+              padding-right: 6px;
+            }
+          }
+          .right {
+            @media screen and (min-width: 521px) and (max-width: 768px) {
+              padding-left: 6px;
+              
+            }
+            @media screen and (min-width: 769px) {
+              padding-left: 6px;
             }
           }
         }
@@ -1047,10 +1110,11 @@ html, body {
             }
             @media screen and (min-width: 769px) {
               display: flex;
+              font-size: 16px;
             }
-            .box {
+            .middle-left, .middle-right {
               @media screen and (min-width: 321px) and (max-width: 520px) {
-              
+            
               }
               @media screen and (min-width: 521px) and (max-width: 768px) {
                 width: 50%;
@@ -1059,17 +1123,69 @@ html, body {
               @media screen and (min-width: 769px) {
                 width: 50%;
               }
-              &:first-child {
-                @media screen and (min-width: 321px) and (max-width: 520px) {
+            }
+          }
+          .left {
+            @media screen and (min-width: 521px) and (max-width: 768px) {
+              padding-right: 6px;
               
-                }
-                @media screen and (min-width: 521px) and (max-width: 768px) {
-                  padding-right: 12px;
-                  
-                }
-                @media screen and (min-width: 769px) {
-                  padding-right: 12px;
-                }
+            }
+            @media screen and (min-width: 769px) {
+              padding-right: 6px;
+            }
+            .middle-left {
+              @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+              }
+              @media screen and (min-width: 521px) and (max-width: 768px) {
+                padding-right: 6px;
+                
+              }
+              @media screen and (min-width: 769px) {
+                padding-right: 6px;
+              }
+            }
+            .middle-right {
+              @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+              }
+              @media screen and (min-width: 521px) and (max-width: 768px) {
+                padding-left: 6px;
+              }
+              @media screen and (min-width: 769px) {
+                padding-left: 6px;
+              }
+            }
+          }
+          .right {
+            @media screen and (min-width: 521px) and (max-width: 768px) {
+              padding-left: 6px;
+              
+            }
+            @media screen and (min-width: 769px) {
+              padding-left: 6px;
+            }
+            .middle-left {
+              @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+              }
+              @media screen and (min-width: 521px) and (max-width: 768px) {
+                padding-right: 6px;
+                
+              }
+              @media screen and (min-width: 769px) {
+                padding-right: 6px;
+              }
+            }
+            .middle-right {
+              @media screen and (min-width: 321px) and (max-width: 520px) {
+            
+              }
+              @media screen and (min-width: 521px) and (max-width: 768px) {
+                padding-left: 6px;
+              }
+              @media screen and (min-width: 769px) {
+                padding-left: 6px;
               }
             }
           }

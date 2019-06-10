@@ -1,10 +1,11 @@
 <template>
   <div class="chart2">
       <section id="chart2-background">
-        <p class="chart2-title">台北和淡水歷年均溫走勢圖</p>
+        <!-- <p class="chart2-title"></p> -->
         <mq-layout :mq="['xs', 's', 'm']">
           <svg :class="controlAnimationProcessMob" class="chart2-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
+            <text x="20" y="140" style="font-size: 27px; font-weight: bold">台北和淡水歷年均溫走勢圖</text>
             <g id="heat_x5F_island_x5F_chart1_x5F_background_x5F_mob">
               <rect x="432.23" y="170.25" class="st0" width="13.88" height="13"/>
               <rect x="344.43" y="170.25" class="st1" width="13.88" height="13"/>
@@ -158,11 +159,13 @@
               <circle class="st0" cx="309.06" cy="522.64" r="4.83"/>
               <text transform="matrix(1.046 0 0 1 271.3994 586.2559)" class="st0 st10 st11">21.9</text>
             </g>
+            <text x="15" y="780" class="st0 st3 st4" style="color: #7d7d7d; font-size: 17px;">資料來源／中央氣象局</text>
             </svg>
         </mq-layout>
         <mq-layout :mq="['l', 'xl']">
           <svg :class="controlAnimationProcessWeb" class="chart2-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
+            <text x="220" y="100" class="st1 st5" style="font-weight: bold; font-size: 21px; fill: #000000">台北和淡水歷年均溫走勢圖</text>
             <g id="heat_x5F_island_x5F_chart1_x5F_background">
               <line class="st0" x1="155.77" y1="600.36" x2="1144.76" y2="600.36"/>
               <line class="st0" x1="168.79" y1="600" x2="168.79" y2="611.34"/>
@@ -316,8 +319,9 @@
               <circle class="st4" cx="742.81" cy="317" r="6"/>
               <circle class="st1" cx="743" cy="421" r="6"/>
             </g>
+            <text x="150" y="680" class="st8 st5 st7" style="color: #7d7d7d; font-size: 17px;">資料來源／中央氣象局</text>
             </svg>
-        </mq-layout>  
+        </mq-layout>
       </section>
       <div ref="chart-section1" class="section section1">
         <div class="container">
@@ -329,7 +333,7 @@
       <div ref="chart-section2" class="section section2">
         <div class="container">
           <div class="chart-content chart-content2">
-            <p>但自1985年起，兩站氣溫差距增至 <span class="mark">0.7度</span>，到了2018年已經<span class="mark">超過1度</span>。</p>
+            <p>但自1985年起，兩站氣溫差距增至 <span class="mark">0.6度</span>，到了2018年已經<span class="mark">接近1度</span>。</p>
             <br>
             <p>推究其因，1985年前後是台北氣象站周邊地表環境改變最大的時刻。</p>
           </div>
@@ -338,9 +342,11 @@
       <div  ref="chart-section3" class="section section3">
         <div class="container">
           <div class="chart-content chart-content5">
-            <p>1980年，中正紀念堂落成</p>
-            <p>1986年，國家圖書館啟用</p>
-            <p>1987年，兩廳院啟用</p>
+            <ul class="time-line">
+              <li>1980年，中正紀念堂落成</li>
+              <li>1986年，國家圖書館啟用</li>
+              <li>1987年，兩廳院啟用</li>
+            </ul>
             <img src="../../public/images/heat_island_img4.jpg" alt="">
           </div>
         </div>   
@@ -460,6 +466,21 @@ export default {
         font-size: 21px;
       }
     }
+    .chart2-source {
+      position: relative;
+      @media screen and (min-width: 321px) {
+
+      }
+      @media screen and (min-width: 521px) {
+        left: 100px;
+      }
+      @media screen and (min-width: 769px) {
+        color: #7d7d7d;
+        bottom: 70px;
+        left: 250px;
+        font-size: 17px;
+      }
+    }
     .chart2-mob {
       height: 100vh;
       width: 100%;
@@ -488,7 +509,10 @@ export default {
       .st10{font-family:'Arial-BoldMT';}
       .st11{font-size:21px;}
       .st12{fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;}
-      .st13{fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:5.0668,3.0401,5.0668,3.0401;}
+      .st13{
+        fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:5.0668,3.0401,5.0668,3.0401;
+      
+      }
       .st14{fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:5.0668,3.0401,5.0668,3.0401,5.0668,3.0401;}
       .st8, .st9, #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1985_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob {
         opacity: 0;
@@ -542,7 +566,7 @@ export default {
         opacity: 1;
         stroke-dashoffset: 0;
       }
-      #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob {
+      #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1985_x5F_mob {
         opacity: 1;
       }
     }
@@ -555,7 +579,7 @@ export default {
         opacity: 1;
         stroke-dashoffset: 0;
       }
-      #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob {
+      #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1985_x5F_mob {
         opacity: 1;
       }
     }
@@ -566,7 +590,9 @@ export default {
       .st1{fill:#707070;}
       .st2{font-family:'ArialMT';}
       .st3{font-size:18px;}
-      .st4{fill:#EA0303;}
+      .st4{
+        fill:#EA0303;
+      }
       .st5{font-family:'ARHeiB5-Light-B5pc-H';}
       .st6{font-size:15.0895px;glyph-orientation-vertical:0;writing-mode:tb;}
       .st7{font-size:17.0895px;}
@@ -591,7 +617,14 @@ export default {
       .st14{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:4.9579,2.9747,4.9579,2.9747;}
       
       .st15{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:4.9579,2.9747,4.9579,2.9747,4.9579,2.9747;}
-      .st16{fill:none;stroke:#EA0303;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:5,3,5,3,5,3;}
+      .st16{
+        fill:none;
+        stroke:#EA0303;
+        stroke-width:0.5;
+        stroke-miterlimit:10;
+        stroke-dasharray:5,3,5,3,5,3;
+        display: none;
+      }
       .st9, .st10 {
         opacity: 0;
         transition: all 1s;
@@ -600,6 +633,9 @@ export default {
         opacity: 0;
         transition: all 1s;
         transition-delay: 0.5s;
+      }
+      #heat_x5F_island_x5F_chart1_x5F_dot {
+        display: none;
       }
     }
     .default-web {
@@ -651,7 +687,7 @@ export default {
         opacity: 1;
         stroke-dashoffset: 0;
       }
-      #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1987, #heat_x5F_island_x5F_chart1_x5F_1986, #heat_x5F_island_x5F_chart1_x5F_1985 {
+      #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1985 {
         opacity: 1;
       }
     }
@@ -664,7 +700,7 @@ export default {
         opacity: 1;
         stroke-dashoffset: 0;
       }
-      #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1987, #heat_x5F_island_x5F_chart1_x5F_1986, #heat_x5F_island_x5F_chart1_x5F_1985 {
+      #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1985 {
         opacity: 1;
       }
     }
@@ -679,6 +715,27 @@ export default {
         background-color: white;
         position: relative;
         z-index: 100;
+        @media screen and (min-width: 321px) {
+
+        }
+        @media screen and (min-width: 521px) {
+          padding: 26px 40px;
+        }
+        @media screen and (min-width: 769px) {
+          padding: 24px 40px;
+        }
+        .time-line {
+          @media screen and (min-width: 321px) {
+
+          }
+          @media screen and (min-width: 521px) {
+            
+          }
+          @media screen and (min-width: 769px) {
+            font-size: 21px;
+            padding-bottom: 20px;
+          }
+        }
         img {
           width: 100%;
         }

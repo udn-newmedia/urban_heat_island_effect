@@ -1,10 +1,11 @@
 <template>
   <div class="chart3">
     <section id="chart3-background">
-      <p class="chart3-title">台北7、8月每小時均溫走勢圖</p>
+      <!-- <p class="chart3-title">台北7、8月每小時均溫走勢圖</p> -->
       <mq-layout :mq="['xs', 's', 'm']">
       <svg :class="controlAnimationProcessMob" class="chart3-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
+            <text x="20" y="150" style="font-size: 27px; font-weight: bold">台北7、8月每小時均溫走勢圖</text>
           <g id="heat_x5F_island_x5F_chart3_x5F_background_x5F_05">
             <rect x="46.38" y="255.93" class="st0" width="94.5" height="414.45"/>
           </g>
@@ -238,11 +239,17 @@
               C410,304.4,408.21,306.19,406,306.19z"/>
             <text transform="matrix(1 0 0 1 323.6234 297.2675)" class="st17 st18 st7">上升近1度</text>
           </g>
+          <text x="15" y="780" class="st0 st3 st4" style="fill: #7d7d7d; font-size: 17px;">
+            <tspan x="15" y="790">資料來源／Climate variability of heat wave and</tspan>
+            <tspan x="15" y="820">projection of warming scenario in Taiwan</tspan>
+            <tspan x="15" y="850">作者／林傳堯、龍世俊、郭勉之、蘇炯瑞、錢伊筠</tspan>           
+          </text>
           </svg>
       </mq-layout>
       <mq-layout :mq="['l', 'xl']">
         <svg :class="controlAnimationProcessWeb" class="chart3-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
+          <text x="220" y="65" class="st2 st3 st4" style="font-weight: bold; font-size: 21px; fill: #000000;">台北7、8月每小時均溫走勢圖</text>
           <g id="heat_x5F_island_x5F_chart3_x5F_background_x5F_05">
             <rect x="128" y="99" class="st0" width="208" height="440"/>
           </g>
@@ -569,6 +576,10 @@
               c2.86,0,5.19,2.32,5.19,5.19V144C784,146.86,781.68,149.18,778.81,149.18z"/>
             <text transform="matrix(1 0 0 1 686.0034 137.1172)" class="st23 st24 st25">上升近1度</text>
           </g>
+           <text x="100" y="650" style="font-size: 17px;fill:#7d7d7d;">
+             <tspan x="100" y="660">資料來源／Climate variability of heat wave and projection of warming scenario in Taiwan</tspan>
+             <tspan x="100" y="690">作者／林傳堯、龍世俊、郭勉之、蘇炯瑞、錢伊筠</tspan>
+           </text>
           </svg>
       </mq-layout>
     </section>
@@ -582,7 +593,7 @@
       <div ref="chart3-section2" class="section section2">
         <div class="container">
           <div class="chart-content chart-content2">
-            <p>自1971年至2010年，台北在夜間及清晨的溫度約<span class="mark">上升2度。</span></p>
+            <p><span class="mark">相較於1971-1980年，台北於2001-2010年的</span>夜間及清晨的溫度<span class="mark">上升近2度。</span></p>
             
           </div>
         </div>   
@@ -590,7 +601,7 @@
       <div ref="chart3-section3" class="section section3">
         <div class="container">
           <div class="chart-content chart-content3">
-            <p>同一時期，台北在中午的溫度則<span class="mark">僅上升1度左右</span>，顯示受熱島效應影影響，都市在夜間的溫度增幅較明顯。</p>
+            <p>同一時期，台北在中午的溫度則<span class="mark">僅上升近1度。</span>顯示受熱島效應影影響，都市在夜間的溫度增幅較明顯。</p>
           </div>
         </div>   
       </div>
@@ -938,6 +949,15 @@ export default {
         background-color: white;
         position: relative;
         z-index: 100;
+        @media screen and (min-width: 321px) {
+
+        }
+        @media screen and (min-width: 521px) {
+          
+        }
+        @media screen and (min-width: 769px) {
+          padding: 18px 40px;
+        }
         img {
           width: 100%;
         }
