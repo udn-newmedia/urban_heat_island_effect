@@ -54,9 +54,9 @@ export default {
       handleGA (logo) {
         window.ga("newmedia.send", {
             "hitType": "event",
-            "eventCategory": "out link title",
-            "eventAction": "click",
-            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [外連到「 " + logo +  " 」]"
+            "eventCategory": "logo_main",
+            "eventAction": "Click_main",
+            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "][.com_main][外連到「 " + logo +  " 」]"
         })
       }
   },

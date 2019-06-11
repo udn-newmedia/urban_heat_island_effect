@@ -959,6 +959,7 @@ export default {
         }
         @media screen and (min-width: 769px) {
           padding: 18px 40px;
+          margin: 0 85px;
         }
         img {
           width: 100%;

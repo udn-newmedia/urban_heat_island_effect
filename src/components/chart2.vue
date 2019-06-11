@@ -514,7 +514,12 @@ export default {
       
       }
       .st14{fill:none;stroke:#EA0303;stroke-width:0.25;stroke-miterlimit:10;stroke-dasharray:5.0668,3.0401,5.0668,3.0401,5.0668,3.0401;}
-      .st8, .st9, #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1985_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob {
+      .st8, .st9, #heat_x5F_island_x5F_chart1_x5F_2018_x5F_mob, #heat_x5F_island_x5F_chart1_x5F_1986_x5F_mob,
+      #heat_x5F_island_x5F_chart1_x5F_1985_x5F_mob,
+      #heat_x5F_island_x5F_chart1_x5F_1987_x5F_mob,
+      #heat_x5F_island_x5F_chart1_x5F_1980_x5F_mob,
+      #heat_x5F_island_x5F_chart1_x5F_dot_x5F_mob,
+      #heat_x5F_island_x5F_chart1_x5F_line_x5F_mob {
         opacity: 0;
         transition: all 1s; 
       }
@@ -715,6 +720,7 @@ export default {
         background-color: white;
         position: relative;
         z-index: 100;
+        padding: 20px;
         @media screen and (min-width: 321px) {
 
         }
@@ -723,6 +729,7 @@ export default {
         }
         @media screen and (min-width: 769px) {
           padding: 24px 40px;
+          margin: 0 85px;
         }
         .time-line {
           @media screen and (min-width: 321px) {

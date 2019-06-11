@@ -1,6 +1,6 @@
 <template>
     <header id="head-bar" :style="{top: top+'px',backgroundColor: setBackgroundColor}">
-        <div id="icon" @click.prevent='refresh'>
+        <div id="icon" @click="handleGA">
             <a href="./"><i class="udn-icon udn-icon-logo" :style="{color: setColor}"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: setBackgroundColor}">
@@ -85,6 +85,14 @@ export default {
         }
     },
     methods: {
+        handleGA: function() {
+            ga("send", {
+                "hitType": "event",
+                "eventCategory": "headbar",
+                "eventAction": "click",
+                "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [聯 logo click]"
+            });
+        },
         handleLinkOut: function() {
             this.isOpen = false
         },
@@ -113,7 +121,6 @@ export default {
             this.lastScrollTop = st
         },
         handleBurger: function(event) {
-            
             this.isOpen == false ? this.isOpen = true : this.isOpen = false;
             ga("send", {
                 "hitType": "event",
@@ -195,8 +202,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.linkOut{
+.linkOut {
     text-align: center;
+    color: #b7b7b7;
+    .active {
+        color: black;
+    }
 }
 .linkOut a{
     background-color: inherit;
@@ -207,10 +218,11 @@ export default {
     font-size: 20px;
     text-decoration: none;
     display: block;
+    color: #b7b7b7;
+    
 }
 .scrollTo-Btn{
     background-color: #FFFFFF;
-    color: #000000;
     height: 60px;
     padding: 0;
     line-height: 60px;
@@ -408,6 +420,7 @@ export default {
     .linkOut a{
         border-bottom: 1px solid #000000;
         margin-top: 1px;
+        color: #b7b7b7;
     }
     
 }
@@ -442,7 +455,7 @@ export default {
         padding: 0 12px;
         height: 50px;
         line-height: 50px;
-        font-size: 16px;
+        color: #b7b7b7;
         cursor: pointer;
         float: left;
     }

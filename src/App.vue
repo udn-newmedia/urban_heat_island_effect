@@ -5,9 +5,9 @@
       <!-- <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
       <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
       <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡綠化降溫</a> -->
-      <a @click="handleGA('menu bar_main', 'M1_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
+      <a class="active" @click="handleGA('menu bar_main', 'M1_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
       <a @click="handleGA('menu bar_main', 'M2_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
-      <a @click="handleGA('menu bar_main', 'M3_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡綠化降溫</a>
+      <a @click="handleGA('menu bar_main', 'M3_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡用綠化降溫</a>
     </Head-Bar>
     <div class="cover">
       <div class="cover-section cover-section1">
@@ -158,15 +158,17 @@
         </div>
       </div>
     </div>
-    <div class="follow-up">
+    <div ref="follow-up" class="follow-up">
       <div class="follow-up-subtile-wrapper">
         <div class="follow-up-subtile">
           <div class="follow-up-subtile-content">
             <div class="main-title">
               變成熱島後...
-            </div>
-            
+            </div> 
           </div>
+        </div>
+        <div :class="{'follow-up-subtile-background-active': isFollowUpCoverActive }" class="follow-up-subtile-background">
+
         </div>
       </div>
       <div class="number-group">
@@ -329,20 +331,20 @@
                 <div class="right">
                   <div class="middle-left">
                     <div class="box">
-                      <a @click="handleGA('Related_main', 'R5_main')"  href="https://udn.com/news/story/7323/3787399">
+                      <a @click="handleGA('Related_main', 'R5_main')"  href="https://vision.udn.com/vision/story/12840/3829036">
                         <img src="../public/images/relate/relate_6.jpg" alt="">
                         <div class="describe">
-                          <span>減緩短暫強降雨致災情況 公私合作打造新北海綿城市</span>
+                          <span>超「綠」辦公樓 出差要買碳排費</span>
                         </div>
                       </a>   
                     </div>
                   </div>
                   <div class="middle-right">
                     <div  class="box">
-                      <a  @click="handleGA('Related_main', 'R6_main')"  href="https://vision.udn.com/vision/story/12840/3829036">
+                      <a  @click="handleGA('Related_main', 'R6_main')"  href="https://udn.com/news/story/7323/3787399">
                         <img src="../public/images/relate/relate_7.jpg" alt="">
                         <div class="describe">
-                          <span>超「綠」辦公樓 出差要買碳排費</span>
+                          <span>減緩短暫強降雨致災情況 公私合作打造新北海綿城市</span>
                         </div>
                       </a>   
                     </div>
@@ -350,7 +352,7 @@
                 </div>
               </div>
             </div>
-            <share href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/"></share>
+            <share href="http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/"></share>
             <br>
             <editor>
               <div>採訪團隊：鄭朝陽、洪敬浤、徐如宜、鄭維真、張裕珍、魏翊庭</div>
@@ -423,6 +425,7 @@ export default {
       currentBackground: 0,
       backgrounds: [true, false, false , false],
       isMainTitle: false,
+      isFollowUpCoverActive: false,
       isNotCover: false,
       isCoverActive: false,
       lineUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
@@ -469,7 +472,7 @@ export default {
     new ScrollMagic.Scene({
         triggerElement: end,
         triggerHook: 'onLeave',
-        duration: "500%"
+        duration: "600%"
       })
       .setPin(end, {pushFollowers: false})
       // .addIndicators() // add indicators (requires plugin)
@@ -481,6 +484,7 @@ export default {
       
       let vm = this
       let mainTitleVideo = vm.$refs['video-wrapper']
+      let followUp = vm.$refs['follow-up']
       let body = document.body;
       let timer;
       
@@ -503,6 +507,12 @@ export default {
         vm.isCoverActive = true
       } else {
         vm.isCoverActive = false
+      }
+
+      if ( followUp != null & followUp.getBoundingClientRect().top < 0 & 0 < followUp.getBoundingClientRect().top + followUp.getBoundingClientRect().height ) {
+        vm.isFollowUpCoverActive = true
+      } else {
+        vm.isFollowUpCoverActive = false
       }
 
       vm.isCurrentCover.fill(false)
@@ -604,7 +614,7 @@ html, body {
     width: 100%;
     margin: 0 auto;
     @media screen and (min-width: 321px) and (max-width: 520px) {
-      padding: 0 35px;
+
     }
     @media screen and (min-width: 521px) and (max-width: 768px) {
       max-width: 550px;
@@ -644,6 +654,7 @@ html, body {
         }
         @media screen and (min-width: 769px) {
           padding: 24px 40px;
+          margin: 0 85px;
         }
         .source {
           color: #7d7d7d;
@@ -655,15 +666,14 @@ html, body {
       .cover-contain-half {
         position: relative;
         z-index: 100;
-        padding: 17px;
+        // padding: 17px;
         @media screen and (min-width: 321px) {
 
         }
         @media screen and (min-width: 521px) {
-          padding: 27px 35px;
         }
         @media screen and (min-width: 769px) {
-          padding: 24px 40px;
+          margin: 0 85px;
         }
         .half-mark {
           background-color: #fff;
@@ -783,6 +793,15 @@ html, body {
     z-index: 100;
     background-color: white;
     padding-top: 104px;
+    @media screen and (min-width: 321px) {
+
+      }
+    @media screen and (min-width: 521px) {
+      
+    }
+    @media screen and (min-width: 769px) {
+      padding: 104px 0 228px;
+    }
     .chart-title {
        font-size: 17px;
        font-weight: bold;
@@ -820,7 +839,6 @@ html, body {
         min-height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center;
       }
     }
     .feature-title {
@@ -847,9 +865,9 @@ html, body {
   
   .follow-up {
     position: relative;
-    z-index: 100;
+    z-index: 90;
     background-color: #fff;
-    padding-bottom: 176px;
+    
     @media screen and (min-width: 321px) {
 
       }
@@ -874,21 +892,7 @@ html, body {
     }
     .follow-up-subtile-wrapper {
       height: 200vh;
-      background-image: url('../public/images/heat_island_img5_mob.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
       position: relative;
-      @media screen and (min-width: 321px) {
-
-      }
-      @media screen and (min-width: 521px) {
-
-      }
-      @media screen and (min-width: 769px) {
-        background-image: url('../public/images/heat_island_img5.jpg');
-      }
-      
       .follow-up-subtile {
         position: absolute;
         width: 100%;
@@ -916,9 +920,35 @@ html, body {
           }
         }
       }
+      .follow-up-subtile-background {
+        width: 100%;
+        height: 100vh;
+        background-image: url('../public/images/heat_island_img5_mob.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // z-index: 0;
+        @media screen and (min-width: 321px) {
+
+        }
+        @media screen and (min-width: 521px) {
+
+        }
+        @media screen and (min-width: 769px) {
+          background-image: url('../public/images/heat_island_img5.jpg');
+        }
+      }
+      .follow-up-subtile-background-active {
+          position: fixed;
+          backface-visibility: hidden;
+          z-index: -10;
+        }
     }
     .follow-up-content {
-      padding-top: 109px;
+      background-color: #ffffff;
+      padding: 109px 0px 177px;
       @media screen and (min-width: 321px) {
 
       }
