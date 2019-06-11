@@ -33,11 +33,14 @@
         <div class="container">
           <div ref="content3" class="content content3">
               <div class="cover-contain-full">
-                <p>台北夏季體感溫度若達31.5度，溫度每上升1度，死亡率便提高<span class="mark">5.1%</span>。</p>
+                <p>台北夏季體感溫度若達31.5度，溫度每上升1度，</p>
+                <p>死亡率便提高<span class="mark">5.1%</span>。</p>
                 <br>
-                <p>體感溫度若達30.7度，溫度每上升1度，心血管疾病死亡率便增加<span class="mark">3.5%</span>。</p>
+                <p>體感溫度若達30.7度，溫度每上升1度，</p>
+                <p>心血管疾病死亡率便增加<span class="mark">3.5%</span>。</p>
                 <br>
-                <p>體感溫度若達31.4度，溫度每上升1度，呼吸系統疾病死亡率便增加<span class="mark">12.5%</span>。</p>
+                <p>體感溫度若達31.4度，溫度每上升1度，</p>
+                <p>呼吸系統疾病死亡率便增加<span class="mark">12.5%</span>。</p>
                 <br>
                 <p class="source">資料來源／台灣大學公共衛生學院教授郭育良</p>
               </div>
@@ -132,22 +135,24 @@
             <br>
           </div>
           <chart2></chart2>
-          <div class="container">
-            <br>
-            <br>
-            <h3 class="feature-title feature-title1">熱島效應特色二：夜間增溫比白天明顯</h3>
-            <br>
-            <p>都市熱島效應夜間比白天影響更大，水泥建築在白天吸收的熱能，入夜後釋放出來，照理說太陽下山後，氣溫會逐漸下降，但這些人工熱能持續悶燒，讓都市夜間增溫。</p>
-            <br>
-            <p>如果夜間最低氣溫高於25度，就像熱帶地區的夜間溫度，稱為「夜間熱帶」（The Trapical Night）。夜間高溫日數越多，代表熱島效應影響越顯著。</p>
-            <br>
-            <p>根據中央氣象局資料，台北1991-2000年每年平均夜間高溫日數為81日，2001-2010年為97.5日，但2011-2018年提高到109.9天。</p>
-            <br>
-            <p>中央研究院環境變遷研究中心研究員林傳堯，分析台北市7、8月每小時均溫的長期趨勢，也證實台北市夜晚越來越熱；以每日最低溫出現的清晨5點來看，1971-1980年每日平均溫度為25.6度，但2001-2010年則提高到27.3度。</p>
-            <br>
-            <p>長期觀測氣象資訊的中央氣象局科長陳孟詩就說，天氣越來越熱，當晚間溫度超過28度，就需要開冷氣，否則根本沒辦法好好睡，但開冷氣睡覺的天數不斷增加，電力使用增加，加上空調熱氣都讓戶外溫度再上升，就更得依靠冷氣，簡直是惡性循環。</p>
-            <br>
-            <br>
+          <div class="feature-two">
+            <div class="container">
+              <br>
+              <br>
+              <h3 class="feature-title feature-title1">熱島效應特色二：夜間增溫比白天明顯</h3>
+              <br>
+              <p>都市熱島效應夜間比白天影響更大，水泥建築在白天吸收的熱能，入夜後釋放出來，照理說太陽下山後，氣溫會逐漸下降，但這些人工熱能持續悶燒，讓都市夜間增溫。</p>
+              <br>
+              <p>如果夜間最低氣溫高於25度，就像熱帶地區的夜間溫度，稱為「夜間熱帶」（The Trapical Night）。夜間高溫日數越多，代表熱島效應影響越顯著。</p>
+              <br>
+              <p>根據中央氣象局資料，台北1991-2000年每年平均夜間高溫日數為81日，2001-2010年為97.5日，但2011-2018年提高到109.9天。</p>
+              <br>
+              <p>中央研究院環境變遷研究中心研究員林傳堯，分析台北市7、8月每小時均溫的長期趨勢，也證實台北市夜晚越來越熱；以每日最低溫出現的清晨5點來看，1971-1980年每日平均溫度為25.6度，但2001-2010年則提高到27.3度。</p>
+              <br>
+              <p>長期觀測氣象資訊的中央氣象局科長陳孟詩就說，天氣越來越熱，當晚間溫度超過28度，就需要開冷氣，否則根本沒辦法好好睡，但開冷氣睡覺的天數不斷增加，電力使用增加，加上空調熱氣都讓戶外溫度再上升，就更得依靠冷氣，簡直是惡性循環。</p>
+              <br>
+              <br>
+            </div>
           </div>
           <chart3></chart3>
         </div>
@@ -368,11 +373,13 @@
         <div class="share">
           <div class="content">
             <div class="container">
-              <fb-comment  href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/"></fb-comment>
+              <fb-comment  href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/"></fb-comment>    
             </div>
           </div>
         </div>
     </div>
+    <back-top></back-top>
+    <foot></foot>
   </div>
 </template>
 
@@ -802,6 +809,20 @@ html, body {
         top: 0;
       }
     }
+    .feature-two {
+      @media screen and (min-width: 321px) {
+
+        }
+      @media screen and (min-width: 521px) {
+        
+      }
+      @media screen and (min-width: 769px) {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
     .feature-title {
       font-size: 20px;
       font-weight: bold;
@@ -823,6 +844,7 @@ html, body {
       color: #7d7d7d;
     }
   }
+  
   .follow-up {
     position: relative;
     z-index: 100;
@@ -1033,6 +1055,16 @@ html, body {
       color: white;
       padding: 500px 0 450px;
       .end-report {
+        padding-bottom: 120px;
+        @media screen and (min-width: 321px) and (max-width: 520px) {
+          padding-bottom: 406px;
+        }
+        @media screen and (min-width: 521px) and (max-width: 768px) {
+          padding-bottom: 123px;
+        }
+        @media screen and (min-width: 769px) {
+          padding-bottom: 203px;
+        }
         .end-report-title {
           font-size: 15px;
           padding-bottom: 10px;

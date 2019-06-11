@@ -5,10 +5,10 @@
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: setBackgroundColor}">
 	    	<!-- <div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: setColor, backgroundColor: setBackgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div> -->
-        <div class="linkOut" :style="{color: setLinkColor, backgroundColor: setLinkBackgroundColor}" @click="handleLinkOut">
+            <div class="linkOut" :style="{color: setLinkColor, backgroundColor: setLinkBackgroundColor}" @click="handleLinkOut">
 	    		<slot></slot>
 	    	</div>
-            <div id="logo-contain" class="hidden-lg" v-if="!noLogo">
+            <!-- <div id="logo-contain" class="hidden-lg" v-if="!noLogo">
                 <div class="logo-block">
                     <div id="vision" class="logo" :class="{hidden: !vision}">
                         <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/vision_logo.svg" alt=""></a>
@@ -20,7 +20,7 @@
                         <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/nmd_logo_2018_v.svg"></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div id="hbutton" class="hidden-lg">
             <div class="nav-icon" :class="{open: isOpen}"

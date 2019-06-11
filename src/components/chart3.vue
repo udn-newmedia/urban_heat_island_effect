@@ -239,7 +239,7 @@
               C410,304.4,408.21,306.19,406,306.19z"/>
             <text transform="matrix(1 0 0 1 323.6234 297.2675)" class="st17 st18 st7">上升近1度</text>
           </g>
-          <text x="15" y="780" class="st0 st3 st4" style="fill: #7d7d7d; font-size: 17px;">
+          <text x="15" y="780" style="fill: #7d7d7d; font-size: 17px;">
             <tspan x="15" y="790">資料來源／Climate variability of heat wave and</tspan>
             <tspan x="15" y="820">projection of warming scenario in Taiwan</tspan>
             <tspan x="15" y="850">作者／林傳堯、龍世俊、郭勉之、蘇炯瑞、錢伊筠</tspan>           
@@ -576,7 +576,7 @@
               c2.86,0,5.19,2.32,5.19,5.19V144C784,146.86,781.68,149.18,778.81,149.18z"/>
             <text transform="matrix(1 0 0 1 686.0034 137.1172)" class="st23 st24 st25">上升近1度</text>
           </g>
-           <text x="100" y="650" style="font-size: 17px;fill:#7d7d7d;">
+           <text x="100" y="650" style="font-size: 17px; fill:#7d7d7d;">
              <tspan x="100" y="660">資料來源／Climate variability of heat wave and projection of warming scenario in Taiwan</tspan>
              <tspan x="100" y="690">作者／林傳堯、龍世俊、郭勉之、蘇炯瑞、錢伊筠</tspan>
            </text>
@@ -593,7 +593,7 @@
       <div ref="chart3-section2" class="section section2">
         <div class="container">
           <div class="chart-content chart-content2">
-            <p><span class="mark">相較於1971-1980年，台北於2001-2010年的</span>夜間及清晨的溫度<span class="mark">上升近2度。</span></p>
+            <p>相較於1971-1980年，台北於2001-2010年的夜間及清晨的溫度<span class="mark">上升近2度。</span></p>
             
           </div>
         </div>   
@@ -601,7 +601,8 @@
       <div ref="chart3-section3" class="section section3">
         <div class="container">
           <div class="chart-content chart-content3">
-            <p>同一時期，台北在中午的溫度則<span class="mark">僅上升近1度。</span>顯示受熱島效應影影響，都市在夜間的溫度增幅較明顯。</p>
+            <p>同一時期，台北在中午的溫度則<span class="mark">僅上升近1度。</span></p>
+            <p>顯示受熱島效應影影響，都市在夜間的溫度增幅較明顯。</p>
           </div>
         </div>   
       </div>
@@ -949,11 +950,12 @@ export default {
         background-color: white;
         position: relative;
         z-index: 100;
+        padding: 20px;
         @media screen and (min-width: 321px) {
 
         }
         @media screen and (min-width: 521px) {
-          
+          padding: 20px 50px;
         }
         @media screen and (min-width: 769px) {
           padding: 18px 40px;
