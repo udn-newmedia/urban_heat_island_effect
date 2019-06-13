@@ -4,7 +4,7 @@
     <Head-Bar head-color="#fff" icon-color="#000">
       <!-- <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
       <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
-      <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡綠化降溫</a> -->
+      <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡用綠化降溫</a> -->
       <a class="active" @click="handleGA('menu bar_main', 'M1_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
       <a @click="handleGA('menu bar_main', 'M2_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
       <a @click="handleGA('menu bar_main', 'M3_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡用綠化降溫</a>
@@ -33,14 +33,14 @@
         <div class="container">
           <div ref="content3" class="content content3">
               <div class="cover-contain-full">
-                <p>台北夏季體感溫度若達31.5度，溫度每上升1度，</p>
-                <p>死亡率便提高<span class="mark">5.1%</span>。</p>
+                <p>台北夏季體感溫度若達31.5度，溫度每上升1度，<br class="cover-contain-full-wrap">
+                死亡率便提高<span class="mark">5.1%</span>。</p>
                 <br>
-                <p>體感溫度若達30.7度，溫度每上升1度，</p>
-                <p>心血管疾病死亡率便增加<span class="mark">3.5%</span>。</p>
+                <p>體感溫度若達30.7度，溫度每上升1度，<br class="cover-contain-full-wrap">
+                心血管疾病死亡率便增加<span class="mark">3.5%</span>。</p>
                 <br>
-                <p>體感溫度若達31.4度，溫度每上升1度，</p>
-                <p>呼吸系統疾病死亡率便增加<span class="mark">12.5%</span>。</p>
+                <p>體感溫度若達31.4度，溫度每上升1度，<br class="cover-contain-full-wrap">
+                呼吸系統疾病死亡率便增加<span class="mark">12.5%</span>。</p>
                 <br>
                 <p class="source">資料來源／台灣大學公共衛生學院教授郭育良</p>
               </div>
@@ -51,7 +51,7 @@
         <div class="container">
           <div ref="content4" class="content content4">
             <div class="cover-contain-half">
-                <p><span class="half-mark">當寶島變熱島</span></p>
+                <!-- <p><span class="half-mark">當寶島變熱島</span></p> -->
                 <h1 class="highline"><span class="half-mark">高溫會殺人</span></h1>
               </div>
           </div>
@@ -116,7 +116,7 @@
               </video>
               <img class="charText" :src="srcRWD(require('../public/images/' + chartOneTextImgMob), require('../public/images/' + chartOneTextImg))" alt="">
             </div>
-            <p>資料來源／中央氣象局</p>
+            <div class="spread-of-temperature-source">資料來源／中央氣象局</div>
             <br>
             <br>
             <br>
@@ -158,8 +158,8 @@
         </div>
       </div>
     </div>
-    <div ref="follow-up" class="follow-up">
-      <div class="follow-up-subtile-wrapper">
+    <div class="follow-up">
+      <div ref="follow-up" class="follow-up-subtile-wrapper">
         <div class="follow-up-subtile">
           <div class="follow-up-subtile-content">
             <div class="main-title">
@@ -167,7 +167,7 @@
             </div> 
           </div>
         </div>
-        <div :class="{'follow-up-subtile-background-active': isFollowUpCoverActive }" class="follow-up-subtile-background">
+        <div :class="{'active': isFollowUpCoverActive }" class="follow-up-subtile-background">
 
         </div>
       </div>
@@ -426,7 +426,6 @@ export default {
       backgrounds: [true, false, false , false],
       isMainTitle: false,
       isFollowUpCoverActive: false,
-      isNotCover: false,
       isCoverActive: false,
       lineUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
       facebookUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
@@ -450,24 +449,6 @@ export default {
     // var slides = document.querySelector("#video-wrapper");
     // var cover3 = document.querySelector("#follow-up-subtile-background");
     var end = document.querySelector("#end-background-video");
-                
-    // new ScrollMagic.Scene({
-    //     triggerElement: slides,
-    //     triggerHook: 'onLeave',
-    //     duration: "100%"
-    //   })
-    //   .setPin(slides, {pushFollowers: false})
-    //   // .addIndicators() // add indicators (requires plugin)
-    //   .addTo(controller);
-
-    // new ScrollMagic.Scene({
-    //     triggerElement: cover3,
-    //     triggerHook: 'onLeave',
-    //     duration: "100%"
-    //   })
-    //   .setPin(cover3, {pushFollowers: false})
-    //   // .addIndicators() // add indicators (requires plugin)
-    //   .addTo(controller);
 
     new ScrollMagic.Scene({
         triggerElement: end,
@@ -509,7 +490,7 @@ export default {
         vm.isCoverActive = false
       }
 
-      if ( followUp != null & followUp.getBoundingClientRect().top < 0 & 0 < followUp.getBoundingClientRect().top + followUp.getBoundingClientRect().height ) {
+      if ( followUp != null && 0 < followUp.getBoundingClientRect().bottom && followUp.getBoundingClientRect().bottom < followUp.getBoundingClientRect().height) {
         vm.isFollowUpCoverActive = true
       } else {
         vm.isFollowUpCoverActive = false
@@ -563,28 +544,6 @@ export default {
         method: 'share',
         href: href,
       }, function(response){});
-      // FB.ui(
-      //   {
-      //     method: 'share_open_graph',
-      //     action_type: 'og.shares',
-      //     action_properties: JSON.stringify({
-      //       object: {
-      //         'og:url': href,
-      //         'og:title': '你是網路「透明人」嗎？測驗你的隱私危險指數',
-      //         'og:description': '台灣人愛滑臉書、下載App，卻不知道自己的隱私可能已經悄悄外洩，在網路世界中宛如透明人。你的個資保護夠安全嗎？快透過小測驗評估你的隱私危險指數。',
-      //         'og:image': 'https://udn.com/upf/newmedia/2019_data/digital_privacy/quiz/meta/meta_quiz.jpg'
-      //       }
-      //     })
-      //   },
-      //   // callback
-      //   function(response) {
-      //     if (response && !response.error_message) {
-      //       console.log(response);
-      //     } else {
-      //       console.log(response.error_message);
-      //     }
-      //   }
-      // );
     },
   }
 }
@@ -656,6 +615,18 @@ html, body {
           padding: 24px 40px;
           margin: 0 85px;
         }
+        .cover-contain-full-wrap {
+          display: none;
+          @media screen and (min-width: 321px) {
+
+        }
+          @media screen and (min-width: 521px) {
+            display: inline;
+          }
+          @media screen and (min-width: 769px) {
+            display: inline;
+          }
+        }
         .source {
           color: #7d7d7d;
           font-size: 15px;
@@ -681,10 +652,41 @@ html, body {
         }
         .highline {
           padding-top: 6px;
+          font-size: 25px;
           font-weight: bold;
+          @media screen and (min-width: 321px) {
+            font-size: 42px;
+          }
+          @media screen and (min-width: 521px) {
+            font-size: 50px;
+          }
+          @media screen and (min-width: 769px) {
+
+          }
           & > .half-mark {
             background-color: #fff;
-            padding: 9px 28px;
+            padding: 8px 16px;
+          }
+          &::before {
+            content: "當寶島變熱島";
+            position: absolute;
+            top: -40px;
+            left: 0;
+            font-size: 20px;
+            background-color: #fff;
+            padding: 5px 16px;
+            font-weight: normal;
+            @media screen and (min-width: 321px) {
+              top: -40px;
+              padding: 8px 16px;
+              font-size: 21px;
+            }
+            @media screen and (min-width: 521px) {
+              top: -60px;
+            }
+            @media screen and (min-width: 769px) {
+              top: -40px;
+            }
           }
         }
       }
@@ -714,7 +716,7 @@ html, body {
     .isCurrentCover {
       opacity: 1;
       z-index: 50;
-      animation: fade 1s ease-in-out forwards;    
+      animation: fade 1s ease-in-out forwards;
     }
     @keyframes fade {
       from { opacity: 0.5; }
@@ -828,6 +830,19 @@ html, body {
         top: 0;
       }
     }
+    .spread-of-temperature-source {
+      color: #7d7d7d;
+      font-size: 15px;
+      @media screen and (min-width: 321px) {
+
+        }
+      @media screen and (min-width: 521px) {
+        
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 17px;
+      }
+    }
     .feature-two {
       @media screen and (min-width: 321px) {
 
@@ -939,12 +954,13 @@ html, body {
         @media screen and (min-width: 769px) {
           background-image: url('../public/images/heat_island_img5.jpg');
         }
-      }
-      .follow-up-subtile-background-active {
+        &.active {
           position: fixed;
           backface-visibility: hidden;
           z-index: -10;
         }
+      }
+      
     }
     .follow-up-content {
       background-color: #ffffff;

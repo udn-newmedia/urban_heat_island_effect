@@ -165,7 +165,7 @@
         <mq-layout :mq="['l', 'xl']">
           <svg :class="controlAnimationProcessWeb" class="chart2-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
-            <text x="220" y="100" class="st1 st5" style="font-weight: bold; font-size: 21px; fill: #000000">台北和淡水歷年均溫走勢圖</text>
+            <text x="220" y="100" class="st1 st5" style="font-weight: bold; font-size: 24px; fill: #000000">台北和淡水歷年均溫走勢圖</text>
             <g id="heat_x5F_island_x5F_chart1_x5F_background">
               <line class="st0" x1="155.77" y1="600.36" x2="1144.76" y2="600.36"/>
               <line class="st0" x1="168.79" y1="600" x2="168.79" y2="611.34"/>

@@ -1,12 +1,12 @@
 <template>
   <div class="logo">
       <ul class="logo-lists">
-          <li class="list" @click="handleGA(links[0].name)" >
+          <li class="list link_active" @click="handleGA(links[0].name)" >
               <a :href="links[0].link">
                   <img :src="links[0].logo" alt="">
               </a>
           </li>
-          <li class="list" @click="handleGA(links[1].name)" >
+          <li class="list link_active" @click="handleGA(links[1].name)" >
               <a :href="links[1].link">
                   <img :src="links[1].logo" alt="">
               </a>
@@ -79,7 +79,9 @@ export default {
            width: 128px;
            height: 37px;
            color: white;
-           cursor: pointer;
+           &.link_active {
+               cursor: pointer;
+           }
        }
     }
 }

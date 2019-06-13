@@ -249,7 +249,7 @@
       <mq-layout :mq="['l', 'xl']">
         <svg :class="controlAnimationProcessWeb" class="chart3-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
-          <text x="220" y="65" class="st2 st3 st4" style="font-weight: bold; font-size: 21px; fill: #000000;">台北7、8月每小時均溫走勢圖</text>
+          <text x="220" y="65" class="st2 st3 st4" style="font-weight: bold; font-size: 24px; fill: #000000;">台北7、8月每小時均溫走勢圖</text>
           <g id="heat_x5F_island_x5F_chart3_x5F_background_x5F_05">
             <rect x="128" y="99" class="st0" width="208" height="440"/>
           </g>
