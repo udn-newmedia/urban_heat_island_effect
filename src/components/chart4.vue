@@ -122,6 +122,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .chart4 {
+  #chart4-background {
+    width: 100%;
+    height: 219px;
+    @media screen and (min-width: 321px) {
+      height: 345px;
+    }
+    @media screen and (min-width: 521px) {
+      height: 465px;
+    }
+    @media screen and (min-width: 769px) {
+       height: 492px;
+    }
+  }
   .st0{fill:#707070;}
   .st1{font-family:'ArialMT';}
   .st2{font-size:18px;}

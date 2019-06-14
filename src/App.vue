@@ -9,7 +9,7 @@
       <a @click="handleGA('menu bar_main', 'M2_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
       <a @click="handleGA('menu bar_main', 'M3_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡用綠化降溫</a>
     </Head-Bar>
-    <div class="cover">
+    <div ref="coverArea" class="cover">
       <div class="cover-section cover-section1">
         <div class="container">
           <div ref="content1" class="content content1">
@@ -57,19 +57,19 @@
           </div>
         </div>
       </div>
-      <div :class="{'isCurrentCover': isCurrentCover[0] }"
+      <div  v-if="isCover" :class="{'isCurrentCover': isCurrentCover[0] }"
            :style="{ 'background-image': 'url(' + srcRWD(require('../public/images/' + coverBackgroundMobs[0]), require('../public/images/' + coverBackgrounds[0])) + ')' }"
             class="cover-background cover-background1">
       </div>
-      <div :class="{'isCurrentCover': isCurrentCover[1] }"
+      <div  v-if="isCover" :class="{'isCurrentCover': isCurrentCover[1] }"
            :style="{ 'background-image': 'url(' + srcRWD(require('../public/images/' + coverBackgroundMobs[1]), require('../public/images/' + coverBackgrounds[1])) + ')' }"
            class="cover-background cover-background2">
       </div>
-      <div :class="{'isCurrentCover': isCurrentCover[2] }"
+      <div v-if="isCover" :class="{'isCurrentCover': isCurrentCover[2] }"
            :style="{ 'background-image': 'url(' + srcRWD(require('../public/images/' + coverBackgroundMobs[2]), require('../public/images/' + coverBackgrounds[2])) + ')' }"
            class="cover-background cover-background3">
       </div>
-      <div :class="{'isCurrentCover': isCurrentCover[3] }"
+      <div  v-if="isCover" :class="{'isCurrentCover': isCurrentCover[3] }"
            :style="{ 'background-image': 'url(' + srcRWD(require('../public/images/' + coverBackgroundMobs[3]), require('../public/images/' + coverBackgrounds[3])) + ')' }"
            class="cover-background cover-background4">
       </div>
@@ -91,10 +91,20 @@
     </div>
     <div class="introduction-video">
       <div ref="video-wrapper" id="video-wrapper">
-        <video :class="{'video-covor-background-active': isCoverActive}" class="video-covor-background video-player" width="100vw" preload="metadata" :src="srcRWD(introductionVideoMob, introductionVideo)" autobuffer autoplay loop muted playsinline>
-          <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)" webkit-playsinline="true"></source>
-          <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)"></source>
-          <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)"></source>
+        <video 
+          :class="{'video-covor-background-active': isCoverActive}"
+          class="video-covor-background video-player"
+          width="100vw"
+          preload="metadata"
+          :src="srcRWD('https://p3.udn.com.tw/urban_heat_island_effect/heat_island_v1_mob.mp4', 'https://p3.udn.com.tw/urban_heat_island_effect/heat_island_v1.mp4')"
+          :poster="srcRWD(require('../public/video/heat_island_v1_mob_bg.jpg'), require('../public/video/heat_island_v1_bg.jpg'))"
+          autobuffer
+          autoplay
+          loop
+          muted
+          playsinline>
+          <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(introductionVideoMob, introductionVideo)" />
+
         </video>
         <div class="video-covor-content">
           <div class="main-title">發燒的都市</div>
@@ -109,10 +119,17 @@
             <h3 class="chart-title">大台北地區於2018年8月1日的溫度分布圖</h3>
             <br>
             <div class="spread-of-temperature">
-              <video  width="100vw" preload="metadata" :src="srcRWD(mapVideoMob, mapVideo)" autobuffer autoplay loop muted playsinline>
-                <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)" webkit-playsinline="true"></source>
-                <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
-                <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(mapVideoMob, mapVideo)"></source>
+              <video
+                width="100vw"
+                preload="metadata"
+                :src="srcRWD('https://p3.udn.com.tw/urban_heat_island_effect/heat_island_chart1_mob.mp4', 'https://p3.udn.com.tw/urban_heat_island_effect/heat_island_chart1.mp4')"
+                :poster="srcRWD(require('../public/video/heat_island_chart1_mob_bg.jpg'), require('../public/video/heat_island_chart1_bg.jpg'))"
+                autobuffer
+                autoplay
+                loop
+                muted
+                playsinline>
+                <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(mapVideoMob, mapVideo)" />
               </video>
               <img class="charText" :src="srcRWD(require('../public/images/' + chartOneTextImgMob), require('../public/images/' + chartOneTextImg))" alt="">
             </div>
@@ -263,7 +280,7 @@
         <video ref="end-background-video"
           width="100vw"
           preload="metadata"
-          :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"
+          :src="srcRWD('https://p3.udn.com.tw/urban_heat_island_effect/heat_island_v2_mob.mp4', 'https://p3.udn.com.tw/urban_heat_island_effect/heat_island_v2.mp4')"
           :poster="srcRWD(require('../public/video/heat_island_v2_mob_bg.jpg'), require('../public/video/heat_island_v2_bg.jpg'))"
           autobuffer
           autoplay
@@ -271,12 +288,30 @@
           muted
           playsinline
         >
-          <!-- <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)" webkit-playsinline="true"></source>
-          <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)"></source> -->
           <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="srcRWD(endBackgroundVideoMob, endBackgroundVideo)" />
         </video>
       </div>
       <div class="ending">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="content">
           <div class="container"> 
             <div class="end-report">
@@ -367,6 +402,26 @@
             <logo></logo>
             <br>
             <Question href="https://www.surveycake.com/s/KpQKN" text="填寫閱讀體驗問卷"></Question>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
           </div>
         </div>
       </div>   
@@ -426,6 +481,7 @@ export default {
       backgrounds: [true, false, false , false],
       isMainTitle: false,
       isFollowUpCoverActive: false,
+      isCover: true,
       isCoverActive: false,
       lineUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
       facebookUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
@@ -465,6 +521,7 @@ export default {
       
       let vm = this
       let mainTitleVideo = vm.$refs['video-wrapper']
+      let coverArea = vm.$refs['coverArea']
       let followUp = vm.$refs['follow-up']
       let body = document.body;
       let timer;
@@ -483,6 +540,11 @@ export default {
         this.currentCover = 3
       }
 
+      if ( coverArea != null && 0 <= coverArea.getBoundingClientRect().bottom && coverArea.getBoundingClientRect().bottom <= coverArea.getBoundingClientRect().height ) {
+        vm.isCover = true
+      } else {
+        vm.isCover = false
+      }
 
       if ( mainTitleVideo != null & mainTitleVideo.getBoundingClientRect().top < 0 & 0 < mainTitleVideo.getBoundingClientRect().top + mainTitleVideo.getBoundingClientRect().height ) {
         vm.isCoverActive = true
@@ -490,7 +552,7 @@ export default {
         vm.isCoverActive = false
       }
 
-      if ( followUp != null && 0 < followUp.getBoundingClientRect().bottom && followUp.getBoundingClientRect().bottom < followUp.getBoundingClientRect().height) {
+      if ( followUp != null && 0 <= followUp.getBoundingClientRect().bottom && followUp.getBoundingClientRect().bottom <= followUp.getBoundingClientRect().height) {
         vm.isFollowUpCoverActive = true
       } else {
         vm.isFollowUpCoverActive = false
@@ -597,7 +659,7 @@ html, body {
     position: relative;
     .cover-section {
       height: 100vh;
-      width: 100;
+      width: 100%;
       display: flex;
       align-items: center;
       .cover-contain-full {
@@ -723,10 +785,6 @@ html, body {
       to { opacity: 1; }
     }
     //當在 cover position 以內的時候不出現 
-    .isNotCover {
-      position: absolute;
-      bottom: 0;
-    }
   }
 
   .introduction {
@@ -851,9 +909,10 @@ html, body {
         
       }
       @media screen and (min-width: 769px) {
+        
         min-height: 100vh;
-        display: flex;
-        justify-content: center;
+        // display: flex;
+        // justify-content: center;
       }
     }
     .feature-title {
@@ -1099,18 +1158,17 @@ html, body {
       position: relative;
       z-index: 110;
       color: white;
-      padding: 500px 0 450px;
       .end-report {
-        padding-bottom: 120px;
-        @media screen and (min-width: 321px) and (max-width: 520px) {
-          padding-bottom: 406px;
-        }
-        @media screen and (min-width: 521px) and (max-width: 768px) {
-          padding-bottom: 123px;
-        }
-        @media screen and (min-width: 769px) {
-          padding-bottom: 203px;
-        }
+        // padding-bottom: 120px;
+        // @media screen and (min-width: 321px) and (max-width: 520px) {
+        //   padding-bottom: 406px;
+        // }
+        // @media screen and (min-width: 521px) and (max-width: 768px) {
+        //   padding-bottom: 123px;
+        // }
+        // @media screen and (min-width: 769px) {
+        //   padding-bottom: 203px;
+        // }
         .end-report-title {
           font-size: 15px;
           padding-bottom: 10px;

@@ -942,9 +942,9 @@ export default {
   }
   .section {  
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
       background-color: white;
       .chart-content {
         background-color: white;

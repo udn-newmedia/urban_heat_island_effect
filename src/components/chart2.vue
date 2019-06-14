@@ -521,6 +521,8 @@ export default {
       #heat_x5F_island_x5F_chart1_x5F_dot_x5F_mob,
       #heat_x5F_island_x5F_chart1_x5F_line_x5F_mob {
         opacity: 0;
+        -webkit-transition: all 1s;
+        -ms-transition: all 1s;
         transition: all 1s; 
       }
     }
@@ -589,7 +591,8 @@ export default {
       }
     }
     .chart2-web {
-      height: 100vh;
+      height:100vh; /* fix IE11 */
+      min-height:100%; /* fix IE11 */
       width: 100%;
       .st0{fill:none;stroke:#969696;stroke-width:0.5;stroke-miterlimit:10;}
       .st1{fill:#707070;}
@@ -633,11 +636,17 @@ export default {
       .st9, .st10 {
         opacity: 0;
         transition: all 1s;
+        -webkit-transition: all 1s;
+        -ms-transition: all 1s;
       }
       #heat_x5F_island_x5F_chart1_x5F_1980, #heat_x5F_island_x5F_chart1_x5F_2018, #heat_x5F_island_x5F_chart1_x5F_1987, #heat_x5F_island_x5F_chart1_x5F_1986, #heat_x5F_island_x5F_chart1_x5F_1985 {
         opacity: 0;
         transition: all 1s;
+        -webkit-transition: all 1s;
+        -ms-transition: all 1s;
         transition-delay: 0.5s;
+        -webkit-transition-delay: all 1s;
+        -ms-transition-delay: all 1s;
       }
       #heat_x5F_island_x5F_chart1_x5F_dot {
         display: none;
@@ -712,9 +721,9 @@ export default {
   }
   .section {  
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
       background-color: white;
       .chart-content {
         background-color: white;
