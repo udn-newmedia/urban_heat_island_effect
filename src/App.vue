@@ -5,9 +5,9 @@
       <!-- <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
       <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
       <a href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡用綠化降溫</a> -->
-      <a class="active" @click="handleGA('menu bar_main', 'M1_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect">高溫會殺人</a>
-      <a @click="handleGA('menu bar_main', 'M2_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">幫都市退燒</a>
-      <a @click="handleGA('menu bar_main', 'M3_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">新加坡用綠化降溫</a>
+      <a class="active" @click="handleGA('menu bar_main', 'M1_main')" href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect" target="_blank">高溫會殺人</a>
+      <a @click="handleGA('menu bar_main', 'M2_main')" href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan" target="_blank">幫都市退燒</a>
+      <a @click="handleGA('menu bar_main', 'M3_main')" href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad" target="_blank">新加坡用綠化降溫</a>
     </Head-Bar>
     <div ref="coverArea" class="cover">
       <div class="cover-section cover-section1">
@@ -321,7 +321,7 @@
               <div class="end-report-related-first-layer">
                 <div class="left">
                   <div class="box">
-                    <a @click="handleGA('Related_main', 'R1_main')"  href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan">
+                    <a @click="handleGA('Related_main', 'R1_main')"  href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_taiwan" target="_blank">
                       <img src="../public/images/relate/relate_2.jpg" alt="">
                       <div class="describe">
                         <span>幫都市退燒</span>
@@ -331,7 +331,7 @@
                 </div>
                 <div class="right">
                   <div class="box">
-                    <a @click="handleGA('Related_main', 'R2_main')" href="https://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad">
+                    <a @click="handleGA('Related_main', 'R2_main')" href="https://udn.com/upf/newmedia/2019_data/urban_heat_island_effect_solutions_abroad" target="_blank">
                       <img src="../public/images/relate/relate_3.jpg" alt="">
                       <div class="describe">
                         <span>新加坡用綠化降溫</span>
@@ -344,7 +344,7 @@
                 <div class="left">
                   <div class="middle-left">
                     <div class="box">
-                      <a @click="handleGA('Related_main', 'R3_main')" href="https://udn.com/news/story/11319/3302778">
+                      <a @click="handleGA('Related_main', 'R3_main')" href="https://udn.com/news/story/11319/3302778" target="_blank">
                         <img src="../public/images/relate/relate_4.jpg" alt="">
                         <div class="describe">
                           <span>勞工高溫休息於法有據 醫籲落實勞檢</span>
@@ -354,7 +354,7 @@
                   </div>
                   <div class="middle-right">
                     <div class="box">
-                      <a @click="handleGA('Related_main', 'R4_main')"  href="https://udn.com/news/story/11321/3283436">
+                      <a @click="handleGA('Related_main', 'R4_main')"  href="https://udn.com/news/story/11321/3283436" target="_blank">
                         <img src="../public/images/relate/relate_5.jpg" alt="">
                         <div class="describe">
                           <span>聯合筆記／走路有風的城市</span>
@@ -366,7 +366,7 @@
                 <div class="right">
                   <div class="middle-left">
                     <div class="box">
-                      <a @click="handleGA('Related_main', 'R5_main')"  href="https://vision.udn.com/vision/story/12840/3829036">
+                      <a @click="handleGA('Related_main', 'R5_main')"  href="https://vision.udn.com/vision/story/12840/3829036" target="_blank">
                         <img src="../public/images/relate/relate_6.jpg" alt="">
                         <div class="describe">
                           <span>超「綠」辦公樓 出差要買碳排費</span>
@@ -376,7 +376,7 @@
                   </div>
                   <div class="middle-right">
                     <div  class="box">
-                      <a  @click="handleGA('Related_main', 'R6_main')"  href="https://udn.com/news/story/7323/3787399">
+                      <a  @click="handleGA('Related_main', 'R6_main')"  href="https://udn.com/news/story/7323/3787399" target="_blank">
                         <img src="../public/images/relate/relate_7.jpg" alt="">
                         <div class="describe">
                           <span>減緩短暫強降雨致災情況 公私合作打造新北海綿城市</span>
@@ -387,7 +387,7 @@
                 </div>
               </div>
             </div>
-            <share href="http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/"></share>
+            <share href="http://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/"></share>
             <br>
             <editor>
               <div>採訪團隊：鄭朝陽、洪敬浤、徐如宜、鄭維真、張裕珍、魏翊庭</div>
@@ -483,8 +483,8 @@ export default {
       isFollowUpCoverActive: false,
       isCover: true,
       isCoverActive: false,
-      lineUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
-      facebookUrl: 'http://nmdap.udn.com.tw/upf/newmedia/2019_data/urban_heat_island_effect/',
+      lineUrl: 'http://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/',
+      facebookUrl: 'http://udn.com/upf/newmedia/2019_data/urban_heat_island_effect/',
     }
   },
   components: {

@@ -5,7 +5,7 @@
       <mq-layout :mq="['xs', 's', 'm']">
       <svg :class="controlAnimationProcessMob" class="chart3-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
-            <text x="20" y="150" style="font-size: 27px; font-weight: bold">台北7、8月每小時均溫走勢圖</text>
+            <text x="20" y="150" class="chart3-title-mob">台北7、8月每小時均溫走勢圖</text>
           <g id="heat_x5F_island_x5F_chart3_x5F_background_x5F_05">
             <rect x="46.38" y="255.93" class="st0" width="94.5" height="414.45"/>
           </g>
@@ -239,7 +239,7 @@
               C410,304.4,408.21,306.19,406,306.19z"/>
             <text transform="matrix(1 0 0 1 323.6234 297.2675)" class="st17 st18 st7">上升近1度</text>
           </g>
-          <text x="15" y="780" style="fill: #7d7d7d; font-size: 17px;">
+          <text x="15" y="780" class="chart3-source-mob">
             <tspan x="15" y="790">資料來源／Climate variability of heat wave and</tspan>
             <tspan x="15" y="820">projection of warming scenario in Taiwan</tspan>
             <tspan x="15" y="850">作者／林傳堯、龍世俊、郭勉之、蘇炯瑞、錢伊筠</tspan>           
@@ -249,7 +249,7 @@
       <mq-layout :mq="['l', 'xl']">
         <svg :class="controlAnimationProcessWeb" class="chart3-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
-          <text x="220" y="65" class="st2 st3 st4" style="font-weight: bold; font-size: 24px; fill: #000000;">台北7、8月每小時均溫走勢圖</text>
+          <text x="220" y="65" class="chart3-title-web">台北7、8月每小時均溫走勢圖</text>
           <g id="heat_x5F_island_x5F_chart3_x5F_background_x5F_05">
             <rect x="128" y="99" class="st0" width="208" height="440"/>
           </g>
@@ -576,7 +576,7 @@
               c2.86,0,5.19,2.32,5.19,5.19V144C784,146.86,781.68,149.18,778.81,149.18z"/>
             <text transform="matrix(1 0 0 1 686.0034 137.1172)" class="st23 st24 st25">上升近1度</text>
           </g>
-           <text x="100" y="650" style="font-size: 17px; fill:#7d7d7d;">
+           <text x="100" y="650" class="chart3-source-web">
              <tspan x="100" y="660">資料來源／Climate variability of heat wave and projection of warming scenario in Taiwan</tspan>
              <tspan x="100" y="690">作者／林傳堯、龍世俊、郭勉之、蘇炯瑞、錢伊筠</tspan>
            </text>
@@ -686,20 +686,19 @@ export default {
   background-color: white;
   #chart3-background {
     position: relative;
-    .chart3-title {
-      position: absolute;
-      font-size: 17px;
+    .chart3-title-mob {
       font-weight: bold;
-      top: 70px;
-      left: 13px;
+      color: #7d7d7d;
+      font-size: 17px;
       @media screen and (min-width: 321px) {
-
+        font-size: 20px;
       }
-      @media screen and (min-width: 521px) {
-        left: 100px;
-      }
-      @media screen and (min-width: 769px) {
-        left: 250px;
+    }
+    .chart3-source-mob {
+      color: #7d7d7d;
+      font-size: 12.5px;
+      @media screen and (min-width: 321px) {
+        font-size: 15px;
       }
     }
     .chart3-mob {
@@ -795,6 +794,18 @@ export default {
     .chart3-web {
       width: 100%;
       height: 100vh;
+       .chart3-title-web {
+        font-weight: bold;
+        font-size: 21px;
+        fill: color;
+        @media screen and (min-width: 769px) {  
+          font-size: 27px;
+        }
+      }
+      .chart3-source-web {
+        fill: #7d7d7d;
+        font-size: 17px;
+      }
       .st0{fill:#F4F4F4;}
       .st1{fill:#F2F2F2;}
       .st2{fill:#707070;}
@@ -813,10 +824,6 @@ export default {
         stroke:#C9C9C9;
         stroke-miterlimit:10;
         stroke-dasharray: 1055;
-        //1041.093017578125
-//1055.300537109375
-//1065.7431640625
-//1040.2020263671875
       }
       .st14{
         fill:none;

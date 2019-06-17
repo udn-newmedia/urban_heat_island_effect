@@ -5,7 +5,7 @@
         <mq-layout :mq="['xs', 's', 'm']">
           <svg :class="controlAnimationProcessMob" class="chart2-mob" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 520 925" style="enable-background:new 0 0 520 925;" xml:space="preserve">
-            <text x="20" y="140" style="font-size: 27px; font-weight: bold">台北和淡水歷年均溫走勢圖</text>
+            <text x="20" y="140" class="chart2-title-mob">台北和淡水歷年均溫走勢圖</text>
             <g id="heat_x5F_island_x5F_chart1_x5F_background_x5F_mob">
               <rect x="432.23" y="170.25" class="st0" width="13.88" height="13"/>
               <rect x="344.43" y="170.25" class="st1" width="13.88" height="13"/>
@@ -159,13 +159,13 @@
               <circle class="st0" cx="309.06" cy="522.64" r="4.83"/>
               <text transform="matrix(1.046 0 0 1 271.3994 586.2559)" class="st0 st10 st11">21.9</text>
             </g>
-            <text x="15" y="780" class="st0 st3 st4" style="color: #7d7d7d; font-size: 17px;">資料來源／中央氣象局</text>
+            <text x="15" y="780" class="chart2-source-mob">資料來源／中央氣象局</text>
             </svg>
         </mq-layout>
         <mq-layout :mq="['l', 'xl']">
           <svg :class="controlAnimationProcessWeb" class="chart2-web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
-            <text x="220" y="100" class="st1 st5" style="font-weight: bold; font-size: 24px; fill: #000000">台北和淡水歷年均溫走勢圖</text>
+            <text x="220" y="100" class="chart2-title-web">台北和淡水歷年均溫走勢圖</text>
             <g id="heat_x5F_island_x5F_chart1_x5F_background">
               <line class="st0" x1="155.77" y1="600.36" x2="1144.76" y2="600.36"/>
               <line class="st0" x1="168.79" y1="600" x2="168.79" y2="611.34"/>
@@ -319,7 +319,7 @@
               <circle class="st4" cx="742.81" cy="317" r="6"/>
               <circle class="st1" cx="743" cy="421" r="6"/>
             </g>
-            <text x="150" y="680" class="st8 st5 st7" style="color: #7d7d7d; font-size: 17px;">資料來源／中央氣象局</text>
+            <text x="150" y="680" class="chart2-source-web">資料來源／中央氣象局</text>
             </svg>
         </mq-layout>
       </section>
@@ -449,36 +449,19 @@ export default {
   position: relative;
   #chart2-background {
     position: relative;
-    .chart2-title {
-      position: absolute;
-      font-size: 17px;
+    .chart2-title-mob {
       font-weight: bold;
-      top: 70px;
-      left: 13px;
+      color: #7d7d7d;
+      font-size: 17px;
       @media screen and (min-width: 321px) {
-
-      }
-      @media screen and (min-width: 521px) {
-        left: 100px;
-      }
-      @media screen and (min-width: 769px) {
-        left: 250px;
-        font-size: 21px;
+        font-size: 20px;
       }
     }
-    .chart2-source {
-      position: relative;
+    .chart2-source-mob {
+      color: #7d7d7d;
+      font-size: 12.5px;
       @media screen and (min-width: 321px) {
-
-      }
-      @media screen and (min-width: 521px) {
-        left: 100px;
-      }
-      @media screen and (min-width: 769px) {
-        color: #7d7d7d;
-        bottom: 70px;
-        left: 250px;
-        font-size: 17px;
+        font-size: 15px;
       }
     }
     .chart2-mob {
@@ -594,6 +577,18 @@ export default {
       height:100vh; /* fix IE11 */
       min-height:100%; /* fix IE11 */
       width: 100%;
+      .chart2-title-web {
+        font-weight: bold;
+        font-size: 21px;
+        fill: color;
+        @media screen and (min-width: 769px) {  
+          font-size: 27px;
+        }
+      }
+      .chart2-source-web {
+        fill: #7d7d7d;
+        font-size: 17px;
+      }
       .st0{fill:none;stroke:#969696;stroke-width:0.5;stroke-miterlimit:10;}
       .st1{fill:#707070;}
       .st2{font-family:'ArialMT';}
