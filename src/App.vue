@@ -257,11 +257,11 @@
             <br>
             <br>
             <br>
-            <h3 class="follow-up-main-title">台北熱浪日與非熱浪日的空氣品質研究</h3>
+            <h3 class="follow-up-main-title">台北高溫日與非高溫日的空氣品質研究</h3>
             <br>
             <chart4></chart4>
             <div class="chart-describtion">
-              <div>註：熱浪與非熱浪個案是取自2014年7月和2015年7、8月三個月。此研究所定義的熱浪為台北日最高溫大於35.2度，低於33.2度則為非熱浪。</div>
+              <div>註：高溫與非高溫個案是取自2014年7月和2015年7、8月三個月。此研究所定義的高溫為台北日最高溫大於35.2度，低於33.2度則為非高溫。</div>
               <br>
               <div>資料來源／中研院永續科學研究計畫-整合性多元高解析度資訊之台灣熱浪脆弱度評估</div>
             </div>
@@ -623,6 +623,20 @@ export default {
 
 .disable-hover {
   pointer-events: none;
+}
+
+body::after {
+  content: url('../public/images/heat_island_bg1.jpg');
+  display: none;
+  @media screen and (min-width: 321px) and (max-width: 520px) {
+
+  }
+  @media screen and (min-width: 521px) {
+    content: url('../public/images/heat_island_bg1.jpg');
+  }
+  @media screen and (min-width: 769px) {
+
+  }
 }
 
 html, body {

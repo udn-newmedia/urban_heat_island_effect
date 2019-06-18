@@ -22,22 +22,26 @@
         <g>
           <text transform="matrix(1.046 0 0 1 10.7168 40.2134)" class="st0 st1 st2">50</text>
         </g>
-        <line class="st3" x1="46.65" y1="359.49" x2="46.65" y2="35.2"/>
-        <g>
-          <g>
-            <line class="st3" x1="46.65" y1="359.49" x2="37.18" y2="359.49"/>
-            <line class="st3" x1="46.65" y1="294.63" x2="37.18" y2="294.63"/>
-            <line class="st3" x1="46.65" y1="229.77" x2="37.18" y2="229.77"/>
-            <line class="st3" x1="46.65" y1="164.92" x2="37.18" y2="164.92"/>
-            <line class="st3" x1="46.65" y1="100.06" x2="37.18" y2="100.06"/>
-            <line class="st3" x1="46.65" y1="35.2" x2="37.18" y2="35.2"/>
-          </g>
-        </g>
+        <line class="st3" x1="46.6" y1="359.5" x2="46.6" y2="35.2"/>
+        <line class="st3" x1="46.6" y1="359.5" x2="37.2" y2="359.5"/>
+        <line class="st3" x1="46.5" y1="294.6" x2="37.2" y2="294.6"/>
+        <line class="st3" x1="46.5" y1="229.8" x2="37.2" y2="229.8"/>
+        <line class="st3" x1="46.5" y1="164.9" x2="37.2" y2="164.9"/>
+        <line class="st3" x1="46.5" y1="100.1" x2="37.2" y2="100.1"/>
+        <path class="st3" d="M37.2,132.1"/>
+        <path class="st3" d="M784.5,132.1"/>
+        <path class="st3" d="M37.2,198.1"/>
+        <path class="st3" d="M784.5,198.1"/>
+        <path class="st4" d="M37.2,264.1"/>
+        <path class="st4" d="M784.5,264.1"/>
+        <path class="st3" d="M37.2,330.1"/>
+        <path class="st3" d="M784.5,330.1"/>
+        <line class="st3" x1="46.6" y1="35.2" x2="37.2" y2="35.2"/>
         <g>
           <text transform="matrix(1.046 0 0 1 122.812 381.9829)"><tspan x="0" y="0" class="st0 st1 st2">O3</tspan><tspan x="-9" y="21.6" class="st0 st1 st2">(ppb)</tspan></text>
         </g>
         <g>
-          <text transform="matrix(1.046 0 0 1 239.4326 381.9829)"><tspan x="0" y="0" class="st0 st1 st2">PM10</tspan><tspan x="-7.68" y="21.6" class="st0 st1 st2">(μg/m3)</tspan></text>
+          <text transform="matrix(1.046 0 0 1 239.4326 381.9829)"><tspan x="0" y="0" class="st0 st1 st2">PM10</tspan><tspan x="-7.7" y="21.6" class="st0 st1 st2">(μg/m3)</tspan></text>
         </g>
         <g>
           <text transform="matrix(1.046 0 0 1 488.2139 381.9829)"><tspan x="0" y="0" class="st0 st1 st2">CO</tspan><tspan x="-10" y="21.6" class="st0 st1 st2">(ppm)</tspan></text>
@@ -46,45 +50,45 @@
           <text transform="matrix(1.046 0 0 1 605.1533 381.9829)"><tspan x="0" y="0" class="st0 st1 st2">SO2</tspan><tspan x="-3" y="21.6" class="st0 st1 st2">(ppb)</tspan></text>
         </g>
         <g>
-          <text transform="matrix(1.046 0 0 1 359.4722 381.9829)"><tspan x="0" y="0" class="st0 st1 st2">PM2.5</tspan><tspan x="-5.18" y="21.6" class="st0 st1 st2">(μg/m3)</tspan></text>
+          <text transform="matrix(1.046 0 0 1 359.4722 381.9829)"><tspan x="0" y="0" class="st0 st1 st2">PM2.5</tspan><tspan x="-5.2" y="21.6" class="st0 st1 st2">(μg/m3)</tspan></text>
         </g>
         <g>
           <text transform="matrix(1.046 0 0 1 726.2881 381.9829)"><tspan x="0" y="0" class="st0 st1 st2">NO2</tspan><tspan x="-2.5" y="21.6" class="st0 st1 st2">(ppb)</tspan></text>
         </g>
-        <line class="st3" x1="46.65" y1="360.11" x2="784" y2="360.11"/>
-        <rect x="703.38" y="24.58" class="st0" width="11.12" height="10.42"/>
-        <rect x="626.38" y="24.58" class="st4" width="11.12" height="10.42"/>
+        <line class="st3" x1="46.6" y1="360.1" x2="784" y2="360.1"/>
+        <rect x="703.4" y="24.6" class="st0" width="11.1" height="10.4"/>
+        <rect x="626.4" y="24.6" class="st5" width="11.1" height="10.4"/>
         <g>
-          <text transform="matrix(1.1186 0 0 1.0533 644.501 35.4033)" class="st5 st6 st7">熱浪</text>
+          <text transform="matrix(1.1186 0 0 1.0533 644.501 35.4033)" class="st4 st6 st7">高溫</text>
         </g>
         <g>
-          <text transform="matrix(1.1186 0 0 1.0533 719.4473 35.4033)" class="st5 st6 st7">非熱浪</text>
+          <text transform="matrix(1.1186 0 0 1.0533 719.4473 35.4033)" class="st4 st6 st7">非高溫</text>
         </g>
       </g>
       <g id="heat_x5F_island_x5F_chart4">
         <g>
-          <rect x="389.32" y="283.34" class="st8" width="15.41" height="76.15"/>
-          <rect x="367.49" y="275.34" class="st4" width="15.41" height="84.14"/>
+          <rect x="389.3" y="298" class="st8" width="15.4" height="61.5"/>
+          <rect x="367.5" y="275.3" class="st5" width="15.4" height="84.1"/>
         </g>
         <g>
-          <rect x="269.64" y="191.44" class="st8" width="15.41" height="167.81"/>
-          <rect x="246.78" y="156.28" class="st4" width="15.41" height="203.21"/>
+          <rect x="269.6" y="191.4" class="st8" width="15.4" height="167.8"/>
+          <rect x="246.8" y="156.3" class="st5" width="15.4" height="203.2"/>
         </g>
         <g>
-          <rect x="726.4" y="250.57" class="st4" width="15.41" height="108.92"/>
-          <rect x="747.97" y="244.98" class="st8" width="15.41" height="114.51"/>
+          <rect x="726.4" y="259" class="st5" width="15.4" height="100.5"/>
+          <rect x="748" y="257" class="st8" width="15.4" height="102.5"/>
         </g>
         <g>
-          <rect x="141.74" y="206.62" class="st8" width="15.41" height="152.87"/>
-          <rect x="118.88" y="97.99" class="st4" width="15.41" height="261.5"/>
+          <rect x="141.7" y="206.6" class="st8" width="15.4" height="152.9"/>
+          <rect x="118.9" y="98" class="st5" width="15.4" height="261.5"/>
         </g>
         <g>
-          <rect x="626.5" y="338.47" class="st8" width="15.41" height="21.02"/>
-          <rect x="605.69" y="332.08" class="st4" width="15.41" height="27.41"/>
+          <rect x="626.5" y="338.5" class="st8" width="15.4" height="21"/>
+          <rect x="605.7" y="332.1" class="st5" width="15.4" height="27.4"/>
         </g>
         <g>
-          <rect x="505.28" y="356.05" class="st8" width="15.41" height="3.44"/>
-          <rect x="484.47" y="356.41" class="st4" width="15.41" height="3.08"/>
+          <rect x="505.3" y="357" class="st8" width="15.4" height="2.5"/>
+          <rect x="484.5" y="357.3" class="st5" width="15.4" height="2.2"/>
         </g>
       </g>
       </svg>
@@ -139,8 +143,8 @@ export default {
   .st1{font-family:'ArialMT';}
   .st2{font-size:18px;}
   .st3{fill:none;stroke:#707070;stroke-width:0.5;stroke-miterlimit:10;}
-  .st4{fill:#EA0303;}
-  .st5{fill:#666666;}
+  .st4{fill:#666666;}
+  .st5{fill:#EA0303;}
   .st6{font-family:'ARHeiB5-Light-B5pc-H';}
   .st7{font-size:17.0895px;}
   .st8{fill:#D2D4D6;}
